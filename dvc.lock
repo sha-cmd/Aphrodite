@@ -1,0 +1,39 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/prepare.py
+    deps:
+    - path: data/training.1600000.processed.noemoticon.csv
+      md5: df952449d6f9b5f9fdfe3fc53ddef7ca
+      size: 238803811
+    outs:
+    - path: data/X_test.csv
+      md5: 05268f0c0adf601f4fa1a4f6e09a3de3
+      size: 2815746
+    - path: data/X_train.csv
+      md5: 3f32fddfae1e244ea9b92948fb09c733
+      size: 14152098
+    - path: data/y_test.csv
+      md5: 140430535b6d02e41d7e6dd9c204d982
+      size: 148901
+    - path: data/y_train.csv
+      md5: 6bdd5546354aa77a55d03a167fe42f1c
+      size: 788901
+  raw_to_txt:
+    cmd: python src/raw_to_txt.py
+    deps:
+    - path: data/X_test.csv
+      md5: 05268f0c0adf601f4fa1a4f6e09a3de3
+      size: 2815746
+    - path: data/X_train.csv
+      md5: 3f32fddfae1e244ea9b92948fb09c733
+      size: 14152098
+    - path: data/y_test.csv
+      md5: 140430535b6d02e41d7e6dd9c204d982
+      size: 148901
+    - path: data/y_train.csv
+      md5: 6bdd5546354aa77a55d03a167fe42f1c
+      size: 788901
+    - path: params.yaml
+      md5: 13eff7319564b2c1952ebfbf1f39aaff
+      size: 558
