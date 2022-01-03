@@ -37,3 +37,66 @@ stages:
     - path: params.yaml
       md5: 13eff7319564b2c1952ebfbf1f39aaff
       size: 558
+  keras_embedding:
+    cmd: python src/keras_embedding.py --action nature
+    outs:
+    - path: confusion_matrices/Confusion_matrix_embeddings_nature.jpg
+      md5: 8538b360060aaca88f29656c981d1d7e
+      size: 24410
+    - path: logs_nature_dvc_plots/auc.json
+      md5: 8591b1d32c2b8d41850189df9e48005d
+      size: 864
+    - path: logs_nature_dvc_plots/binary_accuracy.json
+      md5: 673ba3248f213e04acef0f69a8361f38
+      size: 1161
+    - path: logs_nature_dvc_plots/cost_metric.json
+      md5: 1dab6e0741ef9fbcaef432f6fdd8d65e
+      size: 1093
+    - path: logs_nature_dvc_plots/loss.json
+      md5: ad59471142de6372a64c758a755240d4
+      size: 890
+    - path: logs_nature_dvc_plots/precision.json
+      md5: 97b3e7def46d5ab97cb83cd06623a802
+      size: 1015
+    - path: logs_nature_dvc_plots/precision_at_recall.json
+      md5: ac0fc0636b858a5133b0376c40a6ca69
+      size: 1262
+    - path: logs_nature_dvc_plots/recall.json
+      md5: a22d53445fc958ae408942eb3f590f98
+      size: 939
+    - path: logs_nature_dvc_plots/sensitivity_at_specificity.json
+      md5: f7359c7da310328ed8e6581f877c5519
+      size: 1437
+    - path: logs_nature_dvc_plots/specificity_at_sensitivity.json
+      md5: a342519b82227cded2e247b6962956f0
+      size: 1438
+    - path: logs_nature_dvc_plots/val_auc.json
+      md5: be319f87bc70d8ba17a91bb2e5ef0f02
+      size: 964
+    - path: logs_nature_dvc_plots/val_binary_accuracy.json
+      md5: 240c4fb89ee695d3590929fb420dd572
+      size: 1265
+    - path: logs_nature_dvc_plots/val_cost_metric.json
+      md5: 1f85483909e3fb2bb891c92819e9e622
+      size: 1211
+    - path: logs_nature_dvc_plots/val_loss.json
+      md5: 5b6b2ae2ec5a13f26d7804af407ee91c
+      size: 987
+    - path: logs_nature_dvc_plots/val_precision.json
+      md5: 47c5fa4447714b677130030e104a2145
+      size: 1113
+    - path: logs_nature_dvc_plots/val_precision_at_recall.json
+      md5: e8151f7a99c3f1cd6fce81b1473c0d28
+      size: 1360
+    - path: logs_nature_dvc_plots/val_recall.json
+      md5: c7678f9d3b45b251f1b20648ce548b69
+      size: 1035
+    - path: logs_nature_dvc_plots/val_sensitivity_at_specificity.json
+      md5: d9db9d56a7760dc13ba4bea90be10136
+      size: 1539
+    - path: logs_nature_dvc_plots/val_specificity_at_sensitivity.json
+      md5: 24a81ce7b76facfd8c5276494728e1aa
+      size: 1538
+    - path: metrics/embedding/embedding_metrics_nature.json
+      md5: 27eea70ba13bd78e9f3562d1ef0737a6
+      size: 266
