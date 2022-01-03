@@ -38,7 +38,10 @@ def write_tweets_in_txt(X_list, y_list, dir_list, class_list):
 
     for i in range(len(dir_list)):
         if not os.path.isdir(dir_list[i]):
-            os.mkdir(dir_list[i])
+            try:
+                os.mkdir(dir_list[i])
+            except FileNotFoundError as e:
+                print(e, "Veuillez créer les dossiers data/lemm/ et data/stem/ vide")
     for i in range(len(class_list)):
         if not os.path.isdir(class_list[i]):
             os.mkdir(class_list[i])
