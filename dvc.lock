@@ -163,3 +163,66 @@ stages:
     - path: metrics/embedding/embedding_metrics_lemm.json
       md5: 5fa0a63936fe38f0f7a01a2ad5c8f7e5
       size: 262
+  keras_embedding_stem:
+    cmd: python src/keras_embedding.py --action stem
+    outs:
+    - path: confusion_matrices/Confusion_matrix_embeddings_stem.jpg
+      md5: 73b41a859a6ada4946e9685a3d87fae4
+      size: 24807
+    - path: logs_stem_dvc_plots/auc.json
+      md5: a73319cc32c47a658c1819477bfe164f
+      size: 102
+    - path: logs_stem_dvc_plots/binary_accuracy.json
+      md5: cb2f9d750b3999054774463da40dd8f9
+      size: 138
+    - path: logs_stem_dvc_plots/cost_metric.json
+      md5: f503d881d3977571e85f7779da0ac56e
+      size: 132
+    - path: logs_stem_dvc_plots/loss.json
+      md5: 84c508f62565c07dd1f9029ed98b6858
+      size: 105
+    - path: logs_stem_dvc_plots/precision.json
+      md5: 857409ddbe26043dcfd141a8046551bd
+      size: 120
+    - path: logs_stem_dvc_plots/precision_at_recall.json
+      md5: 4d1a402943bbf1f89ab4f576bc0c03a3
+      size: 149
+    - path: logs_stem_dvc_plots/recall.json
+      md5: fbe09e806f6743b2cdb5411413e2b91b
+      size: 111
+    - path: logs_stem_dvc_plots/sensitivity_at_specificity.json
+      md5: 457cc9ccb9da199142ef11b7225df70b
+      size: 171
+    - path: logs_stem_dvc_plots/specificity_at_sensitivity.json
+      md5: eec584d4b04d8d4ba1d23ef94bfc6b98
+      size: 170
+    - path: logs_stem_dvc_plots/val_auc.json
+      md5: 22d2d0e7eee83e555817d33ddd96521e
+      size: 114
+    - path: logs_stem_dvc_plots/val_binary_accuracy.json
+      md5: f0b8696db85d09fa6244fea7eb491d97
+      size: 150
+    - path: logs_stem_dvc_plots/val_cost_metric.json
+      md5: 419c5ebf2bda82cfc2c4744dd6024f83
+      size: 144
+    - path: logs_stem_dvc_plots/val_loss.json
+      md5: 3ab741b8196b2b79b6289d3dc0e6c802
+      size: 117
+    - path: logs_stem_dvc_plots/val_precision.json
+      md5: 7eb11a54ce049e5fd13666ee7f2baeb2
+      size: 132
+    - path: logs_stem_dvc_plots/val_precision_at_recall.json
+      md5: 81f21bc5a400a0e681535148c964a5e5
+      size: 162
+    - path: logs_stem_dvc_plots/val_recall.json
+      md5: 56be8330aff631eef518848e35ac199d
+      size: 121
+    - path: logs_stem_dvc_plots/val_sensitivity_at_specificity.json
+      md5: 726d5b538ef130a862f1eb21627ff57c
+      size: 183
+    - path: logs_stem_dvc_plots/val_specificity_at_sensitivity.json
+      md5: e5d9ac05dd168ce34872472c755fc5ed
+      size: 183
+    - path: metrics/embedding/embedding_metrics_stem.json
+      md5: 5e1e75a7b82fc560590ff481d71fd75b
+      size: 266
