@@ -41,62 +41,125 @@ stages:
     cmd: python src/keras_embedding.py --action nature
     outs:
     - path: confusion_matrices/Confusion_matrix_embeddings_nature.jpg
-      md5: 8538b360060aaca88f29656c981d1d7e
-      size: 24410
+      md5: fe333f3f4502af63cd008ae83f08b1f3
+      size: 24052
     - path: logs_nature_dvc_plots/auc.json
-      md5: 8591b1d32c2b8d41850189df9e48005d
-      size: 864
+      md5: 44445f7032f9b55d34d8c499ff6419ef
+      size: 100
     - path: logs_nature_dvc_plots/binary_accuracy.json
-      md5: 673ba3248f213e04acef0f69a8361f38
-      size: 1161
+      md5: 8cfe350f37e178c3b3fbfa88d126c87b
+      size: 138
     - path: logs_nature_dvc_plots/cost_metric.json
-      md5: 1dab6e0741ef9fbcaef432f6fdd8d65e
-      size: 1093
+      md5: 4b131116098796a1d7d7b1398c744dc8
+      size: 131
     - path: logs_nature_dvc_plots/loss.json
-      md5: ad59471142de6372a64c758a755240d4
-      size: 890
+      md5: 6f4ce0cab924a650e57cba646657dfb0
+      size: 105
     - path: logs_nature_dvc_plots/precision.json
-      md5: 97b3e7def46d5ab97cb83cd06623a802
-      size: 1015
+      md5: bb2b7d539736273cf6edef1675a401b2
+      size: 120
     - path: logs_nature_dvc_plots/precision_at_recall.json
-      md5: ac0fc0636b858a5133b0376c40a6ca69
-      size: 1262
+      md5: 64f6920f1ef9fad741d4572cd0fea969
+      size: 150
     - path: logs_nature_dvc_plots/recall.json
-      md5: a22d53445fc958ae408942eb3f590f98
-      size: 939
+      md5: 22abe39fcc268cf14157eebcebf7571b
+      size: 110
     - path: logs_nature_dvc_plots/sensitivity_at_specificity.json
-      md5: f7359c7da310328ed8e6581f877c5519
-      size: 1437
+      md5: ef4e7d9a38b14399e1be5bdd87f76eab
+      size: 170
     - path: logs_nature_dvc_plots/specificity_at_sensitivity.json
-      md5: a342519b82227cded2e247b6962956f0
-      size: 1438
+      md5: 9ee42bb9db361557bf1050ec11bdb5bd
+      size: 169
     - path: logs_nature_dvc_plots/val_auc.json
-      md5: be319f87bc70d8ba17a91bb2e5ef0f02
-      size: 964
+      md5: 9d9dd59ff96362464c7ce29632b2b689
+      size: 114
     - path: logs_nature_dvc_plots/val_binary_accuracy.json
-      md5: 240c4fb89ee695d3590929fb420dd572
-      size: 1265
+      md5: a39e83809708955c13770aef63cc39c1
+      size: 150
     - path: logs_nature_dvc_plots/val_cost_metric.json
-      md5: 1f85483909e3fb2bb891c92819e9e622
-      size: 1211
+      md5: 7c31c1c8e49d9ca9aa84a670c485caac
+      size: 143
     - path: logs_nature_dvc_plots/val_loss.json
-      md5: 5b6b2ae2ec5a13f26d7804af407ee91c
-      size: 987
+      md5: 35e6ea5a3155e597afc6049914c9970c
+      size: 117
     - path: logs_nature_dvc_plots/val_precision.json
-      md5: 47c5fa4447714b677130030e104a2145
-      size: 1113
+      md5: c11ae50ba12bed11eededa4a9e9f5cd4
+      size: 131
     - path: logs_nature_dvc_plots/val_precision_at_recall.json
-      md5: e8151f7a99c3f1cd6fce81b1473c0d28
-      size: 1360
+      md5: dcececb1b9e1bdf87bb144c425750fc3
+      size: 161
     - path: logs_nature_dvc_plots/val_recall.json
-      md5: c7678f9d3b45b251f1b20648ce548b69
-      size: 1035
+      md5: 6fe7e2ef08e58b87ea6f1c6b63f8eab5
+      size: 123
     - path: logs_nature_dvc_plots/val_sensitivity_at_specificity.json
-      md5: d9db9d56a7760dc13ba4bea90be10136
-      size: 1539
+      md5: babf5036fcf396075e825345435917fa
+      size: 183
     - path: logs_nature_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 24a81ce7b76facfd8c5276494728e1aa
-      size: 1538
+      md5: 237cf2a983a0b81fd7aa9bf764d1f966
+      size: 183
     - path: metrics/embedding/embedding_metrics_nature.json
-      md5: 27eea70ba13bd78e9f3562d1ef0737a6
-      size: 266
+      md5: 569a81762395083cc2f5b949dc89b320
+      size: 265
+  keras_embedding_lemm:
+    cmd: python src/keras_embedding.py --action lemm
+    outs:
+    - path: confusion_matrices/Confusion_matrix_embeddings_lemm.jpg
+      md5: cfff6284175c875c7defd0ac32c5d2f9
+      size: 25015
+    - path: logs_lemm_dvc_plots/auc.json
+      md5: 9aad07d94baa72e538384eadaa75e250
+      size: 102
+    - path: logs_lemm_dvc_plots/binary_accuracy.json
+      md5: c4e7f2baee912cdc5f85cfe9c39c15e5
+      size: 138
+    - path: logs_lemm_dvc_plots/cost_metric.json
+      md5: 3dab44b9caeb480f312aa06b08d47960
+      size: 132
+    - path: logs_lemm_dvc_plots/loss.json
+      md5: 1b65d9311b95ffbabecb3f3615f880f5
+      size: 105
+    - path: logs_lemm_dvc_plots/precision.json
+      md5: a96936d3148fc04b8f8b29f8db509924
+      size: 120
+    - path: logs_lemm_dvc_plots/precision_at_recall.json
+      md5: 1a6bd95667ec64decd9e91495af5f10d
+      size: 150
+    - path: logs_lemm_dvc_plots/recall.json
+      md5: 988547d603dff9a1fb88e1261160aceb
+      size: 111
+    - path: logs_lemm_dvc_plots/sensitivity_at_specificity.json
+      md5: a0f76486e3b45860b1a330a7bf168dcc
+      size: 169
+    - path: logs_lemm_dvc_plots/specificity_at_sensitivity.json
+      md5: 79c0b54012176f29d93ebef284f827c6
+      size: 171
+    - path: logs_lemm_dvc_plots/val_auc.json
+      md5: 7b5707cafc2bbd9a84f21b6961ef0552
+      size: 114
+    - path: logs_lemm_dvc_plots/val_binary_accuracy.json
+      md5: d030717b6a6e58e82f518208220fd20b
+      size: 149
+    - path: logs_lemm_dvc_plots/val_cost_metric.json
+      md5: 7f1200cd95bff27f6508d673557fa5b2
+      size: 144
+    - path: logs_lemm_dvc_plots/val_loss.json
+      md5: 5652a8e08c548197fc9db8a4eab4bfdd
+      size: 117
+    - path: logs_lemm_dvc_plots/val_precision.json
+      md5: fa5b63db948b0f2327d41d9c32bcd7b3
+      size: 132
+    - path: logs_lemm_dvc_plots/val_precision_at_recall.json
+      md5: 851879acf2fd947633ed03e1dfdd47d3
+      size: 162
+    - path: logs_lemm_dvc_plots/val_recall.json
+      md5: a56c8916fc6680963c8b122f9fff9901
+      size: 123
+    - path: logs_lemm_dvc_plots/val_sensitivity_at_specificity.json
+      md5: 6e8a6c5d1308095fc6a5f12a480362fb
+      size: 183
+    - path: logs_lemm_dvc_plots/val_specificity_at_sensitivity.json
+      md5: 28d5862242080dda193f9d86372a49cc
+      size: 183
+    - path: metrics/embedding/embedding_metrics_lemm.json
+      md5: 5fa0a63936fe38f0f7a01a2ad5c8f7e5
+      size: 262

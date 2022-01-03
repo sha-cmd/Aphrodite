@@ -20,7 +20,7 @@ model_constants:
 
 keras_embedding:
   batch_size: 256
-  epochs: 25
+  epochs: 3
   dense: 128
 
 keras_glove:
