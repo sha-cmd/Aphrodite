@@ -1,1 +1,0 @@
-{"loss":1.4848884344,"binary_accuracy":0.7351999879,"AUC":0.7933207154,"precision":0.7462826967,"recall":0.7127000093,"precision_at_recall":0.8215019703,"sensitivity_at_sensitivity":0.8744000196,"specificity_at_sensitivity":0.8870999813,"cost_metric":-69.5357971191}
