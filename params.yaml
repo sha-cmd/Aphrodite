@@ -1,0 +1,41 @@
+prepare:
+  train_size: 100000
+  test_size: 20000
+
+keras:
+  recall: 0.5
+  specificity: 0.5
+  sensitivity: 0.5
+
+model_constants:
+  max_features: 100000
+  embedding_dim: 100
+  sequence_length: 30
+  maxlen: 30
+  training_samples: 80000
+  validation_samples: 20000
+  max_words: 100000
+  unit_cost_of_a_bad_buzz: 250
+  optimizer: adam
+
+keras_embedding:
+  batch_size: 256
+  epochs: 25
+  dense: 128
+
+keras_glove:
+  epochs: 25
+  dense: 32
+
+keras_lstm:
+  epochs: 25
+  dense: 32
+
+keras_w2v:
+  epochs: 3
+  dense: 32
+
+keras_bert:
+  batch_size: 32
+  epochs: 5
+  dense: 32
