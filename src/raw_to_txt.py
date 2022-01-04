@@ -86,7 +86,7 @@ def create_dir():
         os.mkdir(directory)
 
 
-def custom_standardization(x, stemming):
+def cleaner(x, stemming):
     text = str(x).lower()
     s = re.sub(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', ' _ip_ ', text)
     # Isolate punctuation
@@ -162,10 +162,10 @@ def process():
     create_dir()
     # Écrire les tweets en fichiers textes
     X_nature_train = X_train.copy()
-    X_nature_train['tweets'] = X_nature_train['tweets'].apply(lambda x: custom_standardization(x, 'nature'))
+    X_nature_train['tweets'] = X_nature_train['tweets'].apply(lambda x: cleaner(x, 'nature'))
     y_nature_train = y_train.copy()
     X_nature_test = X_test.copy()
-    X_nature_test['tweets'] = X_nature_test['tweets'].apply(lambda x: custom_standardization(x, 'nature'))
+    X_nature_test['tweets'] = X_nature_test['tweets'].apply(lambda x: cleaner(x, 'nature'))
     y_nature_test = y_test.copy()
     X_nature_train.to_csv('data/X_nature_train.csv', index_label='index')
     X_nature_test.to_csv('data/X_nature_test.csv', index_label='index')
@@ -174,17 +174,17 @@ def process():
     X_list = [X_nature_train, X_nature_test]
     y_list = [y_nature_train, y_nature_test]
     write_tweets_in_txt(X_list, y_list, dir_list, class_list)
-    X = X_nature_train['tweets'].loc[y_nature_train['note'] == 4].apply(lambda x: custom_standardization(x, 'nature'))
+    X = X_nature_train['tweets'].loc[y_nature_train['note'] == 4].apply(lambda x: cleaner(x, 'nature'))
     word_cloud(X, 'nature', 'positive')
-    X = X_nature_train['tweets'].loc[y_nature_train['note'] == 0].apply(lambda x: custom_standardization(x, 'nature'))
+    X = X_nature_train['tweets'].loc[y_nature_train['note'] == 0].apply(lambda x: cleaner(x, 'nature'))
     word_cloud(X, 'nature', 'negative')
     del X_list
     del y_list
     X_lemm_train = X_train.copy()
-    X_lemm_train['tweets'] = X_lemm_train['tweets'].apply(lambda x: custom_standardization(x, 'lemmatize'))
+    X_lemm_train['tweets'] = X_lemm_train['tweets'].apply(lambda x: cleaner(x, 'lemmatize'))
     y_lemm_train = y_train.copy()
     X_lemm_test = X_test.copy()
-    X_lemm_test['tweets'] = X_lemm_test['tweets'].apply(lambda x: custom_standardization(x, 'lemmatize'))
+    X_lemm_test['tweets'] = X_lemm_test['tweets'].apply(lambda x: cleaner(x, 'lemmatize'))
     y_lemm_test = y_test.copy()
     X_lemm_train.to_csv('data/X_lemm_train.csv', index_label='index')
     X_lemm_test.to_csv('data/X_lemm_test.csv', index_label='index')
@@ -194,18 +194,18 @@ def process():
     y_list = [y_lemm_train, y_lemm_test]
     write_tweets_in_txt(X_list, y_list, dir_lemm_list, class_lemm_list)
 
-    X = X_lemm_train['tweets'].loc[y_lemm_train['note'] == 4].apply(lambda x: custom_standardization(x, 'lemmatize'))
+    X = X_lemm_train['tweets'].loc[y_lemm_train['note'] == 4].apply(lambda x: cleaner(x, 'lemmatize'))
     word_cloud(X, 'lemm', 'positive')
-    X = X_lemm_train['tweets'].loc[y_lemm_train['note'] == 0].apply(lambda x: custom_standardization(x, 'lemmatize'))
+    X = X_lemm_train['tweets'].loc[y_lemm_train['note'] == 0].apply(lambda x: cleaner(x, 'lemmatize'))
     word_cloud(X, 'lemm', 'negative')
 
     del X_list
     del y_list
     X_stem_train = X_train.copy()
-    X_stem_train['tweets'] = X_train['tweets'].apply(lambda x: custom_standardization(x, 'stemming'))
+    X_stem_train['tweets'] = X_train['tweets'].apply(lambda x: cleaner(x, 'stemming'))
     y_stem_train = y_train.copy()
     X_stem_test = X_test.copy()
-    X_stem_test['tweets'] = X_test['tweets'].apply(lambda x: custom_standardization(x, 'stemming'))
+    X_stem_test['tweets'] = X_test['tweets'].apply(lambda x: cleaner(x, 'stemming'))
     y_stem_test = y_test.copy()
     X_stem_train.to_csv('data/X_stem_train.csv', index_label='index')
     X_stem_test.to_csv('data/X_stem_test.csv', index_label='index')
@@ -214,9 +214,9 @@ def process():
     X_list = [X_stem_train, X_stem_test]
     y_list = [y_stem_train, y_stem_test]
     write_tweets_in_txt(X_list, y_list, dir_stem_list, class_stem_list)
-    X = X_stem_train['tweets'].loc[y_stem_train['note'] == 4].apply(lambda x: custom_standardization(x, 'stemming'))
+    X = X_stem_train['tweets'].loc[y_stem_train['note'] == 4].apply(lambda x: cleaner(x, 'stemming'))
     word_cloud(X, 'stemming', 'positive')
-    X = X_stem_train['tweets'].loc[y_stem_train['note'] == 0].apply(lambda x: custom_standardization(x, 'stemming'))
+    X = X_stem_train['tweets'].loc[y_stem_train['note'] == 0].apply(lambda x: cleaner(x, 'stemming'))
     word_cloud(X, 'stemming', 'negative')
 
 
