@@ -9,18 +9,18 @@ keras:
 
 model_constants:
   max_features: 100000
-  embedding_dim: 100
+  embedding_dim: 300
   sequence_length: 30
   maxlen: 30
   training_samples: 80000
   validation_samples: 20000
   max_words: 100000
   unit_cost_of_a_bad_buzz: 250
-  optimizer: adam
+  optimizer: rmsprop
 
 keras_embedding:
   batch_size: 256
-  epochs: 3
+  epochs: 25
   dense: 128
 
 keras_glove:
