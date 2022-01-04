@@ -38,6 +38,7 @@ global class_list
 
 path_to_model = 'word2vec/wiki-news-300d-1M.vec'
 
+
 def set_weights(set_of_word, dim_of_model, w2vmodel):
     """Nous allons créer une matrice de poids à partir du modèle fasttext word2vec
     obtenu à cette adresse
@@ -68,8 +69,8 @@ def to_label(prob):
 
 
 def get_true_postive_count(cm, model_ml, df_data, label_column_name, text_column_name, target_class):
-
-    pred_labels = [model_ml(to_tensor(str(raw_text))) for it, raw_text in df_data.loc[df[label_column_name] == target_class][text_column_name].items()]
+    pred_labels = [model_ml(to_tensor(str(raw_text))) for it, raw_text in
+                   df_data.loc[df[label_column_name] == target_class][text_column_name].items()]
     predictions = [to_label(x) for x in pred_labels]
     tp_count = len(list(filter(lambda x: x == target_class, predictions)))
     index = np.where(cm == tp_count)
@@ -165,6 +166,7 @@ class MyCorpus:
             # assume there's one document per line, tokens separated by whitespace
             yield utils.simple_preprocess(line)
 
+
 def cost_metric(y_true, y_pred):
     tn = K.sum(K.round(K.clip((1 - y_true) * (1 - y_pred), 0, 1)))
     fp = K.sum(K.round(K.clip((1 - y_true) * y_pred, 0, 1)))
@@ -175,10 +177,12 @@ def cost_metric(y_true, y_pred):
 
     return cost
 
+
 df_X = pd.read_csv('data/X_' + action + '_train.csv', index_col='index')
 df_y = pd.read_csv('data/y_' + action + '_train.csv', index_col='index')
 df_X['tweets'] = df_X['tweets'].apply(lambda x: str(x)).astype('str')
-X_train, X_val, y_train, y_val = train_test_split(df_X['tweets'].values, df_y['note'].values, test_size=0.2, random_state=1)
+X_train, X_val, y_train, y_val = train_test_split(df_X['tweets'].values, df_y['note'].values, test_size=0.2,
+                                                  random_state=1)
 texts = df_X['tweets'].tolist()
 texts_train = X_train.tolist()
 texts_val = X_val.tolist()
@@ -193,8 +197,8 @@ df_X['nb_words'] = df_X['tweets'].apply(lambda x: x.split())
 df_X['nb_words'] = df_X['nb_words'].apply(lambda x: len(x))
 MAX_SEQUENCE_LENGTH = df_X['nb_words'].max()
 print('Nous avons %s mots tout au plus dans chaque tweets' % MAX_SEQUENCE_LENGTH)
-X_train_pad = pad_sequences(sequences_train, maxlen=MAX_SEQUENCE_LENGTH )
-X_val_pad = pad_sequences(sequences_val, maxlen=MAX_SEQUENCE_LENGTH )
+X_train_pad = pad_sequences(sequences_train, maxlen=MAX_SEQUENCE_LENGTH)
+X_val_pad = pad_sequences(sequences_val, maxlen=MAX_SEQUENCE_LENGTH)
 label_encoding = {
     0: 0,
     4: 1,
@@ -208,25 +212,18 @@ y_val = to_categorical(y_val)
 embeddings_m = set_weights(word_index, embedding_dim, path_to_model)
 print(embeddings_m.shape)
 
-embedding_layer = Embedding(len(word_index) + 1,
+embedding_layer = Embedding(vocab_len + 1,
                             embedding_dim,
                             weights=[embeddings_m],
-                            input_length=MAX_SEQUENCE_LENGTH,
+                            input_length=122,
                             trainable=False)
 
-sequence_input = Input(shape=(MAX_SEQUENCE_LENGTH,), dtype='int32')
-embedded_sequences = embedding_layer(sequence_input)
-x = Conv1D(128, 5, activation='relu')(embedded_sequences)
-x = MaxPooling1D(2)(x)
-x = Conv1D(128, 5, activation='relu')(x)
-x = MaxPooling1D(5)(x)
-x = Conv1D(128, 5, activation='relu')(x)
-x = MaxPooling1D(6)(x)  # global max pooling
-x = Flatten()(x)
-x = Dense(128, activation='relu')(x)
-preds = Dense(2, activation='softmax')(x)
-
-model = Model(sequence_input, preds)
+model = Sequential()
+model.add(embedding_layer)
+model.add(Bidirectional(GRU(units=128,
+                            dropout=0.2,
+                            recurrent_dropout=0.2)))
+model.add(Dense(2, activation='softmax'))
 model.compile(loss='categorical_crossentropy',
               optimizer=optimizer,
               metrics=[tf.metrics.BinaryAccuracy(), 'AUC', tf.keras.metrics.Precision(),
@@ -240,8 +237,7 @@ model.compile(loss='categorical_crossentropy',
 
 # happy learning!
 history = model.fit(X_train_pad, y_train, validation_data=(X_val_pad, y_val),
-          epochs=epochs, batch_size=batch_size, callbacks=[DvcLiveCallback(path="./w2v_logs_" + action)])
-
+                    epochs=epochs, batch_size=batch_size, callbacks=[DvcLiveCallback(path="./w2v_lstm_logs_" + action)])
 
 # Matrice de confusion
 X_test = pd.read_csv('data/X_' + action + '_test.csv', index_col='index')
@@ -249,7 +245,7 @@ y_test = pd.read_csv('data/y_' + action + '_test.csv', index_col='index')
 X_test['tweets'] = X_test['tweets'].apply(lambda x: str(x)).astype('str')
 texts_test = X_test['tweets'].tolist()
 sequences_test = tokenized.texts_to_sequences(texts_test)
-X_test_pad = pad_sequences(sequences_test, maxlen=MAX_SEQUENCE_LENGTH )
+X_test_pad = pad_sequences(sequences_test, maxlen=MAX_SEQUENCE_LENGTH)
 pred_labels = [(1 if (x[0] < 0.5) else 0) for x in model.predict(X_test_pad)]
 df = pd.DataFrame(pred_labels)
 df['note'] = y_test
@@ -260,7 +256,7 @@ cm = confusion_matrix(df['note'], pred_labels)
 df_cm = pd.DataFrame(cm, index=[0, 1], columns=[0, 1])
 plt.figure(figsize=(10, 7))
 sns.heatmap(df_cm, annot=True)
-plt.savefig('confusion_matrices/Confusion_matrix_w2v_' + action + '.jpg')
+plt.savefig('confusion_matrices/Confusion_matrix_w2v_lstm_' + action + '.jpg')
 #
 # dataset_train = keras.preprocessing.text_dataset_from_directory(
 #     dir_list[0], batch_size=batch_size, seed=42, subset='training', validation_split=0.2)
