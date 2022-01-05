@@ -3,15 +3,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import tensorflow as tf
-import string
-import re
 import yaml
 import os
 import pandas as pd
 import glob
 import ast
 import json
-import joblib
 import pickle
 
 from sklearn.metrics import confusion_matrix
@@ -27,6 +24,7 @@ global dir_list
 global class_list
 
 
+# Fonctions pour travailler avec le modèle afin de récupérer une matrice de confusion
 def to_tensor(text):
     return tf.convert_to_tensor([[text]])
 
@@ -74,6 +72,10 @@ def perf_confusion_matrix(model_ml, pd_test_data, label_column_name, text_column
     plt.savefig('confusion_matrices/Confusion_matrix_embeddings_' + action + '.jpg')
 
 
+# Analyse de la ligne de commande du script pour récupérer le type d’action :
+# soit nature (juste le cleaning du texte), soit lemm (lemmatisation), soit stem (stemming)
+# les trois types de données sont à la fois écrit en fichier texte, dans des répertoires,
+# mais aussi dans des fichiers csv, pour pallier la nervosité de keras.
 parser = OptionParser()
 parser.add_option("-a", "--action", dest="action",
                   help="Nature of the action", metavar="ACTION")
@@ -82,6 +84,7 @@ parser.add_option("-a", "--action", dest="action",
 (options, args) = parser.parse_args()
 action = options.action
 
+# Répertoire selon le preprocessing et l’action donnée en argument de la ligne de commande du script python
 dir_list = ['data/train', 'data/test']
 dir_lemm_list = ['data/lemm/train', 'data/lemm/test']
 dir_stem_list = ['data/stem/train', 'data/stem/test']
@@ -95,11 +98,13 @@ class_stem_list = ['data/stem/train/negatif', 'data/stem/train/positif',
 dict_of_dir = {'nature': dir_list, 'lemm': dir_lemm_list, 'stem': dir_stem_list}
 dict_of_class = {'nature': class_list, 'lemm': class_lemm_list, 'stem': class_stem_list}
 
+# Chargement du bon lot de répertoire selon l’action du stage de la commande dvc repro
 data_list = dict_of_dir[action]
 class_list = dict_of_class[action]
 
 print('keras_embedding')
 
+# Chargement des paramètres depuis le fichier de paramètres.
 with open("params.yaml", 'r') as fd:
     params = yaml.safe_load(fd)
     epochs = int(params['keras_embedding']['epochs'])
@@ -116,16 +121,15 @@ with open("params.yaml", 'r') as fd:
 
 
 def cost_metric(y_true, y_pred):
+    """Métrique métier, coût d’un bad buzz multiplier par le logarithme du rappel"""
     tn = K.sum(K.round(K.clip((1 - y_true) * (1 - y_pred), 0, 1)))
     fp = K.sum(K.round(K.clip((1 - y_true) * y_pred, 0, 1)))
-
     cost = K.log(tn / (tn + fp)) * unit_cost_of_a_bad_buzz
     if tf.math.is_nan(cost) or tf.math.is_inf(cost):
         cost = 0.
-
     return cost
 
-
+# Chargement des données à partir des fichiers des répertoires
 dataset_train = keras.preprocessing.text_dataset_from_directory(
     dir_list[0], batch_size=batch_size, seed=42, subset='training', validation_split=0.2)
 dataset_val = keras.preprocessing.text_dataset_from_directory(
@@ -133,70 +137,50 @@ dataset_val = keras.preprocessing.text_dataset_from_directory(
 dataset_test = keras.preprocessing.text_dataset_from_directory(
     dir_list[1], batch_size=batch_size)
 
-print(dataset_train)
+# Vectorisation
 vectorizer = TextVectorization(output_mode="int")
 
-# Now that we have our custom standardization, we can instantiate our text
-# vectorization layer. We are using this layer to normalize, split, and map
-# strings to integers, so we set our 'output_mode' to 'int'.
-# Note that we're using the default split function,
-# and the custom standardization defined above.
-# We also set an explicit maximum sequence length, since the CNNs later in our
-# model won't support ragged sequences.
 vectorize_layer = TextVectorization(
     max_tokens=max_features,
     output_mode="int",
     output_sequence_length=sequence_length,
 )
 
-# Now that the vocab layer has been created, call `adapt` on a text-only
-# dataset to create the vocabulary. You don't have to batch, but for very large
-# datasets this means you're not keeping spare copies of the dataset in memory.
-
-# Let's make a text-only dataset (no labels):
 text_ds = dataset_train.map(lambda x, y: x)
-# Let's call `adapt`:
 vectorize_layer.adapt(text_ds)
 
 
 def vectorize_text(text, label):
-    text = tf.expand_dims(text, -1)
+    text = tf.expand_dims(text, -1)  # Returns a tensor with a length 1 axis inserted at index -1
     return vectorize_layer(text), label
 
 
-# Vectorize the data.
 train_ds = dataset_train.map(vectorize_text)
 val_ds = dataset_val.map(vectorize_text)
 test_ds = dataset_test.map(vectorize_text)
 
-# Do async prefetching / buffering of the data for best performance on GPU.
+# Usage pour la mise en cache des données lors du traitement
 train_ds = train_ds.cache().prefetch(buffer_size=10)
 val_ds = val_ds.cache().prefetch(buffer_size=10)
 test_ds = test_ds.cache().prefetch(buffer_size=10)
 
-# A integer input for vocab indices.
+# Écriture du modèle
 inputs = tf.keras.Input(shape=(None,), dtype="int64")
 
-# Next, we add a layer to map those vocab indices into a space of dimensionality
-# 'embedding_dim'.
-x = layers.Embedding(max_features, embedding_dim)(inputs)  # Word embedding personnalisé
+x = layers.Embedding(max_features, embedding_dim)(inputs)
 x = layers.Dropout(0.5)(x)
 
-# Conv1D + global max pooling
 x = layers.Conv1D(128, 7, padding="valid", activation="relu", strides=3)(x)
-x = layers.Conv1D(128, 7, padding="valid", activation="relu", strides=3)(x)  # Réseau de Neurones convolutif 1D
+x = layers.Conv1D(128, 7, padding="valid", activation="relu", strides=3)(x)
 x = layers.GlobalMaxPooling1D()(x)
 
-# We add a vanilla hidden layer:
 x = layers.Dense(dense, activation="relu")(x)
 x = layers.Dropout(0.5)(x)
 
-# We project onto a single unit output layer, and squash it with a sigmoid:
 predictions = layers.Dense(1, activation="sigmoid", name="predictions")(x)
 
 model = tf.keras.Model(inputs, predictions)
 
-# Compile the model with binary crossentropy loss and an adam optimizer.
 model.compile(loss="binary_crossentropy", optimizer=optimizer, metrics=[tf.metrics.BinaryAccuracy(), 'AUC',
                                                                         tf.keras.metrics.Precision(),
                                                                         tf.keras.metrics.Recall(),
@@ -206,10 +190,11 @@ model.compile(loss="binary_crossentropy", optimizer=optimizer, metrics=[tf.metri
                                                                         tf.keras.metrics.SpecificityAtSensitivity(
                                                                             sensitivity),
                                                                         cost_metric])
-
-# Fit the model using the train and test datasets.
+# Entraînement
 model.fit(train_ds, validation_data=val_ds, epochs=epochs, callbacks=[DvcLiveCallback(path="./logs_" + action,
                                                                                       summary=True)])
+# Évaluation du modèle, sauvegarde, prédiction des données tests pour évaluer la capacité de généralisation de la
+# fonction de prédiction
 
 if not os.path.isdir('models'):
     os.mkdir('models')
@@ -219,16 +204,11 @@ pickle.dump({'config': vectorize_layer.get_config(),
              'vocabulary': vectorize_layer.get_vocabulary(),
              'weights': vectorize_layer.get_weights()},
             open("tv_layer.pkl", "wb"))
-# A string input
 inputs = tf.keras.Input(shape=(1,), dtype="string")
-# Turn strings into vocab indices
 indices = vectorize_layer(inputs)
-# Turn vocab indices into predictions
 outputs = model(indices)
-
-# Our end to end model
+# Réalisation d’un modèle de bout en bout pour tester des phrases de tweets en entrée
 end_to_end_model = tf.keras.Model(inputs, outputs)
-
 end_to_end_model.compile(
     loss="binary_crossentropy", optimizer=optimizer, metrics=[tf.metrics.BinaryAccuracy(), 'AUC',
                                                               tf.keras.metrics.Precision(),
@@ -241,15 +221,15 @@ end_to_end_model.compile(
                                                               cost_metric
                                                               ]
 )
-
+# Example of tweet
 raw_text_data = tf.convert_to_tensor([
     ["That was an excellent movie I loved it"],
 ])
-
+# Prediction of it
 predictions = end_to_end_model(raw_text_data)
 print('Prediction : ', predictions)
 
-# Matrix of confusion
+# Matrix of confusion sur les données test
 predictions = end_to_end_model.predict(dataset_test)
 df = pd.read_csv('data/X_' + action + '_test.csv')
 df_y = pd.read_csv('data/y_' + action + '_test.csv')
@@ -257,7 +237,7 @@ df = df[['tweets']]
 df['note'] = df_y['note']
 perf_confusion_matrix(end_to_end_model, df, 'note', 'tweets')
 
-# Metrics for DVC Studio
+# Metrics for printing DVC Studio at https://studio.iterative.ai/user/sha-cmd/views/Aphrodite-1ue5zga6kt
 metrics = end_to_end_model.evaluate(dataset_test)
 # Enregistrement des métriques plus des paramètres (mais l’enregistrement des paramètres est redondant)
 df = pd.DataFrame(
@@ -285,7 +265,7 @@ if not os.path.isdir('metrics/embedding'):
 f = open('metrics/embedding/embedding_metrics_' + action + '.json', 'w')
 f.writelines(df)
 f.close
-
+# Recopie des fichiers de logs au format json pour la beauté de l’art !
 db = 'logs_' + action + '/'
 file_list = glob.glob(db + '*.tsv')
 for file in file_list:
