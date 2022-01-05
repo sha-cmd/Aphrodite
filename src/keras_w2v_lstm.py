@@ -108,7 +108,7 @@ def perf_confusion_matrix(model_ml, pd_test_data, label_column_name, text_column
     df_cm = pd.DataFrame(cm, index=labels, columns=labels)
     plt.figure(figsize=(10, 7))
     sns.heatmap(df_cm, annot=True)
-    plt.savefig('confusion_matrices/Confusion_matrix_w2v_' + action + '.jpg')
+    plt.savefig('confusion_matrices/Confusion_matrix_w2v_lstm_' + action + '.jpg')
 
 
 parser = OptionParser()
