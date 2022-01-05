@@ -32,6 +32,7 @@ stages:
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_embeddings_nature.jpg:
+          cache: false
           persist: true
     plots:
     - logs_nature_dvc_plots/binary_accuracy.json:
@@ -117,6 +118,7 @@ stages:
           cache: false
     outs:
       - confusion_matrices/Confusion_matrix_embeddings_lemm.jpg:
+          cache: false
           persist: true
     plots:
     - logs_lemm_dvc_plots/binary_accuracy.json:
@@ -201,6 +203,7 @@ stages:
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_embeddings_stem.jpg:
+          cache: false
           persist: true
     plots:
     - logs_stem_dvc_plots/binary_accuracy.json:
@@ -282,6 +285,10 @@ stages:
     metrics:
     - metrics/glove/glove_metrics_nature.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_glove_nature.jpg:
+          cache: false
+          persist: true
     plots:
     - glove_logs_nature_dvc_plots/binary_accuracy.json:
         cache: false
@@ -362,6 +369,10 @@ stages:
     metrics:
     - metrics/glove/glove_metrics_lemm.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_glove_lemm.jpg:
+          cache: false
+          persist: true
     plots:
     - glove_logs_lemm_dvc_plots/binary_accuracy.json:
         cache: false
@@ -443,6 +454,10 @@ stages:
     metrics:
     - metrics/glove/glove_metrics_stem.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_glove_stem.jpg:
+          cache: false
+          persist: true
     plots:
     - glove_logs_stem_dvc_plots/binary_accuracy.json:
         cache: false
@@ -765,6 +780,10 @@ stages:
     metrics:
     - metrics/w2v/w2v_metrics_nature.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_w2v_nature.jpg:
+          cache: false
+          persist: true
     plots:
     - w2v_logs_nature_dvc_plots/binary_accuracy.json:
         cache: false
@@ -845,6 +864,10 @@ stages:
     metrics:
     - metrics/w2v/w2v_metrics_lemm.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_w2v_lemm.jpg:
+          cache: false
+          persist: true
     plots:
     - w2v_logs_lemm_dvc_plots/binary_accuracy.json:
         cache: false
@@ -925,6 +948,10 @@ stages:
     metrics:
     - metrics/w2v/w2v_metrics_stem.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_w2v_stem.jpg:
+          cache: false
+          persist: true
     plots:
     - w2v_logs_stem_dvc_plots/binary_accuracy.json:
         cache: false
@@ -1005,6 +1032,11 @@ stages:
     metrics:
     - metrics/w2v_lstm/w2v_lstm_metrics_nature.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_w2v_lstm.jpg:
+          cache: false
+          persist:
+            true
     plots:
     - w2v_lstm_logs_nature_dvc_plots/binary_accuracy.json:
         cache: false
@@ -1084,6 +1116,11 @@ stages:
     metrics:
     - metrics/w2v_lstm/w2v_lstm_metrics_lemm.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_w2v_lstm_lemm.jpg:
+          cache: false
+          persist:
+            true
     plots:
     - w2v_lstm_logs_lemm_dvc_plots/binary_accuracy.json:
         cache: false
@@ -1164,6 +1201,11 @@ stages:
     metrics:
     - metrics/w2v_lstm/w2v_lstm_metrics_stem.json:
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_w2v_lstm_stem.jpg:
+          cache: false
+          persist:
+            true
     plots:
     - w2v_lstm_logs_stem_dvc_plots/binary_accuracy.json:
         cache: false
