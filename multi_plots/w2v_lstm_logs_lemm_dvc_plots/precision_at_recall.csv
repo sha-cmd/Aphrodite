@@ -1,0 +1,7 @@
+index,precision_at_recall,epoch,stage
+0,0.7885209918,0,train
+1,0.8297566772,1,train
+2,0.8382747173,2,train
+0,0.8282811642,0,test
+1,0.8481098413,1,test
+2,0.8526023626,2,test

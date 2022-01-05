@@ -1,0 +1,7 @@
+index,sensitivity_at_specificity,epoch,stage
+0,0.6314749718,0,train
+1,0.6960250139,1,train
+2,0.7446500063,2,train
+0,0.6193500161000001,0,test
+1,0.642350018,1,test
+2,0.6078000069,2,test
