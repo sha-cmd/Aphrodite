@@ -215,7 +215,7 @@ print(embeddings_m.shape)
 embedding_layer = Embedding(vocab_len + 1,
                             embedding_dim,
                             weights=[embeddings_m],
-                            input_length=122,
+                            input_length=MAX_SEQUENCE_LENGTH,
                             trainable=False)
 
 model = Sequential()
@@ -433,12 +433,12 @@ df = pd.DataFrame(
 # Nécessaire pour travailler en mode expérience, puisque le programme utilise /tmp
 if not os.path.isdir('metrics'):
     os.mkdir('metrics')
-if not os.path.isdir('metrics/w2v'):
-    os.mkdir('metrics/w2v')
-f = open('metrics/w2v/w2v_metrics_' + action + '.json', 'w')
+if not os.path.isdir('metrics/w2v_lstm'):
+    os.mkdir('metrics/w2v_lstm')
+f = open('metrics/w2v_lstm/w2v_lstm_metrics_' + action + '.json', 'w')
 f.writelines(df)
 f.close
-db = 'w2v_logs_' + action + '/'
+db = 'w2v_lstm_logs_' + action + '/'
 file_list = glob.glob(db + '*.tsv')
 for file in file_list:
     name = file.split('/')[-1]
