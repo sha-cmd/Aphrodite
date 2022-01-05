@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sn
+import seaborn as sns
 import tensorflow as tf
 import string
 import re
@@ -70,7 +70,7 @@ def perf_confusion_matrix(model_ml, pd_test_data, label_column_name, text_column
     print(confusion_matrix(test_labels, pred_labels, labels=labels))
     df_cm = pd.DataFrame(cm, index=labels, columns=labels)
     plt.figure(figsize=(10, 7))
-    sn.heatmap(df_cm, annot=True)
+    sns.heatmap(df_cm, annot=True)
     plt.savefig('confusion_matrices/Confusion_matrix_embeddings_' + action + '.jpg')
 
 
