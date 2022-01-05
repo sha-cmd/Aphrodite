@@ -1508,12 +1508,6 @@ stages:
           x: epoch
           y: cost_metric
 
-      - multi_plots/logs_stem_dvc_plots/acc.csv:
-          cache: false
-          title: Train/Test Acc logs_stem
-          template: multi_loss
-          x: epoch
-          y: acc
 
       - multi_plots/logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
@@ -1655,12 +1649,6 @@ stages:
           x: epoch
           y: cost_metric
 
-      - multi_plots/lstm_logs_nature_dvc_plots/acc.csv:
-          cache: false
-          title: Train/Test Acc lstm_logs_nature
-          template: multi_loss
-          x: epoch
-          y: acc
 
       - multi_plots/lstm_logs_nature_dvc_plots/binary_accuracy.csv:
           cache: false
@@ -1724,13 +1712,6 @@ stages:
           template: multi_loss
           x: epoch
           y: cost_metric
-
-      - multi_plots/lstm_logs_lemm_dvc_plots/acc.csv:
-          cache: false
-          title: Train/Test Acc lstm_logs_lemm
-          template: multi_loss
-          x: epoch
-          y: acc
 
       - multi_plots/lstm_logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
@@ -1998,13 +1979,6 @@ stages:
           x: epoch
           y: cost_metric
 
-      - multi_plots/lstm_logs_stem_dvc_plots/acc.csv:
-          cache: false
-          title: Train/Test Acc lstm_logs_stem
-          template: multi_loss
-          x: epoch
-          y: acc
-
       - multi_plots/lstm_logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
           title: Train/Test Binary Accuracy lstm_logs_stem
@@ -2068,13 +2042,6 @@ stages:
           x: epoch
           y: cost_metric
 
-      - multi_plots/glove_logs_stem_dvc_plots/acc.csv:
-          cache: false
-          title: Train/Test Acc glove_logs_stem
-          template: multi_loss
-          x: epoch
-          y: acc
-
       - multi_plots/glove_logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
           title: Train/Test Binary Accuracy glove_logs_stem
@@ -2137,13 +2104,6 @@ stages:
           template: multi_loss
           x: epoch
           y: cost_metric
-
-      - multi_plots/w2v_logs_lemm_dvc_plots/acc.csv:
-          cache: false
-          title: Train/Test Acc w2v_logs_lemm
-          template: multi_loss
-          x: epoch
-          y: acc
 
       - multi_plots/w2v_logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
@@ -2333,13 +2293,6 @@ stages:
           template: multi_loss
           x: epoch
           y: cost_metric
-
-      - multi_plots/logs_lemm_dvc_plots/acc.csv:
-          cache: false
-          title: Train/Test Acc logs_lemm
-          template: multi_loss
-          x: epoch
-          y: acc
 
       - multi_plots/logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
