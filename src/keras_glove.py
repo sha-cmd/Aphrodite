@@ -9,8 +9,11 @@ import glob
 import ast
 import json
 import tensorflow as tf
+import seaborn as sns
 
 from tensorflow.keras.layers import TextVectorization
+
+from sklearn.metrics import confusion_matrix
 from tensorflow import keras
 from tensorflow.keras import backend as K
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -22,6 +25,51 @@ from optparse import OptionParser
 global dir_list
 global class_list
 
+def to_tensor(text):
+    return tf.convert_to_tensor([[text]])
+
+
+def to_label(prob):
+    return 0 if (prob < 0.5) else 4
+
+
+def get_true_postive_count(cm, model_ml, df_data, label_column_name, text_column_name, target_class):
+
+    pred_labels = [model_ml(to_tensor(str(raw_text))) for it, raw_text in df_data.loc[df[label_column_name] == target_class][text_column_name].items()]
+    predictions = [to_label(x) for x in pred_labels]
+    tp_count = len(list(filter(lambda x: x == target_class, predictions)))
+    index = np.where(cm == tp_count)
+    if index[0][0] == index[1][0]:
+        return index[0][0]
+    else:
+        raise ValueError('Could not find the index ' + index)
+
+
+def resolve_labels_sequence(classes, cm, model_ml, df_data, label_column_name, text_column_name):
+    target_seq = [0] * len(classes)
+    for label in classes:
+        index = get_true_postive_count(cm, model_ml, df_data, label_column_name, text_column_name, label)
+        target_seq[index] = label
+    return target_seq
+
+
+def perf_confusion_matrix(model_ml, pd_test_data, label_column_name, text_column_name):
+    test_labels = pd_test_data[label_column_name]
+    test_labels = np.array(test_labels)
+    _classes = list(set(test_labels))
+    predictions = [model_ml(to_tensor(str(raw_text))) for it, raw_text in pd_test_data[text_column_name].items()]
+    pred_labels = [to_label(x) for x in predictions]
+    pred_labels = np.array(pred_labels)
+    eq = test_labels == pred_labels
+    print("Accuracy: " + str(eq.sum() / len(test_labels)))
+    cm = confusion_matrix(test_labels, pred_labels)
+    labels = resolve_labels_sequence(_classes, cm, model_ml, pd_test_data, label_column_name, text_column_name)
+    print(labels)
+    print(confusion_matrix(test_labels, pred_labels, labels=labels))
+    df_cm = pd.DataFrame(cm, index=labels, columns=labels)
+    plt.figure(figsize=(10, 7))
+    sns.heatmap(df_cm, annot=True)
+    plt.savefig('confusion_matrices/Confusion_matrix_glove_' + action + '.jpg')
 parser = OptionParser()
 parser.add_option("-a", "--action", dest="action",
                   help="Nature of the action", metavar="ACTION")
@@ -52,7 +100,7 @@ with open("params.yaml", 'r') as fd:
     batch_size = int(params['keras_embedding']['batch_size'])
     embedding_dim = int(params['model_constants']['embedding_dim'])
     max_features = int(params['model_constants']['max_features'])
-    embedding_dim = int(params['model_constants']['embedding_dim'])
+    embedding_dim = int(params['keras_glove']['embedding_dim'])
     sequence_length = int(params['model_constants']['sequence_length'])
     optimizer = str(params['model_constants']['optimizer'])
     maxlen = int(params['model_constants']['maxlen'])
@@ -194,9 +242,36 @@ plt.legend()
 
 # plt.show()
 
-
 model.load_weights('models/glove_model' + action + '.h5')
 metrics = model.evaluate(test_ds)
+
+# Matrix of confusion
+#predictions = model.predict(test_ds)
+#df = pd.read_csv('data/X_' + action + '_test.csv')
+#df_y = pd.read_csv('data/y_' + action + '_test.csv')
+#df = df[['tweets']]
+#df['note'] = df_y['note']
+#perf_confusion_matrix(model, df, 'note', 'tweets')
+
+# Matrice de confusion
+#X_test = pd.read_csv('data/X_' + action + '_test.csv', index_col='index')
+y_test = pd.read_csv('data/y_' + action + '_test.csv', index_col='index')
+#X_test['tweets'] = X_test['tweets'].apply(lambda x: str(x)).astype('str')
+#texts_test = X_test['tweets'].tolist()
+#sequences_test = tokenized.texts_to_sequences(texts_test)
+#X_test_pad = pad_sequences(sequences_test, maxlen=MAX_SEQUENCE_LENGTH)
+pred_labels = [(1 if (x[0] < 0.5) else 0) for x in model.predict(test_ds)]
+df = pd.DataFrame(pred_labels)
+df['note'] = y_test
+df['note'] = df['note'].map({0: 0, 4: 1})
+df = df.rename(columns={0: 'tweets'})
+list_index = df[df['note'] == 1]['tweets'].index.tolist()
+cm = confusion_matrix(df['note'], pred_labels)
+df_cm = pd.DataFrame(cm, index=[0, 1], columns=[0, 1])
+plt.figure(figsize=(10, 7))
+sns.heatmap(df_cm, annot=True)
+plt.savefig('confusion_matrices/Confusion_matrix_glove_' + action + '.jpg')
+
 # Enregistrement des métriques plus des paramètres (mais l’enregistrement des paramètres est redondant)
 df = pd.DataFrame([[w, x, y, z, a, b, c, d, e] for w, x, y, z, a, b, c, d, e in zip([metrics[0]],
                                                                                     [metrics[1]],
