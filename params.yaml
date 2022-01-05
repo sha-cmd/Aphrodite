@@ -17,6 +17,7 @@ model_constants:
   max_words: 100000
   unit_cost_of_a_bad_buzz: 250
   optimizer: rmsprop
+  fasttext_300: word2vec/wiki-news-300d-1M.vec
 
 keras_embedding:
   batch_size: 256

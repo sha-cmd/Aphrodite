@@ -369,7 +369,7 @@ plt.savefig('confusion_matrices/Confusion_matrix_w2v_lstm_' + action + '.jpg')
 
 if not os.path.isdir('models'):
     os.mkdir('models')
-model.save_weights('models/w2v_model_' + action + '.h5')
+model.save_weights('models/w2v_lstm_model_' + action + '.h5')
 
 # acc = history.history['binary_accuracy']
 # val_acc = history.history['val_binary_accuracy']
