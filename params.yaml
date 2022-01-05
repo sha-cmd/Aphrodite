@@ -24,6 +24,7 @@ keras_embedding:
   dense: 128
 
 keras_glove:
+  embedding_dim: 100
   epochs: 25
   dense: 32
 
@@ -32,7 +33,7 @@ keras_lstm:
   dense: 32
 
 keras_w2v:
-  epochs: 3
+  epochs: 25
   dense: 32
 
 keras_bert:
