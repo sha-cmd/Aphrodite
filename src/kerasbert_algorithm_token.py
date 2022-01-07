@@ -9,17 +9,10 @@ import glob
 import ast
 import json
 import tensorflow_hub as hub
-import tensorflow_text
 
-from official.nlp import optimization  # to create AdamW optimizer
-from tensorflow.keras.layers import TextVectorization
-from tensorflow.keras import layers
-from tensorflow import keras
 from keras import backend as K
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
-from keras.models import Sequential
-from keras.layers import Embedding, Flatten, Dense
 from dvclive.keras import DvcLiveCallback
 from optparse import OptionParser
 

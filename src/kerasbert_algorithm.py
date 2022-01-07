@@ -1,27 +1,95 @@
-# -*- coding: utf-8 -*-
-import numpy as np
-import pandas as pd
-import yaml
 import os
-import matplotlib.pyplot as plt
-import tensorflow as tf
+import shutil
 import glob
 import ast
-import json
+import tensorflow as tf
 import tensorflow_hub as hub
-import tensorflow_text
-
+import pandas as pd
+import json
+import seaborn as sns
+import tensorflow_text as text
 from official.nlp import optimization  # to create AdamW optimizer
-from tensorflow.keras.layers import TextVectorization
-from tensorflow.keras import layers
-from tensorflow import keras
-from tensorflow.keras import backend as K
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, Flatten, Dense
+
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
 from dvclive.keras import DvcLiveCallback
+from tensorflow.keras import backend as K
 from optparse import OptionParser
+
+tf.get_logger().setLevel('ERROR')
+
+parser = OptionParser()
+parser.add_option("-a", "--action", dest="action",
+                  help="Nature of the action", metavar="ACTION")
+
+# Importation des données et typage pour matcher avec la fonction du fichier
+(options, args) = parser.parse_args()
+action = options.action
+
+dir_list = ['data/train', 'data/test']
+dir_lemm_list = ['data/lemm/train', 'data/lemm/test']
+dir_stem_list = ['data/stem/train', 'data/stem/test']
+
+class_list = ['data/train/negatif', 'data/train/positif',
+              'data/test/negatif', 'data/test/positif']
+class_lemm_list = ['data/lemm/train/negatif', 'data/lemm/train/positif',
+                   'data/lemm/test/negatif', 'data/lemm/test/positif']
+class_stem_list = ['data/stem/train/negatif', 'data/stem/train/positif',
+                   'data/stem/test/negatif', 'data/stem/test/positif']
+
+dict_of_dir = {'nature': dir_list, 'lemm': dir_lemm_list, 'stem': dir_stem_list}
+dict_of_class = {'nature': class_list, 'lemm': class_lemm_list, 'stem': class_stem_list}
+
+data_list = dict_of_dir[action]
+class_list = dict_of_class[action]
+
+print('keras_bert')
+
+
+def cost_metric(y_true, y_pred):
+    tn = K.sum(K.round(K.clip((1 - y_true) * (1 - y_pred), 0, 1)))
+    fp = K.sum(K.round(K.clip((1 - y_true) * y_pred, 0, 1)))
+
+    cost = K.log(tn / (tn + fp)) * 5000  # unit_cost_of_a_bad_buzz
+    if tf.math.is_nan(cost) or tf.math.is_inf(cost):
+        cost = 0.
+
+    return cost
+
+AUTOTUNE = tf.data.AUTOTUNE
+batch_size = 32
+seed = 42
+
+raw_train_ds = tf.keras.utils.text_dataset_from_directory(
+    dir_list[0],
+    batch_size=batch_size,
+    validation_split=0.2,
+    subset='training',
+    seed=seed)
+
+class_names = raw_train_ds.class_names
+train_ds = raw_train_ds.cache().prefetch(buffer_size=AUTOTUNE)
+
+val_ds = tf.keras.utils.text_dataset_from_directory(
+    dir_list[0],
+    batch_size=batch_size,
+    validation_split=0.2,
+    subset='validation',
+    seed=seed)
+
+val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
+
+test_ds = tf.keras.utils.text_dataset_from_directory(
+    dir_list[1],
+    batch_size=batch_size)
+
+test_ds = test_ds.cache().prefetch(buffer_size=AUTOTUNE)
+
+for text_batch, label_batch in train_ds.take(1):
+    for i in range(3):
+        print(f'Review: {text_batch.numpy()[i]}')
+        label = label_batch.numpy()[i]
+        print(f'Label : {label} ({class_names[label]})')
 
 # @title Choose a BERT model to fine-tune
 
@@ -168,92 +236,28 @@ map_model_to_preprocess = {
 tfhub_handle_encoder = map_name_to_handle[bert_model_name]
 tfhub_handle_preprocess = map_model_to_preprocess[bert_model_name]
 
-global dir_list
-global class_list
+print(f'BERT model selected           : {tfhub_handle_encoder}')
+print(f'Preprocess model auto-selected: {tfhub_handle_preprocess}')
 
-parser = OptionParser()
-parser.add_option("-a", "--action", dest="action",
-                  help="Nature of the action", metavar="ACTION")
+bert_preprocess_model = hub.KerasLayer(tfhub_handle_preprocess)
 
-# Importation des données et typage pour matcher avec la fonction du fichier
-(options, args) = parser.parse_args()
-action = options.action
+text_test = ['this is such an amazing movie!']
+text_preprocessed = bert_preprocess_model(text_test)
 
-dir_list = ['data/train', 'data/test']
-dir_lemm_list = ['data/lemm/train', 'data/lemm/test']
-dir_stem_list = ['data/stem/train', 'data/stem/test']
+print(f'Keys       : {list(text_preprocessed.keys())}')
+print(f'Shape      : {text_preprocessed["input_word_ids"].shape}')
+print(f'Word Ids   : {text_preprocessed["input_word_ids"][0, :12]}')
+print(f'Input Mask : {text_preprocessed["input_mask"][0, :12]}')
+print(f'Type Ids   : {text_preprocessed["input_type_ids"][0, :12]}')
 
-class_list = ['data/train/negatif', 'data/train/positif',
-              'data/test/negatif', 'data/test/positif']
-class_lemm_list = ['data/lemm/train/negatif', 'data/lemm/train/positif',
-                   'data/lemm/test/negatif', 'data/lemm/test/positif']
-class_stem_list = ['data/stem/train/negatif', 'data/stem/train/positif',
-                   'data/stem/test/negatif', 'data/stem/test/positif']
+bert_model = hub.KerasLayer(tfhub_handle_encoder)
+bert_results = bert_model(text_preprocessed)
 
-dict_of_dir = {'nature': dir_list, 'lemm': dir_lemm_list, 'stem': dir_stem_list}
-dict_of_class = {'nature': class_list, 'lemm': class_lemm_list, 'stem': class_stem_list}
-
-data_list = dict_of_dir[action]
-class_list = dict_of_class[action]
-
-with open("params.yaml", 'r') as fd:
-    params = yaml.safe_load(fd)
-    epochs = int(params['keras_bert']['epochs'])
-    batch_size = int(params['keras_bert']['batch_size'])
-    embedding_dim = int(params['model_constants']['embedding_dim'])
-    max_features = int(params['model_constants']['max_features'])
-    sequence_length = int(params['model_constants']['sequence_length'])
-    maxlen = int(params['model_constants']['maxlen'])
-    training_samples = int(params['model_constants']['training_samples'])
-    optimizer = str(params['model_constants']['optimizer'])
-    validation_samples = int(params['model_constants']['validation_samples'])
-    max_words = int(params['model_constants']['max_words'])
-    unit_cost_of_a_bad_buzz = int(params['model_constants']['unit_cost_of_a_bad_buzz'])
-    dense = int(params['keras_w2v']['dense'])
-    recall = float(params['keras']['recall'])
-    specificity = float(params['keras']['specificity'])
-    sensitivity = float(params['keras']['sensitivity'])
-
-print('keras_bert')
-
-
-def cost_metric(y_true, y_pred):
-    tn = K.sum(K.round(K.clip((1 - y_true) * (1 - y_pred), 0, 1)))
-    fp = K.sum(K.round(K.clip((1 - y_true) * y_pred, 0, 1)))
-
-    cost = K.log(tn / (tn + fp)) * unit_cost_of_a_bad_buzz
-    if tf.math.is_nan(cost) or tf.math.is_inf(cost):
-        cost = 0.
-
-    return cost
-
-AUTOTUNE = tf.data.AUTOTUNE
-seed = 42
-
-raw_train_ds = tf.keras.utils.text_dataset_from_directory(
-    dir_list[0],
-    batch_size=batch_size,
-    validation_split=0.2,
-    subset='training',
-    seed=seed)
-
-class_names = raw_train_ds.class_names
-train_ds = raw_train_ds.cache().prefetch(buffer_size=AUTOTUNE)
-
-val_ds = tf.keras.utils.text_dataset_from_directory(
-    dir_list[0],
-    batch_size=batch_size,
-    validation_split=0.2,
-    subset='validation',
-    seed=seed)
-
-val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
-
-test_ds = tf.keras.utils.text_dataset_from_directory(
-    dir_list[1],
-    batch_size=batch_size)
-
-test_ds = test_ds.cache().prefetch(buffer_size=AUTOTUNE)
+print(f'Loaded BERT: {tfhub_handle_encoder}')
+print(f'Pooled Outputs Shape:{bert_results["pooled_output"].shape}')
+print(f'Pooled Outputs Values:{bert_results["pooled_output"][0, :12]}')
+print(f'Sequence Outputs Shape:{bert_results["sequence_output"].shape}')
+print(f'Sequence Outputs Values:{bert_results["sequence_output"][0, :12]}')
 
 
 def build_classifier_model():
@@ -268,9 +272,19 @@ def build_classifier_model():
     return tf.keras.Model(text_input, net)
 
 
-model = build_classifier_model()
+classifier_model = build_classifier_model()
+bert_raw_result = classifier_model(tf.constant(text_test))
+print(tf.sigmoid(bert_raw_result))
+
+tf.keras.utils.plot_model(classifier_model)
+recall = 0.5
+specificity = 0.5
+sensitivity = 0.5
 loss = tf.keras.losses.BinaryCrossentropy(from_logits=True)
-metrics = tf.metrics.BinaryAccuracy()
+metrics = [tf.metrics.BinaryAccuracy(),
+           cost_metric]
+
+epochs = 25
 steps_per_epoch = tf.data.experimental.cardinality(train_ds).numpy()
 num_train_steps = steps_per_epoch * epochs
 num_warmup_steps = int(0.1 * num_train_steps)
@@ -280,48 +294,123 @@ optimizer = optimization.create_optimizer(init_lr=init_lr,
                                           num_train_steps=num_train_steps,
                                           num_warmup_steps=num_warmup_steps,
                                           optimizer_type='adamw')
-model.compile(optimizer=optimizer,
-              loss=loss,
-              metrics=metrics)
-history = model.fit(train_ds,
-                     validation_data=val_ds,
-                     epochs=epochs,
-                     callbacks=[DvcLiveCallback(path="./bert_logs_" + action)])
 
-if not os.path.isdir('models'):
-    os.mkdir('models')
-model.save_weights('models/bert_model_' + action + '.h5')
+classifier_model.compile(optimizer=optimizer,
+                         loss=loss,
+                         metrics=metrics)
 
-model.load_weights('models/bert_model_' + action + '.h5')
-acc = history.history['binary_accuracy']
-val_acc = history.history['val_binary_accuracy']
-loss = history.history['loss']
-val_loss = history.history['val_loss']
+print(f'Training model with {tfhub_handle_encoder}')
+history = classifier_model.fit(x=train_ds,
+                               validation_data=val_ds,
+                               epochs=epochs,
+                               callbacks=[DvcLiveCallback(path="./bert_logs_" + action)])
+
+metrics = classifier_model.evaluate(test_ds)
+
+print(f'Loss: {metrics[0]}')
+print(f'Accuracy: {metrics[1]}')
+
+history_dict = history.history
+print(history_dict.keys())
+
+acc = history_dict['binary_accuracy']
+val_acc = history_dict['val_binary_accuracy']
+loss = history_dict['loss']
+val_loss = history_dict['val_loss']
 
 epochs = range(1, len(acc) + 1)
+fig = plt.figure(figsize=(10, 6))
+fig.tight_layout()
 
-plt.plot(epochs, acc, 'bo', label='Training acc')
-plt.plot(epochs, val_acc, 'b', label='Validation acc')
-plt.title('Training and validation accuracy')
-plt.legend()
-
-plt.figure()
-
-plt.plot(epochs, loss, 'bo', label='Training loss')
+plt.subplot(2, 1, 1)
+# r is for "solid red line"
+plt.plot(epochs, loss, 'r', label='Training loss')
+# b is for "solid blue line"
 plt.plot(epochs, val_loss, 'b', label='Validation loss')
 plt.title('Training and validation loss')
+# plt.xlabel('Epochs')
+plt.ylabel('Loss')
 plt.legend()
 
-# plt.show()
+plt.subplot(2, 1, 2)
+plt.plot(epochs, acc, 'r', label='Training acc')
+plt.plot(epochs, val_acc, 'b', label='Validation acc')
+plt.title('Training and validation accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend(loc='lower right')
+
+dataset_name = 'imdb'
+saved_model_path = './{}_bert'.format(dataset_name.replace('/', '_'))
+
+classifier_model.save(saved_model_path, include_optimizer=False)
+
+reloaded_model = tf.saved_model.load(saved_model_path)
+#predict = tf.sigmoid(reloaded_model(test_ds))  # classifier_model.predict(test_ds)
+#print(predict, type(predict))
+
+# Matrice de confusion
+X_test = pd.read_csv('data/X_' + action + '_test.csv', index_col='index')
+y_test = pd.read_csv('data/y_' + action + '_test.csv', index_col='index')
+# X_test['tweets'] = X_test['tweets'].apply(lambda x: str(x)).astype('str')
+# texts_test = X_test['tweets'].tolist()
+# sequences_test = tokenized.texts_to_sequences(texts_test)
+# X_test_pad = pad_sequences(sequences_test, maxlen=MAX_SEQUENCE_LENGTH)
+pred_labels = [(0 if (tf.sigmoid(reloaded_model(tf.constant([x]))) < 0.5) else 1) for x in X_test['tweets'].tolist()]
+
+df = pd.DataFrame(pred_labels)
+df['note'] = y_test
+df['note'] = df['note'].map({0: 0, 4: 1})
+df = df.rename(columns={0: 'tweets'})
+list_index = df[df['note'] == 1]['tweets'].index.tolist()
+cm = confusion_matrix(df['note'], pred_labels)
+df_cm = pd.DataFrame(cm, index=[0, 1], columns=[0, 1])
+plt.figure(figsize=(10, 7))
+plt.title('Matrice de confusion' + ' bert ' + action)
+sns.heatmap(df_cm, annot=True)
+plt.savefig('confusion_matrices/Confusion_matrix_bert_' + action + '.jpg')
 
 
-#model.load_weights('models/bert_model_' + action + '.h5')
-metrics = model.evaluate(test_ds)
+def print_my_examples(inputs, results):
+    result_for_printing = \
+        [f'input: {inputs[i]:<30} : score: {results[i][0]:.6f}'
+         for i in range(len(inputs))]
+    print(*result_for_printing, sep='\n')
+    print()
+
+
+examples = [
+    'this is such an amazing movie!',  # this is the same sentence tried earlier
+    'The movie was great!',
+    'The movie was meh.',
+    'The movie was okish.',
+    'The movie was terrible...'
+]
+
+reloaded_results = tf.sigmoid(reloaded_model(tf.constant(examples)))
+original_results = tf.sigmoid(classifier_model(tf.constant(examples)))
+
+print('Results from the saved model:')
+print_my_examples(examples, reloaded_results)
+print('Results from the model in memory:')
+print_my_examples(examples, original_results)
+
+serving_results = reloaded_model \
+    .signatures['serving_default'](tf.constant(examples))
+
+serving_results = tf.sigmoid(serving_results['classifier'])
+
+print_my_examples(examples, serving_results)
 
 # Enregistrement des métriques plus des paramètres (mais l’enregistrement des paramètres est redondant)
-df = pd.DataFrame([[x, y] for x, y in zip([metrics[0]], [metrics[1]])],
+df = pd.DataFrame(
+    [[x, y, z] for x, y, z in zip([metrics[0]],
+                                  [metrics[1]],
+                                  [metrics[2]],
+                                  )],
 
-                  columns=['loss', 'binary_accuracy']) \
+    columns=['loss', 'binary_accuracy',
+             'cost_metric']) \
     .to_json(orient='records').replace('[', '').replace(']', '')
 
 # Nécessaire pour travailler en mode expérience, puisque le programme utilise /tmp

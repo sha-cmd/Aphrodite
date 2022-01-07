@@ -196,7 +196,7 @@ list_index = df[df['note'] == 1]['tweets'].index.tolist()
 cm = confusion_matrix(df['note'], pred_labels)
 df_cm = pd.DataFrame(cm, index=[0, 1], columns=[0, 1])
 plt.figure(figsize=(10, 7))
-plt.title('Matrice de confusion' + ' w2v ' + action)
+plt.title('Matrice de confusion' + ' w2v cnn ' + action)
 sns.heatmap(df_cm, annot=True)
 plt.savefig('confusion_matrices/Confusion_matrix_w2v_' + action + '.jpg')
 #

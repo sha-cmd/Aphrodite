@@ -540,157 +540,194 @@ stages:
     metrics:
     - metrics/lstm/lstm_metrics_nature.json:
         cache: false
+        persist: true
     plots:
     - lstm_logs_nature_dvc_plots/binary_accuracy.json:
         cache: false
+        persist: true
         x: step
         y: binary_accuracy
     - lstm_logs_nature_dvc_plots/auc.json:
         cache: false
+        persist: true
         x: step
         y: auc
     - lstm_logs_nature_dvc_plots/cost_metric.json:
         cache: false
+        persist: true
         x: step
         y: cost_metric
     - lstm_logs_nature_dvc_plots/loss.json:
         cache: false
+        persist: true
         x: step
         y: loss
     - lstm_logs_nature_dvc_plots/precision.json:
         cache: false
+        persist: true
         x: step
         y: precision
     - lstm_logs_nature_dvc_plots/precision_at_recall.json:
         cache: false
+        persist: true
         x: step
         y: precision_at_recall
     - lstm_logs_nature_dvc_plots/recall.json:
         cache: false
+        persist: true
         x: step
         y: recall
     - lstm_logs_nature_dvc_plots/sensitivity_at_specificity.json:
         cache: false
+        persist: true
         x: step
         y: sensitivity_at_specificity
     - lstm_logs_nature_dvc_plots/specificity_at_sensitivity.json:
         cache: false
+        persist: true
         x: step
         y: specificity_at_sensitivity
     - lstm_logs_nature_dvc_plots/val_binary_accuracy.json:
         cache: false
+        persist: true
         x: step
         y: val_binary_accuracy
     - lstm_logs_nature_dvc_plots/val_auc.json:
         cache: false
+        persist: true
         x: step
         y: val_auc
     - lstm_logs_nature_dvc_plots/val_cost_metric.json:
         cache: false
+        persist: true
         x: step
         y: val_cost_metric
     - lstm_logs_nature_dvc_plots/val_loss.json:
         cache: false
+        persist: true
         x: step
         y: val_loss
     - lstm_logs_nature_dvc_plots/val_precision.json:
         cache: false
+        persist: true
         x: step
         y: val_precision
     - lstm_logs_nature_dvc_plots/val_precision_at_recall.json:
         cache: false
+        persist: true
         x: step
         y: val_precision_at_recall
     - lstm_logs_nature_dvc_plots/val_recall.json:
         cache: false
+        persist: true
         x: step
         y: val_recall
     - lstm_logs_nature_dvc_plots/val_sensitivity_at_specificity.json:
         cache: false
+        persist: true
         x: step
         y: val_sensitivity_at_specificity
     - lstm_logs_nature_dvc_plots/val_specificity_at_sensitivity.json:
         cache: false
+        persist: true
         x: step
         y: val_specificity_at_sensitivity
 
   keras_lstm_lemm:
     cmd: python src/keras_lstm.py --action lemm
-
     metrics:
     - metrics/lstm/lstm_metrics_lemm.json:
+        persist: true
         cache: false
     plots:
     - lstm_logs_lemm_dvc_plots/binary_accuracy.json:
         cache: false
+        persist: true
         x: step
         y: binary_accuracy
     - lstm_logs_lemm_dvc_plots/auc.json:
         cache: false
+        persist: true
         x: step
         y: auc
     - lstm_logs_lemm_dvc_plots/cost_metric.json:
         cache: false
+        persist: true
         x: step
         y: cost_metric
     - lstm_logs_lemm_dvc_plots/loss.json:
         cache: false
+        persist: true
         x: step
         y: loss
     - lstm_logs_lemm_dvc_plots/precision.json:
         cache: false
+        persist: true
         x: step
         y: precision
     - lstm_logs_lemm_dvc_plots/precision_at_recall.json:
         cache: false
+        persist: true
         x: step
         y: precision_at_recall
     - lstm_logs_lemm_dvc_plots/recall.json:
         cache: false
+        persist: true
         x: step
         y: recall
     - lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.json:
         cache: false
+        persist: true
         x: step
         y: sensitivity_at_specificity
     - lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.json:
         cache: false
+        persist: true
         x: step
         y: specificity_at_sensitivity
     - lstm_logs_lemm_dvc_plots/val_binary_accuracy.json:
         cache: false
+        persist: true
         x: step
         y: val_binary_accuracy
     - lstm_logs_lemm_dvc_plots/val_auc.json:
         cache: false
+        persist: true
         x: step
         y: val_auc
     - lstm_logs_lemm_dvc_plots/val_cost_metric.json:
         cache: false
+        persist: true
         x: step
         y: val_cost_metric
     - lstm_logs_lemm_dvc_plots/val_loss.json:
         cache: false
+        persist: true
         x: step
         y: val_loss
     - lstm_logs_lemm_dvc_plots/val_precision.json:
         cache: false
+        persist: true
         x: step
         y: val_precision
     - lstm_logs_lemm_dvc_plots/val_precision_at_recall.json:
         cache: false
+        persist: true
         x: step
         y: val_precision_at_recall
     - lstm_logs_lemm_dvc_plots/val_recall.json:
         cache: false
+        persist: true
         x: step
         y: val_recall
     - lstm_logs_lemm_dvc_plots/val_sensitivity_at_specificity.json:
         cache: false
+        persist: true
         x: step
         y: val_sensitivity_at_specificity
     - lstm_logs_lemm_dvc_plots/val_specificity_at_sensitivity.json:
         cache: false
+        persist: true
         x: step
         y: val_specificity_at_sensitivity
 
@@ -699,78 +736,97 @@ stages:
 
     metrics:
     - metrics/lstm/lstm_metrics_stem.json:
+        persist: true
         cache: false
     plots:
     - lstm_logs_stem_dvc_plots/binary_accuracy.json:
         cache: false
+        persist: true
         x: step
         y: binary_accuracy
     - lstm_logs_stem_dvc_plots/auc.json:
         cache: false
+        persist: true
         x: step
         y: auc
     - lstm_logs_stem_dvc_plots/cost_metric.json:
         cache: false
+        persist: true
         x: step
         y: cost_metric
     - lstm_logs_stem_dvc_plots/loss.json:
         cache: false
+        persist: true
         x: step
         y: loss
     - lstm_logs_stem_dvc_plots/precision.json:
         cache: false
+        persist: true
         x: step
         y: precision
     - lstm_logs_stem_dvc_plots/precision_at_recall.json:
         cache: false
+        persist: true
         x: step
         y: precision_at_recall
     - lstm_logs_stem_dvc_plots/recall.json:
         cache: false
+        persist: true
         x: step
         y: recall
     - lstm_logs_stem_dvc_plots/sensitivity_at_specificity.json:
         cache: false
+        persist: true
         x: step
         y: sensitivity_at_specificity
     - lstm_logs_stem_dvc_plots/specificity_at_sensitivity.json:
         cache: false
+        persist: true
         x: step
         y: specificity_at_sensitivity
     - lstm_logs_stem_dvc_plots/val_binary_accuracy.json:
         cache: false
+        persist: true
         x: step
         y: val_binary_accuracy
     - lstm_logs_stem_dvc_plots/val_auc.json:
         cache: false
+        persist: true
         x: step
         y: val_auc
     - lstm_logs_stem_dvc_plots/val_cost_metric.json:
         cache: false
+        persist: true
         x: step
         y: val_cost_metric
     - lstm_logs_stem_dvc_plots/val_loss.json:
         cache: false
+        persist: true
         x: step
         y: val_loss
     - lstm_logs_stem_dvc_plots/val_precision.json:
         cache: false
+        persist: true
         x: step
         y: val_precision
     - lstm_logs_stem_dvc_plots/val_precision_at_recall.json:
         cache: false
+        persist: true
         x: step
         y: val_precision_at_recall
     - lstm_logs_stem_dvc_plots/val_recall.json:
         cache: false
+        persist: true
         x: step
         y: val_recall
     - lstm_logs_stem_dvc_plots/val_sensitivity_at_specificity.json:
         cache: false
+        persist: true
         x: step
         y: val_sensitivity_at_specificity
     - lstm_logs_stem_dvc_plots/val_specificity_at_sensitivity.json:
         cache: false
+        persist: true
         x: step
         y: val_specificity_at_sensitivity
 
@@ -779,6 +835,7 @@ stages:
 
     metrics:
     - metrics/w2v/w2v_metrics_nature.json:
+        persist: true
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_w2v_nature.jpg:
@@ -863,6 +920,7 @@ stages:
 
     metrics:
     - metrics/w2v/w2v_metrics_lemm.json:
+        persist: true
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_w2v_lemm.jpg:
@@ -947,6 +1005,7 @@ stages:
 
     metrics:
     - metrics/w2v/w2v_metrics_stem.json:
+        persist: true
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_w2v_stem.jpg:
@@ -1031,12 +1090,12 @@ stages:
 
     metrics:
     - metrics/w2v_lstm/w2v_lstm_metrics_nature.json:
+        persist: true
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_w2v_lstm_nature.jpg:
           cache: false
-          persist:
-            true
+          persist: true
     plots:
     - w2v_lstm_logs_nature_dvc_plots/binary_accuracy.json:
         cache: false
@@ -1115,6 +1174,7 @@ stages:
     cmd: python src/keras_w2v_lstm.py --action lemm
     metrics:
     - metrics/w2v_lstm/w2v_lstm_metrics_lemm.json:
+        persist: true
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_w2v_lstm_lemm.jpg:
@@ -1200,12 +1260,12 @@ stages:
 
     metrics:
     - metrics/w2v_lstm/w2v_lstm_metrics_stem.json:
+        persist: true
         cache: false
     outs:
       - confusion_matrices/Confusion_matrix_w2v_lstm_stem.jpg:
           cache: false
-          persist:
-            true
+          persist: true
     plots:
     - w2v_lstm_logs_stem_dvc_plots/binary_accuracy.json:
         cache: false
@@ -1280,17 +1340,23 @@ stages:
         x: step
         y: val_specificity_at_sensitivity
 
+
   kerasbert_algorithm:
     cmd: python src/kerasbert_algorithm.py --action nature
 
     metrics:
     - metrics/bert/bert_metrics_nature.json:
+        persist: true
         cache: false
     plots:
     - bert_logs_nature_dvc_plots/binary_accuracy.json:
         cache: false
         x: step
         y: binary_accuracy
+    - bert_logs_nature_dvc_plots/cost_metric.json:
+        cache: false
+        x: step
+        y: cost_metric
     - bert_logs_nature_dvc_plots/loss.json:
         cache: false
         x: step
@@ -1299,12 +1365,16 @@ stages:
         cache: false
         x: step
         y: val_binary_accuracy
+    - bert_logs_nature_dvc_plots/val_cost_metric.json:
+        cache: false
+        x: step
+        y: val_cost_metric
     - bert_logs_nature_dvc_plots/val_loss.json:
         cache: false
         x: step
         y: val_loss
 
-    frozen: true
+    frozen: false
 
   kerasbert_algorithm_lemm:
     cmd: python src/kerasbert_algorithm.py --action lemm
@@ -1363,6 +1433,7 @@ stages:
     plots:
       - multi_plots/glove_logs_lemm_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1370,6 +1441,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1377,6 +1449,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1384,6 +1457,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1391,6 +1465,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1398,6 +1473,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1405,6 +1481,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1412,6 +1489,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1419,6 +1497,7 @@ stages:
 
       - multi_plots/glove_logs_lemm_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity glove_logs_lemm
           template: multi_loss
           x: epoch
@@ -1426,6 +1505,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1433,6 +1513,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1440,6 +1521,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1447,6 +1529,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1454,6 +1537,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1461,6 +1545,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1468,6 +1553,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1475,6 +1561,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1482,6 +1569,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_stem_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity w2v_lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1489,6 +1577,7 @@ stages:
 
       - multi_plots/bert_logs_nature_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy bert_logs_nature
           template: multi_loss
           x: epoch
@@ -1496,6 +1585,7 @@ stages:
 
       - multi_plots/bert_logs_nature_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss bert_logs_nature
           template: multi_loss
           x: epoch
@@ -1503,14 +1593,23 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric logs_stem
           template: multi_loss
           x: epoch
           y: cost_metric
 
+      - multi_plots/logs_stem_dvc_plots/acc.csv:
+          cache: false
+          persist: true
+          title: Train/Test Acc logs_stem
+          template: multi_loss
+          x: epoch
+          y: acc
 
       - multi_plots/logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy logs_stem
           template: multi_loss
           x: epoch
@@ -1518,6 +1617,7 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision logs_stem
           template: multi_loss
           x: epoch
@@ -1525,6 +1625,7 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall logs_stem
           template: multi_loss
           x: epoch
@@ -1532,6 +1633,7 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc logs_stem
           template: multi_loss
           x: epoch
@@ -1539,6 +1641,7 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall logs_stem
           template: multi_loss
           x: epoch
@@ -1546,6 +1649,7 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity logs_stem
           template: multi_loss
           x: epoch
@@ -1553,6 +1657,7 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss logs_stem
           template: multi_loss
           x: epoch
@@ -1560,6 +1665,7 @@ stages:
 
       - multi_plots/logs_stem_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity logs_stem
           template: multi_loss
           x: epoch
@@ -1567,6 +1673,7 @@ stages:
 
       - multi_plots/bert_logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy bert_logs_lemm
           template: multi_loss
           x: epoch
@@ -1574,6 +1681,7 @@ stages:
 
       - multi_plots/bert_logs_lemm_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss bert_logs_lemm
           template: multi_loss
           x: epoch
@@ -1581,6 +1689,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric logs_nature
           template: multi_loss
           x: epoch
@@ -1588,6 +1697,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy logs_nature
           template: multi_loss
           x: epoch
@@ -1595,6 +1705,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision logs_nature
           template: multi_loss
           x: epoch
@@ -1602,6 +1713,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall logs_nature
           template: multi_loss
           x: epoch
@@ -1609,6 +1721,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc logs_nature
           template: multi_loss
           x: epoch
@@ -1616,6 +1729,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall logs_nature
           template: multi_loss
           x: epoch
@@ -1623,6 +1737,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity logs_nature
           template: multi_loss
           x: epoch
@@ -1630,6 +1745,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss logs_nature
           template: multi_loss
           x: epoch
@@ -1637,6 +1753,7 @@ stages:
 
       - multi_plots/logs_nature_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity logs_nature
           template: multi_loss
           x: epoch
@@ -1644,14 +1761,23 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric lstm_logs_nature
           template: multi_loss
           x: epoch
           y: cost_metric
 
+      - multi_plots/lstm_logs_nature_dvc_plots/acc.csv:
+          cache: false
+          persist: true
+          title: Train/Test Acc lstm_logs_nature
+          template: multi_loss
+          x: epoch
+          y: acc
 
       - multi_plots/lstm_logs_nature_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1659,6 +1785,7 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1666,6 +1793,7 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1673,6 +1801,7 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1680,6 +1809,7 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1687,6 +1817,7 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1694,6 +1825,7 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1701,6 +1833,7 @@ stages:
 
       - multi_plots/lstm_logs_nature_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1708,13 +1841,23 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric lstm_logs_lemm
           template: multi_loss
           x: epoch
           y: cost_metric
 
+      - multi_plots/lstm_logs_lemm_dvc_plots/acc.csv:
+          cache: false
+          persist: true
+          title: Train/Test Acc lstm_logs_lemm
+          template: multi_loss
+          x: epoch
+          y: acc
+
       - multi_plots/lstm_logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1722,6 +1865,7 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1729,6 +1873,7 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1736,6 +1881,7 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1743,6 +1889,7 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1750,6 +1897,7 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1757,6 +1905,7 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1764,6 +1913,7 @@ stages:
 
       - multi_plots/lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -1771,6 +1921,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1778,6 +1929,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1785,6 +1937,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1792,6 +1945,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1799,6 +1953,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1806,6 +1961,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1813,6 +1969,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1820,6 +1977,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1827,6 +1985,7 @@ stages:
 
       - multi_plots/glove_logs_nature_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity glove_logs_nature
           template: multi_loss
           x: epoch
@@ -1834,6 +1993,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1841,6 +2001,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1848,6 +2009,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1855,6 +2017,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1862,6 +2025,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1869,6 +2033,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1876,6 +2041,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1883,6 +2049,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1890,6 +2057,7 @@ stages:
 
       - multi_plots/w2v_logs_stem_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity w2v_logs_stem
           template: multi_loss
           x: epoch
@@ -1897,6 +2065,7 @@ stages:
 
       - multi_plots/bert_logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy bert_logs_stem
           template: multi_loss
           x: epoch
@@ -1904,6 +2073,7 @@ stages:
 
       - multi_plots/bert_logs_stem_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss bert_logs_stem
           template: multi_loss
           x: epoch
@@ -1911,6 +2081,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1918,6 +2089,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1925,6 +2097,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1932,6 +2105,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1939,6 +2113,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1946,6 +2121,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1953,6 +2129,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1960,6 +2137,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1967,6 +2145,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_nature_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity w2v_lstm_logs_nature
           template: multi_loss
           x: epoch
@@ -1974,13 +2153,23 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric lstm_logs_stem
           template: multi_loss
           x: epoch
           y: cost_metric
 
+      - multi_plots/lstm_logs_stem_dvc_plots/acc.csv:
+          cache: false
+          persist: true
+          title: Train/Test Acc lstm_logs_stem
+          template: multi_loss
+          x: epoch
+          y: acc
+
       - multi_plots/lstm_logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1988,6 +2177,7 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -1995,6 +2185,7 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -2002,6 +2193,7 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -2009,6 +2201,7 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -2016,6 +2209,7 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -2023,6 +2217,7 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -2030,6 +2225,7 @@ stages:
 
       - multi_plots/lstm_logs_stem_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity lstm_logs_stem
           template: multi_loss
           x: epoch
@@ -2037,13 +2233,23 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric glove_logs_stem
           template: multi_loss
           x: epoch
           y: cost_metric
 
+      - multi_plots/glove_logs_stem_dvc_plots/acc.csv:
+          cache: false
+          persist: true
+          title: Train/Test Acc glove_logs_stem
+          template: multi_loss
+          x: epoch
+          y: acc
+
       - multi_plots/glove_logs_stem_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2051,6 +2257,7 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2058,6 +2265,7 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2065,6 +2273,7 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2072,6 +2281,7 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2079,6 +2289,7 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2086,6 +2297,7 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2093,6 +2305,7 @@ stages:
 
       - multi_plots/glove_logs_stem_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity glove_logs_stem
           template: multi_loss
           x: epoch
@@ -2100,13 +2313,23 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric w2v_logs_lemm
           template: multi_loss
           x: epoch
           y: cost_metric
 
+      - multi_plots/w2v_logs_lemm_dvc_plots/acc.csv:
+          cache: false
+          persist: true
+          title: Train/Test Acc w2v_logs_lemm
+          template: multi_loss
+          x: epoch
+          y: acc
+
       - multi_plots/w2v_logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2114,6 +2337,7 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2121,6 +2345,7 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2128,6 +2353,7 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2135,6 +2361,7 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2142,6 +2369,7 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2149,6 +2377,7 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2156,6 +2385,7 @@ stages:
 
       - multi_plots/w2v_logs_lemm_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity w2v_logs_lemm
           template: multi_loss
           x: epoch
@@ -2163,6 +2393,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2170,6 +2401,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2177,6 +2409,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2184,6 +2417,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2191,6 +2425,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2198,6 +2433,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2205,6 +2441,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2212,6 +2449,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2219,6 +2457,7 @@ stages:
 
       - multi_plots/w2v_logs_nature_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity w2v_logs_nature
           template: multi_loss
           x: epoch
@@ -2226,6 +2465,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2233,6 +2473,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2240,6 +2481,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2247,6 +2489,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2254,6 +2497,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2261,6 +2505,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2268,6 +2513,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2275,6 +2521,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2282,6 +2529,7 @@ stages:
 
       - multi_plots/w2v_lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity w2v_lstm_logs_lemm
           template: multi_loss
           x: epoch
@@ -2289,13 +2537,23 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/cost_metric.csv:
           cache: false
+          persist: true
           title: Train/Test Cost Metric logs_lemm
           template: multi_loss
           x: epoch
           y: cost_metric
 
+      - multi_plots/logs_lemm_dvc_plots/acc.csv:
+          cache: false
+          persist: true
+          title: Train/Test Acc logs_lemm
+          template: multi_loss
+          x: epoch
+          y: acc
+
       - multi_plots/logs_lemm_dvc_plots/binary_accuracy.csv:
           cache: false
+          persist: true
           title: Train/Test Binary Accuracy logs_lemm
           template: multi_loss
           x: epoch
@@ -2303,6 +2561,7 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/precision.csv:
           cache: false
+          persist: true
           title: Train/Test Precision logs_lemm
           template: multi_loss
           x: epoch
@@ -2310,6 +2569,7 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/precision_at_recall.csv:
           cache: false
+          persist: true
           title: Train/Test Precision At Recall logs_lemm
           template: multi_loss
           x: epoch
@@ -2317,6 +2577,7 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/auc.csv:
           cache: false
+          persist: true
           title: Train/Test Auc logs_lemm
           template: multi_loss
           x: epoch
@@ -2324,6 +2585,7 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/recall.csv:
           cache: false
+          persist: true
           title: Train/Test Recall logs_lemm
           template: multi_loss
           x: epoch
@@ -2331,6 +2593,7 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/sensitivity_at_specificity.csv:
           cache: false
+          persist: true
           title: Train/Test Sensitivity At Specificity logs_lemm
           template: multi_loss
           x: epoch
@@ -2338,6 +2601,7 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/loss.csv:
           cache: false
+          persist: true
           title: Train/Test Loss logs_lemm
           template: multi_loss
           x: epoch
@@ -2345,6 +2609,7 @@ stages:
 
       - multi_plots/logs_lemm_dvc_plots/specificity_at_sensitivity.csv:
           cache: false
+          persist: true
           title: Train/Test Specificity At Sensitivity logs_lemm
           template: multi_loss
           x: epoch

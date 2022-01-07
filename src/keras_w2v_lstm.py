@@ -12,22 +12,13 @@ import gensim.downloader
 import seaborn as sns
 
 from gensim import utils
-from gensim.models import Word2Vec
-from nltk.tokenize import word_tokenize
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.layers import TextVectorization
-from tensorflow.keras.layers import Input, Conv1D, MaxPooling1D, Bidirectional, GRU
-from tensorflow.keras import Model
-from tensorflow.keras import layers
-from tensorflow import keras
+from tensorflow.keras.layers import Bidirectional, GRU
 from tensorflow.keras import backend as K
-from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, Flatten, Dense
+from tensorflow.keras.layers import Embedding, Dense
 from dvclive.keras import DvcLiveCallback
 from optparse import OptionParser
 from sklearn.model_selection import train_test_split

@@ -8,6 +8,7 @@ import tensorflow as tf
 import glob
 import ast
 import json
+import seaborn as sns
 
 from tensorflow.keras import backend as K
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -20,6 +21,7 @@ from tensorflow.keras.layers import Embedding, Flatten, Dense
 from tensorflow.keras.layers import LSTM
 from dvclive.keras import DvcLiveCallback
 from optparse import OptionParser
+from sklearn.metrics import confusion_matrix
 
 global dir_list
 global class_list
@@ -49,7 +51,6 @@ dict_of_class = {'nature': class_list, 'lemm': class_lemm_list, 'stem': class_st
 data_list = dict_of_dir[action]
 class_list = dict_of_class[action]
 
-
 with open("params.yaml", 'r') as fd:
     params = yaml.safe_load(fd)
     epochs = int(params['keras_lstm']['epochs'])
@@ -70,17 +71,18 @@ with open("params.yaml", 'r') as fd:
 
 print('Keras_lstm')
 
+
 def cost_metric(y_true, y_pred):
     tn = K.sum(K.round(K.clip((1 - y_true) * (1 - y_pred), 0, 1)))
     fp = K.sum(K.round(K.clip((1 - y_true) * y_pred, 0, 1)))
 
     cost = K.log(tn / (tn + fp)) * unit_cost_of_a_bad_buzz
 
-
     if tf.math.is_nan(cost) or tf.math.is_inf(cost):
         cost = 0.
 
     return cost
+
 
 train_dir = (dir_list[0])
 
@@ -148,24 +150,8 @@ if not os.path.isdir('models'):
     os.mkdir('models')
 model.save('models/lstm_model_' + action + '.h5')
 
-acc = history.history['binary_accuracy']
-val_acc = history.history['val_binary_accuracy']
-loss = history.history['loss']
-val_loss = history.history['val_loss']
+# model.load_weights('models/lstm_model_' + action + '.h5')
 
-epochs = range(1, len(acc) + 1)
-
-plt.plot(epochs, acc, 'bo', label='Training acc')
-plt.plot(epochs, val_acc, 'b', label='Validation acc')
-plt.title('Training and validation accuracy')
-plt.legend()
-
-plt.figure()
-
-plt.plot(epochs, loss, 'bo', label='Training loss')
-plt.plot(epochs, val_loss, 'b', label='Validation loss')
-plt.title('Training and validation loss')
-plt.legend()
 
 # plt.show()
 test_dir = dir_list[1]
@@ -189,24 +175,26 @@ sequences = tokenizer.texts_to_sequences(texts)
 x_test = pad_sequences(sequences, maxlen=maxlen)
 y_test = np.asarray(labels)
 
-#model.load_model('models/lstm_model_' + action + '.h5')
 metrics = model.evaluate(x_test, y_test)
 # Enregistrement des métriques plus des paramètres (mais l’enregistrement des paramètres est redondant)
-df = pd.DataFrame([[w, x, y, z, a, b, c, d, e] for w, x, y, z, a, b, c, d, e in zip([metrics[0]], [metrics[1]], [metrics[2]],
-                                                                              [metrics[3]],
-                                                                              [metrics[4]],
-                                                                              [metrics[5]],
-                                                                              [metrics[6]],
-                                                                              [metrics[7]],
-                                                                              [metrics[8]])],
+df = pd.DataFrame(
+    [[w, x, y, z, a, b, c, d, e] for w, x, y, z, a, b, c, d, e in zip([metrics[0]],
+                                                                      [metrics[1]],
+                                                                      [metrics[2]],
+                                                                      [metrics[3]],
+                                                                      [metrics[4]],
+                                                                      [metrics[5]],
+                                                                      [metrics[6]],
+                                                                      [metrics[7]],
+                                                                      [metrics[8]])],
 
-                  columns=['loss', 'binary_accuracy', 'AUC',
-                           'precision',
-                           'recall',
-                           'precision_at_recall',
-                           'cost_metric',
-                           'sensitivity_at_sensitivity',
-                           'specificity_at_sensitivity']) \
+    columns=['loss', 'binary_accuracy', 'AUC',
+             'precision',
+             'recall',
+             'precision_at_recall',
+             'cost_metric',
+             'sensitivity_at_sensitivity',
+             'specificity_at_sensitivity']) \
     .to_json(orient='records').replace('[', '').replace(']', '')
 
 # Nécessaire pour travailler en mode expérience, puisque le programme utilise /tmp
