@@ -50,7 +50,7 @@ def cost_metric(y_true, y_pred):
     tn = K.sum(K.round(K.clip((1 - y_true) * (1 - y_pred), 0, 1)))
     fp = K.sum(K.round(K.clip((1 - y_true) * y_pred, 0, 1)))
 
-    cost = K.log(tn / (tn + fp)) * 5000  # unit_cost_of_a_bad_buzz
+    cost = K.log(tn / (tn + fp)) * 250  # unit_cost_of_a_bad_buzz
     if tf.math.is_nan(cost) or tf.math.is_inf(cost):
         cost = 0.
 
