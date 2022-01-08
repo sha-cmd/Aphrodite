@@ -136,7 +136,7 @@ with open("params.yaml", 'r') as fd:
     sequence_length = int(params['model_constants']['sequence_length'])
     maxlen = int(params['model_constants']['maxlen'])
     training_samples = int(params['model_constants']['training_samples'])
-    optimizer = str(params['model_constants']['optimizer'])
+    optimizer = str(params['keras_w2v']['optimizer'])
     validation_samples = int(params['model_constants']['validation_samples'])
     max_words = int(params['model_constants']['max_words'])
     unit_cost_of_a_bad_buzz = int(params['model_constants']['unit_cost_of_a_bad_buzz'])
