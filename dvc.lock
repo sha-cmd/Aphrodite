@@ -673,18 +673,27 @@ stages:
     - path: multi_plots/bert_logs_lemm_dvc_plots/binary_accuracy.csv
       md5: 22431e932add9dfb4dd117408a8c4ce9
       size: 1300
+    - path: multi_plots/bert_logs_lemm_dvc_plots/cost_metric.csv
+      md5: 5d1056fcdd388fce6fb07abf35a7549d
+      size: 1295
     - path: multi_plots/bert_logs_lemm_dvc_plots/loss.csv
       md5: db5ae1b9d352fde48d4af779516bc4cf
       size: 1228
     - path: multi_plots/bert_logs_nature_dvc_plots/binary_accuracy.csv
       md5: d20c029aadccdeb0b172ddfb9853fe7e
       size: 1293
+    - path: multi_plots/bert_logs_nature_dvc_plots/cost_metric.csv
+      md5: a11cf99ad30fa37d1193f25eaf5283c9
+      size: 1276
     - path: multi_plots/bert_logs_nature_dvc_plots/loss.csv
       md5: 9ee00458671d4852ca4b7318c1a34ec8
       size: 1249
     - path: multi_plots/bert_logs_stem_dvc_plots/binary_accuracy.csv
       md5: 2eab96bee8c33482d420fe2397ec40d0
       size: 1294
+    - path: multi_plots/bert_logs_stem_dvc_plots/cost_metric.csv
+      md5: 036bc93dbf60cd58a0fa62247fc374b2
+      size: 1274
     - path: multi_plots/bert_logs_stem_dvc_plots/loss.csv
       md5: 2f79955a74974495709cb84a17ff8140
       size: 1241
@@ -742,9 +751,6 @@ stages:
     - path: multi_plots/glove_logs_nature_dvc_plots/specificity_at_sensitivity.csv
       md5: 0fbf82bfb557db4a8b2af095b36689e5
       size: 1306
-    - path: multi_plots/glove_logs_stem_dvc_plots/acc.csv
-      md5: 35a9b1af1c76f8e69427334f1ae3718b
-      size: 1239
     - path: multi_plots/glove_logs_stem_dvc_plots/auc.csv
       md5: 486d1a208f5926a4a797f2d8b28ac91f
       size: 1274
@@ -772,9 +778,6 @@ stages:
     - path: multi_plots/glove_logs_stem_dvc_plots/specificity_at_sensitivity.csv
       md5: 84785bd41804922a5e6781cd1672a04a
       size: 1294
-    - path: multi_plots/logs_lemm_dvc_plots/acc.csv
-      md5: 8ab8564f697b8dca90097fc1969b186d
-      size: 1259
     - path: multi_plots/logs_lemm_dvc_plots/auc.csv
       md5: fa0571883d12244e09d60523072dcddf
       size: 1255
@@ -829,9 +832,6 @@ stages:
     - path: multi_plots/logs_nature_dvc_plots/specificity_at_sensitivity.csv
       md5: 07ca4210b2e87284c14d957dcf094d51
       size: 1327
-    - path: multi_plots/logs_stem_dvc_plots/acc.csv
-      md5: e6deb7497256ad289a87b38d1f90972f
-      size: 1262
     - path: multi_plots/logs_stem_dvc_plots/auc.csv
       md5: 6c9e805b9fc5c261a596418855ef1984
       size: 1268
@@ -859,9 +859,6 @@ stages:
     - path: multi_plots/logs_stem_dvc_plots/specificity_at_sensitivity.csv
       md5: ac3de49a82ff7b1cc74ebef1b9d41b2a
       size: 1315
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/acc.csv
-      md5: f4384f60cc64a2439439de0a762fd028
-      size: 1273
     - path: multi_plots/lstm_logs_lemm_dvc_plots/auc.csv
       md5: 65de8ddd1a4dcf679dbe3f8bf5bd6803
       size: 1256
@@ -889,9 +886,6 @@ stages:
     - path: multi_plots/lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
       md5: ed5c088dbb49c102b587aa30db5cdec2
       size: 1339
-    - path: multi_plots/lstm_logs_nature_dvc_plots/acc.csv
-      md5: 40dac03e20e47417e50a9830dab6eea8
-      size: 1270
     - path: multi_plots/lstm_logs_nature_dvc_plots/auc.csv
       md5: 830847c7a93922d45df645b30432c34d
       size: 1251
@@ -919,9 +913,6 @@ stages:
     - path: multi_plots/lstm_logs_nature_dvc_plots/specificity_at_sensitivity.csv
       md5: 78a08c257e3be9e14a57cafc6b5fea71
       size: 1302
-    - path: multi_plots/lstm_logs_stem_dvc_plots/acc.csv
-      md5: 04ebca33578a6fd977ec88c98e505390
-      size: 1288
     - path: multi_plots/lstm_logs_stem_dvc_plots/auc.csv
       md5: 17c2e83916862cc2aba59747249d348c
       size: 1278
@@ -949,9 +940,6 @@ stages:
     - path: multi_plots/lstm_logs_stem_dvc_plots/specificity_at_sensitivity.csv
       md5: c9dd2a874731c9e38f2f93df52420f4f
       size: 1299
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/acc.csv
-      md5: a9038e13709c0bc40d7a9982c5e69819
-      size: 1245
     - path: multi_plots/w2v_logs_lemm_dvc_plots/auc.csv
       md5: 008de5c0a6eab27afde072759f23b99a
       size: 1258
