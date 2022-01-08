@@ -671,428 +671,449 @@ stages:
     cmd: python src/multi_plots.py
     outs:
     - path: multi_plots/bert_logs_lemm_dvc_plots/binary_accuracy.csv
-      md5: 019264233c55a2ca1ac137d7eb0c5796
-      size: 283
-    - path: multi_plots/bert_logs_lemm_dvc_plots/loss.csv
-      md5: c480d13fb7fb2ec3f5334d018a3a9436
-      size: 276
-    - path: multi_plots/bert_logs_nature_dvc_plots/binary_accuracy.csv
-      md5: b08a6715f71ce7a3397a0f850255235c
-      size: 277
-    - path: multi_plots/bert_logs_nature_dvc_plots/loss.csv
-      md5: 99248585edd286eade3298a0178d5498
-      size: 262
-    - path: multi_plots/bert_logs_stem_dvc_plots/binary_accuracy.csv
-      md5: 00451122e4aa8d58458c7a14582ff6a3
-      size: 258
-    - path: multi_plots/bert_logs_stem_dvc_plots/loss.csv
-      md5: 2903abf0c2921ba330a7ea2d69df7162
-      size: 259
-    - path: multi_plots/glove_logs_lemm_dvc_plots/auc.csv
-      md5: d324cdc2c4ae890324abbbfeaf47d599
-      size: 1287
-    - path: multi_plots/glove_logs_lemm_dvc_plots/binary_accuracy.csv
-      md5: fdd3062c92447252013ac4e5add6c176
-      size: 1279
-    - path: multi_plots/glove_logs_lemm_dvc_plots/cost_metric.csv
-      md5: a67b8dc9cf8a17b5442b9f640c089d2d
-      size: 1321
-    - path: multi_plots/glove_logs_lemm_dvc_plots/loss.csv
-      md5: 1c8b78f4a67b7baa1f2082eb1ba9f58f
-      size: 1302
-    - path: multi_plots/glove_logs_lemm_dvc_plots/precision.csv
-      md5: cd966f268485791d6f87a24ddb36f13c
-      size: 1338
-    - path: multi_plots/glove_logs_lemm_dvc_plots/precision_at_recall.csv
-      md5: 93a684dce1220ec2ce85ff670b38fae0
-      size: 1305
-    - path: multi_plots/glove_logs_lemm_dvc_plots/recall.csv
-      md5: adb46a8f0b2ca61aeb1715a9b0035c8e
-      size: 1279
-    - path: multi_plots/glove_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
-      md5: 7296787de908bde47b6e46dca314fbb1
-      size: 1331
-    - path: multi_plots/glove_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
-      md5: 607a5c8d2ea818784040769dd6cdc661
-      size: 1335
-    - path: multi_plots/glove_logs_nature_dvc_plots/auc.csv
-      md5: 2635a335f911bda860a19c84bb6273ee
-      size: 1284
-    - path: multi_plots/glove_logs_nature_dvc_plots/binary_accuracy.csv
-      md5: 81bc992e900819b3be0f6c6da4eac096
-      size: 1292
-    - path: multi_plots/glove_logs_nature_dvc_plots/cost_metric.csv
-      md5: 99e26270f17e54d4d37899bfefe20883
-      size: 1325
-    - path: multi_plots/glove_logs_nature_dvc_plots/loss.csv
-      md5: 093670456a0c3e1507d87613d3729cd1
-      size: 1265
-    - path: multi_plots/glove_logs_nature_dvc_plots/precision.csv
-      md5: a3ea3296ee5a3dba66cae18f557e11dc
-      size: 1285
-    - path: multi_plots/glove_logs_nature_dvc_plots/precision_at_recall.csv
-      md5: 6d1327a1bb0e31ba6437900caec85576
-      size: 1299
-    - path: multi_plots/glove_logs_nature_dvc_plots/recall.csv
-      md5: c8eed8c5b3a9b5b13448afcbd4b1393e
-      size: 1275
-    - path: multi_plots/glove_logs_nature_dvc_plots/sensitivity_at_specificity.csv
-      md5: 4443717d18c1d62404cd7e1f9ae0ad53
-      size: 1291
-    - path: multi_plots/glove_logs_nature_dvc_plots/specificity_at_sensitivity.csv
-      md5: f710f31f5b624bbae43e20e886c4906e
-      size: 1304
-    - path: multi_plots/glove_logs_stem_dvc_plots/auc.csv
-      md5: 28fbed16abd8780d5859ca5a782582fb
-      size: 1278
-    - path: multi_plots/glove_logs_stem_dvc_plots/binary_accuracy.csv
-      md5: 0b474254c51a54606616d81b98d815b6
-      size: 1292
-    - path: multi_plots/glove_logs_stem_dvc_plots/cost_metric.csv
-      md5: f4b24469ca2268096949b26fd08beaf6
-      size: 1321
-    - path: multi_plots/glove_logs_stem_dvc_plots/loss.csv
-      md5: 19d29a49b1a612a9f2a39800137295e9
-      size: 1299
-    - path: multi_plots/glove_logs_stem_dvc_plots/precision.csv
-      md5: e31e71971aca2c83bf7b71525e3cf50d
-      size: 1272
-    - path: multi_plots/glove_logs_stem_dvc_plots/precision_at_recall.csv
-      md5: bb7d93c8b727077d91709816370ddbf2
-      size: 1318
-    - path: multi_plots/glove_logs_stem_dvc_plots/recall.csv
-      md5: de0c708a33a4bd063b277a64f4a67117
-      size: 1302
-    - path: multi_plots/glove_logs_stem_dvc_plots/sensitivity_at_specificity.csv
-      md5: 5e21e99f9a3f1c23474f969f78e58650
-      size: 1301
-    - path: multi_plots/glove_logs_stem_dvc_plots/specificity_at_sensitivity.csv
-      md5: 1979842791be43ac5bf847963a3ddbad
-      size: 1337
-    - path: multi_plots/logs_lemm_dvc_plots/auc.csv
-      md5: d134a3c2d5587adb42fbf124e645681c
-      size: 1276
-    - path: multi_plots/logs_lemm_dvc_plots/binary_accuracy.csv
-      md5: 7a3ea91f2ca64b11ada1f3e4fb81bf46
-      size: 1339
-    - path: multi_plots/logs_lemm_dvc_plots/cost_metric.csv
-      md5: 3b6c22072ff26e3401d485551a19978b
-      size: 1295
-    - path: multi_plots/logs_lemm_dvc_plots/loss.csv
-      md5: 0e8222297227a64db0f841b02b62010b
-      size: 1288
-    - path: multi_plots/logs_lemm_dvc_plots/precision.csv
-      md5: f8eda093da5da9bb07e956ffe1345264
-      size: 1293
-    - path: multi_plots/logs_lemm_dvc_plots/precision_at_recall.csv
-      md5: 8d1b5706ec0138410ca271e84212caaa
-      size: 1321
-    - path: multi_plots/logs_lemm_dvc_plots/recall.csv
-      md5: 5ac9642c3e206d964504be08d0d52dd0
-      size: 1308
-    - path: multi_plots/logs_lemm_dvc_plots/sensitivity_at_specificity.csv
-      md5: 60b320ae4a35235d691fa840ad2d56fa
-      size: 1332
-    - path: multi_plots/logs_lemm_dvc_plots/specificity_at_sensitivity.csv
-      md5: 9e0dd1ec4014494cc0fb8e0ac25247a9
-      size: 1320
-    - path: multi_plots/logs_nature_dvc_plots/auc.csv
-      md5: ce45782191b94c2b8ea389381eb2a9ed
-      size: 1285
-    - path: multi_plots/logs_nature_dvc_plots/binary_accuracy.csv
-      md5: 75701c0176dae9d7dcb5cc43646b922b
-      size: 1302
-    - path: multi_plots/logs_nature_dvc_plots/cost_metric.csv
-      md5: b460e0d23ff056e5ad09fc0cd31baccf
-      size: 1299
-    - path: multi_plots/logs_nature_dvc_plots/loss.csv
-      md5: 220301da7cad3603bcbaf0cbc3281660
-      size: 1252
-    - path: multi_plots/logs_nature_dvc_plots/precision.csv
-      md5: b9d0c7abbf3e8453be652638d2c1ad72
-      size: 1281
-    - path: multi_plots/logs_nature_dvc_plots/precision_at_recall.csv
-      md5: 9d494dacb982de546eb44e45adf17c3f
+      md5: 22431e932add9dfb4dd117408a8c4ce9
       size: 1300
-    - path: multi_plots/logs_nature_dvc_plots/recall.csv
-      md5: 714aa87fe6998b162a654177a3048916
-      size: 1310
-    - path: multi_plots/logs_nature_dvc_plots/sensitivity_at_specificity.csv
-      md5: 55b75e13a034f398ed3aa8304c717f62
-      size: 1348
-    - path: multi_plots/logs_nature_dvc_plots/specificity_at_sensitivity.csv
-      md5: 91f83149f4e85adace0de50ee15372b1
-      size: 1324
-    - path: multi_plots/logs_stem_dvc_plots/auc.csv
-      md5: b48177c927efe810812d78a3cf69672c
-      size: 1326
-    - path: multi_plots/logs_stem_dvc_plots/binary_accuracy.csv
-      md5: 6b0feeb85a94e98d0c0d9828f33d396c
-      size: 1332
-    - path: multi_plots/logs_stem_dvc_plots/cost_metric.csv
-      md5: 2af1368b7419db35aa9067778bfcd818
-      size: 1323
-    - path: multi_plots/logs_stem_dvc_plots/loss.csv
-      md5: b8ac88d538bf7574f65a0c706fa1a763
-      size: 1263
-    - path: multi_plots/logs_stem_dvc_plots/precision.csv
-      md5: 01a64c3f0d24ecdbfcf9dda130ca41ca
-      size: 1294
-    - path: multi_plots/logs_stem_dvc_plots/precision_at_recall.csv
-      md5: 9533ebb5a2e2870496dc8dfc35d0fea5
-      size: 1315
-    - path: multi_plots/logs_stem_dvc_plots/recall.csv
-      md5: 30671c6a0faf951db6aa7202c5152379
+    - path: multi_plots/bert_logs_lemm_dvc_plots/loss.csv
+      md5: db5ae1b9d352fde48d4af779516bc4cf
+      size: 1228
+    - path: multi_plots/bert_logs_nature_dvc_plots/binary_accuracy.csv
+      md5: d20c029aadccdeb0b172ddfb9853fe7e
+      size: 1293
+    - path: multi_plots/bert_logs_nature_dvc_plots/loss.csv
+      md5: 9ee00458671d4852ca4b7318c1a34ec8
       size: 1249
-    - path: multi_plots/logs_stem_dvc_plots/sensitivity_at_specificity.csv
-      md5: c7465bd739fdfb894af9f54f1e56e891
-      size: 1350
-    - path: multi_plots/logs_stem_dvc_plots/specificity_at_sensitivity.csv
-      md5: 1a08599318d48e15fc2929493a8b4546
-      size: 1326
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/auc.csv
-      md5: 7aaf1f61d640177443a2c29c64ebcc75
-      size: 1302
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/binary_accuracy.csv
-      md5: 17cbf96c92b8e74b78bb68a9474adc19
-      size: 1271
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/cost_metric.csv
-      md5: d8548620296b700283520ad679efb4fc
-      size: 1292
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/loss.csv
-      md5: 2c915ff99d427f5029dcd0ee7ecaa3f0
-      size: 1268
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/precision.csv
-      md5: fa9b01b2d89644d6d7655d0dbdc5a6a3
-      size: 1296
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/precision_at_recall.csv
-      md5: 435d9993d23dd762af6daa3c51615098
-      size: 1317
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/recall.csv
-      md5: 97a35cae1752060e96f2a1052a3a39bf
-      size: 1268
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
-      md5: 42c1c2f131fe111c2cf597a6efdec5ff
-      size: 1317
-    - path: multi_plots/lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
-      md5: 25d224177ae30dbf4d4649db5a56c77f
-      size: 1329
-    - path: multi_plots/lstm_logs_nature_dvc_plots/auc.csv
-      md5: bbb7c8a88fcda22a7785b9f6817044c2
-      size: 1278
-    - path: multi_plots/lstm_logs_nature_dvc_plots/binary_accuracy.csv
-      md5: 5d4ee1f75e90e7b8c2efdfa5dfdd5c9e
-      size: 1281
-    - path: multi_plots/lstm_logs_nature_dvc_plots/cost_metric.csv
-      md5: f4fc0065847f9c9623b0c955161443a3
-      size: 1307
-    - path: multi_plots/lstm_logs_nature_dvc_plots/loss.csv
-      md5: d80e0a9449d01fcb3a8c7119bdbac609
-      size: 1264
-    - path: multi_plots/lstm_logs_nature_dvc_plots/precision.csv
-      md5: 2cc6f56420c2de31b182bf342a1578b6
-      size: 1288
-    - path: multi_plots/lstm_logs_nature_dvc_plots/precision_at_recall.csv
-      md5: 9fdac078568db4feefa0e6748d8e33ec
-      size: 1324
-    - path: multi_plots/lstm_logs_nature_dvc_plots/recall.csv
-      md5: 0ece465748e8cfeb09cfbf4c9905a606
-      size: 1320
-    - path: multi_plots/lstm_logs_nature_dvc_plots/sensitivity_at_specificity.csv
-      md5: 93a9b63358d2f5154d9e5b27efebc15c
-      size: 1317
-    - path: multi_plots/lstm_logs_nature_dvc_plots/specificity_at_sensitivity.csv
-      md5: d26cde84f8a9c90d61572936c23f8a42
-      size: 1339
-    - path: multi_plots/lstm_logs_stem_dvc_plots/auc.csv
-      md5: 99bd52a4930c129b68ad8b9f971607a8
-      size: 1318
-    - path: multi_plots/lstm_logs_stem_dvc_plots/binary_accuracy.csv
-      md5: 5e7480dced8a40731426b0b5e08c8492
-      size: 1293
-    - path: multi_plots/lstm_logs_stem_dvc_plots/cost_metric.csv
-      md5: 73247ed27b6e631075952737fad5d7a8
-      size: 1289
-    - path: multi_plots/lstm_logs_stem_dvc_plots/loss.csv
-      md5: 1dd1dbab0937b9b5cb7cab6853de0610
-      size: 1283
-    - path: multi_plots/lstm_logs_stem_dvc_plots/precision.csv
-      md5: d7082e2ff2d98032229af156fb8dbfd7
-      size: 1327
-    - path: multi_plots/lstm_logs_stem_dvc_plots/precision_at_recall.csv
-      md5: 8ce982dd7e7d5ff6dc20c9a1a45585ef
-      size: 1336
-    - path: multi_plots/lstm_logs_stem_dvc_plots/recall.csv
-      md5: c237d0a68469e526ae7afe4e79104595
-      size: 1262
-    - path: multi_plots/lstm_logs_stem_dvc_plots/sensitivity_at_specificity.csv
-      md5: ecd18e6410c600cc51e832e982c454fd
-      size: 1317
-    - path: multi_plots/lstm_logs_stem_dvc_plots/specificity_at_sensitivity.csv
-      md5: 1b32dbf92ec90a4a0804036b2c262c08
-      size: 1343
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/auc.csv
-      md5: 7a2c50979bae03cfe7b9cb416420b0de
-      size: 1247
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/binary_accuracy.csv
-      md5: bb42e4a428c02b22eddf777e7f651023
+    - path: multi_plots/bert_logs_stem_dvc_plots/binary_accuracy.csv
+      md5: 2eab96bee8c33482d420fe2397ec40d0
+      size: 1294
+    - path: multi_plots/bert_logs_stem_dvc_plots/loss.csv
+      md5: 2f79955a74974495709cb84a17ff8140
+      size: 1241
+    - path: multi_plots/glove_logs_lemm_dvc_plots/auc.csv
+      md5: 2ff34deb870bb58534e058c43d4b33d8
       size: 1275
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/cost_metric.csv
-      md5: a1e1a6d4a48f7db95d179e8a1dc8aac7
-      size: 1362
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/loss.csv
-      md5: cd8c6a5feb22e42adb307a05ef4c2f29
-      size: 1258
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/precision.csv
-      md5: 837574cf8b9958e803429557eb5fcb23
-      size: 1269
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/precision_at_recall.csv
-      md5: 268b6c9ee52fb762850363cb1b52d589
-      size: 1276
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/recall.csv
-      md5: d84e2f1bbebd5a248b2997dac0d6e15b
-      size: 1266
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
-      md5: 19c47f72aa8cf91750e407a887b8399c
-      size: 1341
-    - path: multi_plots/w2v_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
-      md5: eedafc3f2a07c484835684a245585afe
-      size: 1341
-    - path: multi_plots/w2v_logs_nature_dvc_plots/auc.csv
-      md5: ffe716a3599cafb05e79266a1ca750bb
-      size: 1273
-    - path: multi_plots/w2v_logs_nature_dvc_plots/binary_accuracy.csv
-      md5: 29e9195d0ea92f9a86fb725781c0a70d
-      size: 1272
-    - path: multi_plots/w2v_logs_nature_dvc_plots/cost_metric.csv
-      md5: 23db037e888dac7be9abd465de13ec7b
-      size: 1341
-    - path: multi_plots/w2v_logs_nature_dvc_plots/loss.csv
-      md5: cc8c23f68a6735f1852b71e3adcb3064
-      size: 1281
-    - path: multi_plots/w2v_logs_nature_dvc_plots/precision.csv
-      md5: 4548a5ba033e5478198b1b619271027f
-      size: 1266
-    - path: multi_plots/w2v_logs_nature_dvc_plots/precision_at_recall.csv
-      md5: 7b385d7ebf9b9c1923fdc68ad6838492
-      size: 1306
-    - path: multi_plots/w2v_logs_nature_dvc_plots/recall.csv
-      md5: 44dd3d72ab0051f79f6279bf566b833b
-      size: 1263
-    - path: multi_plots/w2v_logs_nature_dvc_plots/sensitivity_at_specificity.csv
-      md5: df84ad1833b10945af221d0016c231a1
-      size: 1339
-    - path: multi_plots/w2v_logs_nature_dvc_plots/specificity_at_sensitivity.csv
-      md5: 773bb85cb14e538d22029791c5d4e0a4
-      size: 1339
-    - path: multi_plots/w2v_logs_stem_dvc_plots/auc.csv
-      md5: f37f677bb49611d275527eb6f14a4eb1
-      size: 1252
-    - path: multi_plots/w2v_logs_stem_dvc_plots/binary_accuracy.csv
-      md5: 8777ea57e4cb9384fc2cf6257991dc67
-      size: 1256
-    - path: multi_plots/w2v_logs_stem_dvc_plots/cost_metric.csv
-      md5: ec9beb5aeb50f8e1b3626941b8628d86
-      size: 1363
-    - path: multi_plots/w2v_logs_stem_dvc_plots/loss.csv
-      md5: de75e473d5e3c83f87df35af725ab981
-      size: 1271
-    - path: multi_plots/w2v_logs_stem_dvc_plots/precision.csv
-      md5: daffdf8fe4c1abeb9c3dcd567313fb32
-      size: 1250
-    - path: multi_plots/w2v_logs_stem_dvc_plots/precision_at_recall.csv
-      md5: 6310455fa99373a04199b01a8b4b8d55
-      size: 1292
-    - path: multi_plots/w2v_logs_stem_dvc_plots/recall.csv
-      md5: 16771477c9e4246b82357007cb8a292b
-      size: 1253
-    - path: multi_plots/w2v_logs_stem_dvc_plots/sensitivity_at_specificity.csv
-      md5: 0312c85967f9d7271332b39f69047ca4
-      size: 1322
-    - path: multi_plots/w2v_logs_stem_dvc_plots/specificity_at_sensitivity.csv
-      md5: e734fc8dcea901ae43539dfc5f3f4a78
-      size: 1322
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/auc.csv
-      md5: 238e94545534ad9cd47665a28de2419d
-      size: 1306
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/binary_accuracy.csv
-      md5: eeeb13ae7c6e072f1a53759a5c33c0b7
-      size: 1317
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/cost_metric.csv
-      md5: 3fd2623943fde313ed91a40aa91c911a
-      size: 1305
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/loss.csv
-      md5: 2d948a1c6c759818f36d736b5d941795
-      size: 1328
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/precision.csv
-      md5: 475100a32b56591ba52e59e4dc368f53
-      size: 1312
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/precision_at_recall.csv
-      md5: 28e229e58474f58d2e812d6611a81fc8
-      size: 1304
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/recall.csv
-      md5: 19e8edc4838f18e4f2a9665f01379065
-      size: 1315
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
-      md5: 3541122de312527457ef87b9780642ac
-      size: 1342
-    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
-      md5: e0e5382fcfba46b5d641eaa5d39d4837
-      size: 1342
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/auc.csv
-      md5: 12d6175211b1268f396818537ce5825b
-      size: 1315
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/binary_accuracy.csv
-      md5: 24dc180daf30ec78399778d8c19c60f6
-      size: 1302
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/cost_metric.csv
-      md5: 06a99820cfe7a6ca894329127614bd06
-      size: 1305
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/loss.csv
-      md5: 6728ddd2d288013e730c1aaad45c4145
-      size: 1278
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/precision.csv
-      md5: 157f6509929b6ec3e35bc44a1799dfa4
-      size: 1296
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/precision_at_recall.csv
-      md5: 7aa979deef05c07721b4f586fb580d8b
-      size: 1340
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/recall.csv
-      md5: f2da5634b9ab2ad3f13fe468de81f270
-      size: 1293
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/sensitivity_at_specificity.csv
-      md5: efd9eabcecdb9791abb88a37065e2845
-      size: 1329
-    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/specificity_at_sensitivity.csv
-      md5: 5cddecef6f54a0aad7d15d3480dec473
-      size: 1329
-    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/auc.csv
-      md5: b1d800d923fd97c43955b47b1aa832ff
-      size: 1276
-    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/binary_accuracy.csv
-      md5: c0a208eca07e12a23df3443dd41f0943
-      size: 1288
-    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/cost_metric.csv
-      md5: 5b6116ab8e13419b37076889aed3afa2
-      size: 1308
-    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/loss.csv
-      md5: f12048dab1198c64744e605323831b66
-      size: 1272
-    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/precision.csv
-      md5: 31541689c0fdccf65705c3a54a6eb763
-      size: 1276
-    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/precision_at_recall.csv
-      md5: 66fe1e66ba1f3066686b57407e493616
+    - path: multi_plots/glove_logs_lemm_dvc_plots/binary_accuracy.csv
+      md5: 822fc9598b356ccb567fb05fba0da4b3
+      size: 1222
+    - path: multi_plots/glove_logs_lemm_dvc_plots/cost_metric.csv
+      md5: 3418249c41b153ed2bd49de674418091
+      size: 1297
+    - path: multi_plots/glove_logs_lemm_dvc_plots/loss.csv
+      md5: c30b7c9e168a4dd7392afd257b86c92a
+      size: 1211
+    - path: multi_plots/glove_logs_lemm_dvc_plots/precision.csv
+      md5: d3e612cafba26f02f96ce34ee7a79182
+      size: 1257
+    - path: multi_plots/glove_logs_lemm_dvc_plots/precision_at_recall.csv
+      md5: 7291972a0fbdcaac21fc6f4af6eb639e
+      size: 1307
+    - path: multi_plots/glove_logs_lemm_dvc_plots/recall.csv
+      md5: fd83db83c803597505feeca9a57e0744
+      size: 1265
+    - path: multi_plots/glove_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
+      md5: 7f8238967407bb49e15c2cc25a1707c5
+      size: 1284
+    - path: multi_plots/glove_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
+      md5: 844ee0982556ba08f3b80160f8e7828a
+      size: 1334
+    - path: multi_plots/glove_logs_nature_dvc_plots/auc.csv
+      md5: 18b30f7e6d9eab605f50277284bfb5ff
+      size: 1257
+    - path: multi_plots/glove_logs_nature_dvc_plots/binary_accuracy.csv
+      md5: 30a68fc84e1ce86942e26e8a3d57da8f
       size: 1248
-    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/recall.csv
-      md5: 2aca725c27e155748c689fe775516b59
+    - path: multi_plots/glove_logs_nature_dvc_plots/cost_metric.csv
+      md5: 7e17155e495999a594ddda73aa2e9959
+      size: 1296
+    - path: multi_plots/glove_logs_nature_dvc_plots/loss.csv
+      md5: 59f3d9e62e2d9f778760c748118adf79
+      size: 1289
+    - path: multi_plots/glove_logs_nature_dvc_plots/precision.csv
+      md5: 054ff2a5b28d6fdb58699f7b27f1b45a
+      size: 1298
+    - path: multi_plots/glove_logs_nature_dvc_plots/precision_at_recall.csv
+      md5: 203fb8a78472dbd0f63a2226f641692d
+      size: 1257
+    - path: multi_plots/glove_logs_nature_dvc_plots/recall.csv
+      md5: 872f4ec7b5aa5e1ad8a851b61863461f
+      size: 1268
+    - path: multi_plots/glove_logs_nature_dvc_plots/sensitivity_at_specificity.csv
+      md5: 4f702e66634e3c2c778415a43ea4d838
+      size: 1308
+    - path: multi_plots/glove_logs_nature_dvc_plots/specificity_at_sensitivity.csv
+      md5: 0fbf82bfb557db4a8b2af095b36689e5
+      size: 1306
+    - path: multi_plots/glove_logs_stem_dvc_plots/acc.csv
+      md5: 35a9b1af1c76f8e69427334f1ae3718b
+      size: 1239
+    - path: multi_plots/glove_logs_stem_dvc_plots/auc.csv
+      md5: 486d1a208f5926a4a797f2d8b28ac91f
+      size: 1274
+    - path: multi_plots/glove_logs_stem_dvc_plots/binary_accuracy.csv
+      md5: 2df661af2e23bb01d1242637bd3780d4
+      size: 1294
+    - path: multi_plots/glove_logs_stem_dvc_plots/cost_metric.csv
+      md5: 99bdcb5f56fa689bcf5ed93c96c90967
+      size: 1295
+    - path: multi_plots/glove_logs_stem_dvc_plots/loss.csv
+      md5: 6975fe90481085cd0ded790692c62b6a
+      size: 1249
+    - path: multi_plots/glove_logs_stem_dvc_plots/precision.csv
+      md5: d5217cc4f2aa30d803794fd7c0f760b2
+      size: 1238
+    - path: multi_plots/glove_logs_stem_dvc_plots/precision_at_recall.csv
+      md5: 3966597fc9915f34282d734d66be43ad
+      size: 1289
+    - path: multi_plots/glove_logs_stem_dvc_plots/recall.csv
+      md5: 47d09aefc2e5e20c2093c8e791c877cb
+      size: 1270
+    - path: multi_plots/glove_logs_stem_dvc_plots/sensitivity_at_specificity.csv
+      md5: 33ff9afa513c2ce5db4d9806db82c2c4
+      size: 1281
+    - path: multi_plots/glove_logs_stem_dvc_plots/specificity_at_sensitivity.csv
+      md5: 84785bd41804922a5e6781cd1672a04a
+      size: 1294
+    - path: multi_plots/logs_lemm_dvc_plots/acc.csv
+      md5: 8ab8564f697b8dca90097fc1969b186d
+      size: 1259
+    - path: multi_plots/logs_lemm_dvc_plots/auc.csv
+      md5: fa0571883d12244e09d60523072dcddf
+      size: 1255
+    - path: multi_plots/logs_lemm_dvc_plots/binary_accuracy.csv
+      md5: 150ff51e256e7caeb9b3090543b5070e
+      size: 1259
+    - path: multi_plots/logs_lemm_dvc_plots/cost_metric.csv
+      md5: aeeb7fdf2d5e7e942686cd57ec0b85cd
+      size: 1274
+    - path: multi_plots/logs_lemm_dvc_plots/loss.csv
+      md5: 6d04c2d9d7b0d53cecde50193b3f982c
+      size: 1253
+    - path: multi_plots/logs_lemm_dvc_plots/precision.csv
+      md5: 809605aebaaf73fbd9c51be292a9b900
+      size: 1275
+    - path: multi_plots/logs_lemm_dvc_plots/precision_at_recall.csv
+      md5: 0e59af97ead4feee18ed59f0fd4ae949
+      size: 1298
+    - path: multi_plots/logs_lemm_dvc_plots/recall.csv
+      md5: 94bac95fb2f71b0c321951f0699794bc
+      size: 1284
+    - path: multi_plots/logs_lemm_dvc_plots/sensitivity_at_specificity.csv
+      md5: 8e2bc0d41099b48b76be0a5169cd7090
+      size: 1278
+    - path: multi_plots/logs_lemm_dvc_plots/specificity_at_sensitivity.csv
+      md5: f1b51ebe35d2ee5a8a64c4b163724cf4
+      size: 1347
+    - path: multi_plots/logs_nature_dvc_plots/auc.csv
+      md5: 02b2499149a14919aa6659d37d3f765a
+      size: 1293
+    - path: multi_plots/logs_nature_dvc_plots/binary_accuracy.csv
+      md5: dd4c166966046843d2e524d27a9d64ca
+      size: 1307
+    - path: multi_plots/logs_nature_dvc_plots/cost_metric.csv
+      md5: 7eee0ccb798d24a2a3e8926d16a31423
       size: 1273
+    - path: multi_plots/logs_nature_dvc_plots/loss.csv
+      md5: 221591cf22a80b9a510d7a192a5aa9c3
+      size: 1299
+    - path: multi_plots/logs_nature_dvc_plots/precision.csv
+      md5: 10887f16617ed20b3194f608893c42e0
+      size: 1296
+    - path: multi_plots/logs_nature_dvc_plots/precision_at_recall.csv
+      md5: 37cd759ceb0be824fcbc5f0ebe57f3a5
+      size: 1318
+    - path: multi_plots/logs_nature_dvc_plots/recall.csv
+      md5: 20919a909f1ffb4f6c04426e8984171a
+      size: 1263
+    - path: multi_plots/logs_nature_dvc_plots/sensitivity_at_specificity.csv
+      md5: 0e2668d47f2170700490090a506dac69
+      size: 1301
+    - path: multi_plots/logs_nature_dvc_plots/specificity_at_sensitivity.csv
+      md5: 07ca4210b2e87284c14d957dcf094d51
+      size: 1327
+    - path: multi_plots/logs_stem_dvc_plots/acc.csv
+      md5: e6deb7497256ad289a87b38d1f90972f
+      size: 1262
+    - path: multi_plots/logs_stem_dvc_plots/auc.csv
+      md5: 6c9e805b9fc5c261a596418855ef1984
+      size: 1268
+    - path: multi_plots/logs_stem_dvc_plots/binary_accuracy.csv
+      md5: b6a39db9149cc46f79d412f67f8416c0
+      size: 1273
+    - path: multi_plots/logs_stem_dvc_plots/cost_metric.csv
+      md5: 457dd34b85888d180c9fbcde0b18c5ac
+      size: 1273
+    - path: multi_plots/logs_stem_dvc_plots/loss.csv
+      md5: 16fe751c91caf5a10e48de601c93d534
+      size: 1297
+    - path: multi_plots/logs_stem_dvc_plots/precision.csv
+      md5: 4caecbc3597fc06eda5e66d0ceb83c97
+      size: 1236
+    - path: multi_plots/logs_stem_dvc_plots/precision_at_recall.csv
+      md5: e02f5c3f90f42b51d4a4a55183b4888c
+      size: 1292
+    - path: multi_plots/logs_stem_dvc_plots/recall.csv
+      md5: 867ed81142ccd3f53e9f88787c3c6039
+      size: 1284
+    - path: multi_plots/logs_stem_dvc_plots/sensitivity_at_specificity.csv
+      md5: 28e3d871282bc3013cb86530af31d1b4
+      size: 1324
+    - path: multi_plots/logs_stem_dvc_plots/specificity_at_sensitivity.csv
+      md5: ac3de49a82ff7b1cc74ebef1b9d41b2a
+      size: 1315
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/acc.csv
+      md5: f4384f60cc64a2439439de0a762fd028
+      size: 1273
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/auc.csv
+      md5: 65de8ddd1a4dcf679dbe3f8bf5bd6803
+      size: 1256
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/binary_accuracy.csv
+      md5: db9571a03bb816456b32180574b6e407
+      size: 1276
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/cost_metric.csv
+      md5: a6ca852e4cd7a6d10ec2bd7c0233152c
+      size: 1279
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/loss.csv
+      md5: cfa9d1f08c22bb5efa0fda87eb0c563c
+      size: 1243
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/precision.csv
+      md5: 21b36533a1e50d4ba89df44b5035acba
+      size: 1245
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/precision_at_recall.csv
+      md5: 55ad3b64ef87516083333c1479d0428c
+      size: 1327
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/recall.csv
+      md5: 9449863f0f575df41db739c62ac2b0c3
+      size: 1248
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
+      md5: 2c6515e253477107df9f26ec18804370
+      size: 1329
+    - path: multi_plots/lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
+      md5: ed5c088dbb49c102b587aa30db5cdec2
+      size: 1339
+    - path: multi_plots/lstm_logs_nature_dvc_plots/acc.csv
+      md5: 40dac03e20e47417e50a9830dab6eea8
+      size: 1270
+    - path: multi_plots/lstm_logs_nature_dvc_plots/auc.csv
+      md5: 830847c7a93922d45df645b30432c34d
+      size: 1251
+    - path: multi_plots/lstm_logs_nature_dvc_plots/binary_accuracy.csv
+      md5: c31f14b4f87f0bc469b8bc5a9858df27
+      size: 1262
+    - path: multi_plots/lstm_logs_nature_dvc_plots/cost_metric.csv
+      md5: e0cbd8cb2f35ed7e1ae1948cb87851da
+      size: 1286
+    - path: multi_plots/lstm_logs_nature_dvc_plots/loss.csv
+      md5: c2c63b183ee4d04fe64683c108238cc9
+      size: 1251
+    - path: multi_plots/lstm_logs_nature_dvc_plots/precision.csv
+      md5: d38823f99d5eb803fa33c2c34454f4c9
+      size: 1255
+    - path: multi_plots/lstm_logs_nature_dvc_plots/precision_at_recall.csv
+      md5: 0781e40173d851f702dfa5c3b356f8f4
+      size: 1259
+    - path: multi_plots/lstm_logs_nature_dvc_plots/recall.csv
+      md5: fe46f4901c13d549e2b92c38dbda5ec3
+      size: 1305
+    - path: multi_plots/lstm_logs_nature_dvc_plots/sensitivity_at_specificity.csv
+      md5: 15f365e1e91bc6f5b449dd2c6f69344a
+      size: 1263
+    - path: multi_plots/lstm_logs_nature_dvc_plots/specificity_at_sensitivity.csv
+      md5: 78a08c257e3be9e14a57cafc6b5fea71
+      size: 1302
+    - path: multi_plots/lstm_logs_stem_dvc_plots/acc.csv
+      md5: 04ebca33578a6fd977ec88c98e505390
+      size: 1288
+    - path: multi_plots/lstm_logs_stem_dvc_plots/auc.csv
+      md5: 17c2e83916862cc2aba59747249d348c
+      size: 1278
+    - path: multi_plots/lstm_logs_stem_dvc_plots/binary_accuracy.csv
+      md5: 5968b097aefb6bd11dfc52b121ef95fa
+      size: 1263
+    - path: multi_plots/lstm_logs_stem_dvc_plots/cost_metric.csv
+      md5: 3aa03797e006f9567ae401b3b1ebd1e9
+      size: 1274
+    - path: multi_plots/lstm_logs_stem_dvc_plots/loss.csv
+      md5: 25debb4c5e89def249711643c9ff5743
+      size: 1251
+    - path: multi_plots/lstm_logs_stem_dvc_plots/precision.csv
+      md5: 795fa1de1c223d4797b93f4b0e10d1d7
+      size: 1248
+    - path: multi_plots/lstm_logs_stem_dvc_plots/precision_at_recall.csv
+      md5: 73b0e86366e2bedb08955d701d443131
+      size: 1270
+    - path: multi_plots/lstm_logs_stem_dvc_plots/recall.csv
+      md5: 217436f31916d0016678999b731723be
+      size: 1287
+    - path: multi_plots/lstm_logs_stem_dvc_plots/sensitivity_at_specificity.csv
+      md5: 2f37d49e4c71f248ebe14942a0a20fe9
+      size: 1294
+    - path: multi_plots/lstm_logs_stem_dvc_plots/specificity_at_sensitivity.csv
+      md5: c9dd2a874731c9e38f2f93df52420f4f
+      size: 1299
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/acc.csv
+      md5: a9038e13709c0bc40d7a9982c5e69819
+      size: 1245
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/auc.csv
+      md5: 054b340a9dba1a37941d812dcab677ef
+      size: 1234
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/binary_accuracy.csv
+      md5: bff63793eaf810204a0d9d831fe3d493
+      size: 1238
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/cost_metric.csv
+      md5: ec4b1012260f0509179f78968458fc3f
+      size: 1340
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/loss.csv
+      md5: 042540f314e837c9a910ea24103ea16f
+      size: 1245
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/precision.csv
+      md5: 126df90ffbe31d29e139f1846fe635f8
+      size: 1234
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/precision_at_recall.csv
+      md5: 29491959614c41c5bae222773cc7cb0d
+      size: 1225
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/recall.csv
+      md5: c4f93148c1029deade59793b019aea1e
+      size: 1231
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
+      md5: b84ab4500a3e0dbc624d80ecb323bfd4
+      size: 1255
+    - path: multi_plots/w2v_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
+      md5: e0cdb3d2ee53db1a4ded8b93c5183cc5
+      size: 1255
+    - path: multi_plots/w2v_logs_nature_dvc_plots/auc.csv
+      md5: a082218884a4ab04d74bc2109fd784c8
+      size: 1250
+    - path: multi_plots/w2v_logs_nature_dvc_plots/binary_accuracy.csv
+      md5: 3f96f350f73ec8fc6a4fb2800e56a97f
+      size: 1259
+    - path: multi_plots/w2v_logs_nature_dvc_plots/cost_metric.csv
+      md5: 8fcb466c84d4110ed9bfd7914912446f
+      size: 1308
+    - path: multi_plots/w2v_logs_nature_dvc_plots/loss.csv
+      md5: cdc02e7f6089e8c253c0cd07e003ccef
+      size: 1263
+    - path: multi_plots/w2v_logs_nature_dvc_plots/precision.csv
+      md5: 17abc1927f2ff6ddede5861802fdfe5f
+      size: 1253
+    - path: multi_plots/w2v_logs_nature_dvc_plots/precision_at_recall.csv
+      md5: 1d5b23f8fbe2cdaeb823f83f1ecd7f31
+      size: 1251
+    - path: multi_plots/w2v_logs_nature_dvc_plots/recall.csv
+      md5: 2414c4d9bf6c194f330d18fe50a32cf4
+      size: 1250
+    - path: multi_plots/w2v_logs_nature_dvc_plots/sensitivity_at_specificity.csv
+      md5: c9095c2275ea836e40a3ac927ef7d81d
+      size: 1270
+    - path: multi_plots/w2v_logs_nature_dvc_plots/specificity_at_sensitivity.csv
+      md5: 42f87530d7ac748a2be6c2222e5d6a16
+      size: 1270
+    - path: multi_plots/w2v_logs_stem_dvc_plots/auc.csv
+      md5: b8d83192a529e7f13812f36c32c3b369
+      size: 1225
+    - path: multi_plots/w2v_logs_stem_dvc_plots/binary_accuracy.csv
+      md5: b8b813e30de6581954bfc773b8ca76e7
+      size: 1275
+    - path: multi_plots/w2v_logs_stem_dvc_plots/cost_metric.csv
+      md5: fe339e34c2b5e32474fd8787b07f2ca4
+      size: 1337
+    - path: multi_plots/w2v_logs_stem_dvc_plots/loss.csv
+      md5: 14220bcafff1c43fbcc3d878e258c05a
+      size: 1226
+    - path: multi_plots/w2v_logs_stem_dvc_plots/precision.csv
+      md5: 9b161af05f480122c786a1dd97e05e8f
+      size: 1269
+    - path: multi_plots/w2v_logs_stem_dvc_plots/precision_at_recall.csv
+      md5: 4a8a09b5e163f023fe96b3159a535fd2
+      size: 1241
+    - path: multi_plots/w2v_logs_stem_dvc_plots/recall.csv
+      md5: 66f6ece4f9cf3b623a1603ea1717ca40
+      size: 1266
+    - path: multi_plots/w2v_logs_stem_dvc_plots/sensitivity_at_specificity.csv
+      md5: 6a97e46212b972a8298ac841074305ad
+      size: 1277
+    - path: multi_plots/w2v_logs_stem_dvc_plots/specificity_at_sensitivity.csv
+      md5: c2ea2c85734c565f39fafb200cc25c31
+      size: 1277
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/auc.csv
+      md5: 3de3e7f3a144a22e650324b5d4fcfa12
+      size: 1289
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/binary_accuracy.csv
+      md5: 1331f4127ebdd95b0a353bc3ad7ba735
+      size: 1296
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/cost_metric.csv
+      md5: 26ebaf2e9e44880fb9ca7ba7e18ac6cb
+      size: 1283
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/loss.csv
+      md5: 64d2790b4f4af9d03770e8ae470bec6e
+      size: 1265
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/precision.csv
+      md5: 6499d412d620b1490a800ab754d4fda0
+      size: 1290
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/precision_at_recall.csv
+      md5: 99687b46cf507d1821b2d8baf5e9dfca
+      size: 1299
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/recall.csv
+      md5: 02cadda6306ab7c425af5238171a99b7
+      size: 1287
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.csv
+      md5: 6996d489152f6843df874391a934b5b2
+      size: 1304
+    - path: multi_plots/w2v_lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.csv
+      md5: c3056b22673f56537d96069e950c0e66
+      size: 1304
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/auc.csv
+      md5: 8132c19be0d1c7d19d6b5d5ec685f21f
+      size: 1290
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/binary_accuracy.csv
+      md5: 58b2aa62797dfbcb99e6d70b1bb05ed9
+      size: 1277
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/cost_metric.csv
+      md5: 6cbdaa31e3d9a0729ebadf652a52469c
+      size: 1284
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/loss.csv
+      md5: 35a87cba95ab76013e96125c07455598
+      size: 1262
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/precision.csv
+      md5: 60f1eda09e4792b8ee27033416c99141
+      size: 1272
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/precision_at_recall.csv
+      md5: bfce14a4355e6339a7539eb97c9582dc
+      size: 1279
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/recall.csv
+      md5: 4d889d70bf00708aab488e79de3cb657
+      size: 1275
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/sensitivity_at_specificity.csv
+      md5: f3273f1382bb5fbb1735d1d0784bd859
+      size: 1310
+    - path: multi_plots/w2v_lstm_logs_nature_dvc_plots/specificity_at_sensitivity.csv
+      md5: 47c0d9dfa486a738d6b1d625e02ce78a
+      size: 1310
+    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/auc.csv
+      md5: 48f0a97ea4a937c2422db5a1ee19656f
+      size: 1258
+    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/binary_accuracy.csv
+      md5: 00849e9a4859febc7dc25230f1e32800
+      size: 1293
+    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/cost_metric.csv
+      md5: 93732653fe3780d078c07d9ac96c1fd5
+      size: 1286
+    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/loss.csv
+      md5: 600a057b38ad93b5e4c3244d8ec4fb1d
+      size: 1255
+    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/precision.csv
+      md5: 0db572c8f6da7ab44d76b4f2399bc033
+      size: 1287
+    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/precision_at_recall.csv
+      md5: 18c2324bd4ffe060bec7b33ded51f698
+      size: 1263
+    - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/recall.csv
+      md5: 758695eea0e801fe5ce723c974b4fc55
+      size: 1284
     - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/sensitivity_at_specificity.csv
-      md5: 77ab042c1e5cfbf368bd88ee593c47f0
-      size: 1301
+      md5: f5d7f33942eadfad7755de5bcdc77b10
+      size: 1262
     - path: multi_plots/w2v_lstm_logs_stem_dvc_plots/specificity_at_sensitivity.csv
-      md5: 06db059abe304c5b3cafa90bcb2d1b6a
-      size: 1301
+      md5: 1bb9636c4469e73d489de563754265c9
+      size: 1262
   keras_glove_lemm:
     cmd: python src/keras_glove.py --action lemm
     outs:
