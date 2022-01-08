@@ -161,10 +161,10 @@ x = Conv1D(128, 5, activation='relu')(x)
 x = MaxPooling1D(6)(x)  # global max pooling
 x = Flatten()(x)
 x = Dense(128, activation='relu')(x)
-preds = Dense(2, activation='softmax')(x)
+preds = Dense(2, activation='sigmoid')(x)
 
 model = Model(sequence_input, preds)
-model.compile(loss='categorical_crossentropy',
+model.compile(loss="binary_crossentropy",
               optimizer=optimizer,
               metrics=[tf.metrics.BinaryAccuracy(), 'AUC', tf.keras.metrics.Precision(),
                        tf.keras.metrics.Recall(),
@@ -203,8 +203,11 @@ plt.savefig('confusion_matrices/Confusion_matrix_w2v_' + action + '.jpg')
 if not os.path.isdir('models'):
     os.mkdir('models')
 model.save_weights('models/w2v_model_' + action + '.h5')
-
-metrics = model.evaluate(X_test_pad)
+print(df['note'].to_numpy(), df['note'].to_numpy().shape)
+print(df['note'].values, len(df['note'].values))
+print(len(df['note'].tolist()))
+print(type(X_test_pad), X_test_pad.shape)
+metrics = model.evaluate(X_test_pad, tf.one_hot(df['note'], depth=2))
 # Enregistrement des métriques plus des paramètres (mais l’enregistrement des paramètres est redondant)
 df = pd.DataFrame(
     [[w, x, y, z, a, b, c, d, e] for w, x, y, z, a, b, c, d, e in zip([metrics[0]],

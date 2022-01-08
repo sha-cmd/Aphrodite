@@ -254,7 +254,7 @@ if not os.path.isdir('models'):
     os.mkdir('models')
 model.save_weights('models/w2v_lstm_model_' + action + '.h5')
 
-metrics = model.evaluate(X_test_pad)
+metrics = model.evaluate(X_test_pad, tf.one_hot(df['note'], depth=2))
 
 # Enregistrement des métriques plus des paramètres (mais l’enregistrement des paramètres est redondant)
 df = pd.DataFrame(
