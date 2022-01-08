@@ -68,6 +68,7 @@ for key_dir, metrics in dirs_dict.items():
         with open('multi_plots/yamlhadoc.txt', 'a') as f:
             f.writelines(f"- multi_plots/{key_dir}/{key_metric}.csv:\n\
             cache: false\n\
+            persist: true\n\
             title: Train/Test {' '.join(key_metric.split('_')).title()} {key_dir[:-10]}\n\
             template: multi_loss\n\
             x: epoch\n\
