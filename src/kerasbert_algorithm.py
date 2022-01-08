@@ -341,18 +341,19 @@ plt.ylabel('Accuracy')
 plt.legend(loc='lower right')
 
 dataset_name = 'imdb'
-saved_model_path = './{}_bert'.format(dataset_name.replace('/', '_'))
-
+saved_model_path = ('./{}_bert_' + action).format(dataset_name.replace('/', '_'))
+print(saved_model_path)
 classifier_model.save(saved_model_path, include_optimizer=False)
 
 reloaded_model = tf.saved_model.load(saved_model_path)
+#reloaded_model = tf.keras.models.load_model(saved_model_path, custom_objects={'cost_metric': cost_metric})
 #predict = tf.sigmoid(reloaded_model(test_ds))  # classifier_model.predict(test_ds)
 #print(predict, type(predict))
 
 # Matrice de confusion
 X_test = pd.read_csv('data/X_' + action + '_test.csv', index_col='index')
 y_test = pd.read_csv('data/y_' + action + '_test.csv', index_col='index')
-# X_test['tweets'] = X_test['tweets'].apply(lambda x: str(x)).astype('str')
+X_test['tweets'] = X_test['tweets'].apply(lambda x: str(x)).astype('str')
 # texts_test = X_test['tweets'].tolist()
 # sequences_test = tokenized.texts_to_sequences(texts_test)
 # X_test_pad = pad_sequences(sequences_test, maxlen=MAX_SEQUENCE_LENGTH)
