@@ -35,7 +35,7 @@ keras_lstm:
 
 keras_w2v:
   epochs: 25
-  optimizer: adam
+  optimizer: rmsprop
   dense: 32
 
 keras_bert:
