@@ -41,629 +41,632 @@ stages:
     cmd: python src/keras_embedding.py --action nature
     outs:
     - path: confusion_matrices/Confusion_matrix_embeddings_nature.jpg
-      md5: 347924ddd1a47ce77a6990ab57b4fd93
-      size: 24258
+      md5: fce48ae059f07bed7b0e40016833e20d
+      size: 27604
     - path: logs_nature_dvc_plots/auc.json
-      md5: 144b7fc4f21e66a78e50d26166eeb61e
-      size: 862
+      md5: 20899d7f2ee9ea7b6bec21a4262c1234
+      size: 858
     - path: logs_nature_dvc_plots/binary_accuracy.json
-      md5: 52f9c35a177d5a2f8f18d68c65b11370
-      size: 1163
+      md5: c07b2f173279881b9ac294ff9b70675a
+      size: 1164
     - path: logs_nature_dvc_plots/cost_metric.json
-      md5: 322131384fbf71d79be11fb18ab27ec0
-      size: 1095
+      md5: e062c7f6150a27e076ce0d3635e1b185
+      size: 1093
     - path: logs_nature_dvc_plots/loss.json
-      md5: bee2ce2f6fdc61f86bc7ef55bdcc0ff6
-      size: 887
+      md5: 9db324b94d77a43161677d4745b83c9f
+      size: 889
     - path: logs_nature_dvc_plots/precision.json
-      md5: df4bba7553144564d62d5fa8318fee79
+      md5: 9d76c96bf42d2b1f80f1b63d6ca57db7
       size: 1013
     - path: logs_nature_dvc_plots/precision_at_recall.json
-      md5: e1faa7f1c0908ff6c8feec18da61f727
-      size: 1262
+      md5: 05d89bc040924045df3503e5acd9d572
+      size: 1265
     - path: logs_nature_dvc_plots/recall.json
-      md5: d88db296faa5c4e4f6cd8e199ddfd760
-      size: 938
+      md5: 3dbbc86b3114187172f89b7be17f7143
+      size: 936
     - path: logs_nature_dvc_plots/sensitivity_at_specificity.json
-      md5: 9d931970c21cfc15dc3366ab8694eea5
-      size: 1440
+      md5: dd5ffbb4de9ec855655efad839e2d1a1
+      size: 1438
     - path: logs_nature_dvc_plots/specificity_at_sensitivity.json
-      md5: 273b0f8bb3207e14943370f47126764b
-      size: 1439
+      md5: d407e3d33271aaa70c6aab7ebbc9c818
+      size: 1434
     - path: logs_nature_dvc_plots/val_auc.json
-      md5: 324475adffa15b6c8be1e131d5bf9801
-      size: 961
+      md5: ef8e2fce68b007cca5b686026a700264
+      size: 963
     - path: logs_nature_dvc_plots/val_binary_accuracy.json
-      md5: 37c5020b1bb4cc36fa77d98c574921bc
-      size: 1264
+      md5: af40a3114faf60514962a3fbb00de152
+      size: 1262
     - path: logs_nature_dvc_plots/val_cost_metric.json
-      md5: 34d54d4724861e5835faeebdb8eae8aa
-      size: 1213
+      md5: 9ad9db1b337743ee9919c2640a76b0f1
+      size: 1214
     - path: logs_nature_dvc_plots/val_loss.json
-      md5: aadd52d76cf72de4e179381d9c850f2c
+      md5: 473e4521bd26d618dfb74f9e41bc05e7
       size: 988
     - path: logs_nature_dvc_plots/val_precision.json
-      md5: d7dd826b119446f04739ac5fc1fd701a
+      md5: 66e623ff827039d3ffd099549a293962
       size: 1112
     - path: logs_nature_dvc_plots/val_precision_at_recall.json
-      md5: 7b6b07cd3ab0343c9e0fad01888948e8
-      size: 1364
+      md5: 323921090f69c086f189bc03807f93ad
+      size: 1363
     - path: logs_nature_dvc_plots/val_recall.json
-      md5: d9932863f9efd34d89be7ab2ff12cc92
-      size: 1038
+      md5: 216363b03a8be280a2ff4fc22e370c77
+      size: 1037
     - path: logs_nature_dvc_plots/val_sensitivity_at_specificity.json
-      md5: d6d7dd5a752c74d7cfe87605afb5ca0f
-      size: 1536
+      md5: 6d5e1f685f53a609ad518fc34dbd9b2a
+      size: 1539
     - path: logs_nature_dvc_plots/val_specificity_at_sensitivity.json
-      md5: e7ce8395d407dafe5684815fc4432d5c
+      md5: b1b9e8b74fa4ae75e85e82545e0e7820
       size: 1537
     - path: metrics/embedding/embedding_metrics_nature.json
-      md5: 2ca9e71e0d7657af7dc18b9f2f10b31d
-      size: 266
+      md5: 8e77218bbcb37fee96ef555cfcb1e9b0
+      size: 263
   keras_embedding_lemm:
     cmd: python src/keras_embedding.py --action lemm
     outs:
     - path: confusion_matrices/Confusion_matrix_embeddings_lemm.jpg
-      md5: d145ae8b75bbd6cc699a9283292f9ec1
-      size: 25774
+      md5: 2d98cbe068fdaf6fbcec624059c8511b
+      size: 27854
     - path: logs_lemm_dvc_plots/auc.json
-      md5: b26c77ef9511ae733c1b906477e0e5b7
-      size: 863
+      md5: 3c2d9e54c5856a10e2fa91dbd32f49b3
+      size: 864
     - path: logs_lemm_dvc_plots/binary_accuracy.json
-      md5: 5f005cfd3be74d7873bef25f92982101
+      md5: 0e4b2c11e08f53dcfd444929033c46e6
       size: 1164
     - path: logs_lemm_dvc_plots/cost_metric.json
-      md5: d8bceb019d32fb32ee647606a4c335b7
-      size: 1094
+      md5: 6d05303b99fd4897ceb32c092e7061c7
+      size: 1088
     - path: logs_lemm_dvc_plots/loss.json
-      md5: 3d7aa2ac078a50ee607191cbd1fc0be1
-      size: 890
+      md5: 2daa9249e19a8aaf04ba1ed73909bdb9
+      size: 886
     - path: logs_lemm_dvc_plots/precision.json
-      md5: 13d30c941518ef0dbda1d80585061f60
-      size: 1013
+      md5: fbfe7591938b803d04d4896f4482bfcc
+      size: 1011
     - path: logs_lemm_dvc_plots/precision_at_recall.json
-      md5: 270243f25d3b15da327b138e4f7fa280
-      size: 1261
+      md5: 87b1aeb07c46a2a93631ea5f34d2167b
+      size: 1264
     - path: logs_lemm_dvc_plots/recall.json
-      md5: f1e4e50bc7bcb5042ff6bbbfc74803aa
-      size: 934
+      md5: c4ab2484425568bb3329e4ab2bbb92f6
+      size: 937
     - path: logs_lemm_dvc_plots/sensitivity_at_specificity.json
-      md5: e2aed87dce368e8c5d8e6bb272d36f43
-      size: 1438
+      md5: 6fe38c5031136e870d372eba4c2ac0f2
+      size: 1435
     - path: logs_lemm_dvc_plots/specificity_at_sensitivity.json
-      md5: fbfddde8fb6182f2333a60ed416d553c
-      size: 1439
+      md5: 109c50412d290b9f569c404e48d8ef1c
+      size: 1438
     - path: logs_lemm_dvc_plots/val_auc.json
-      md5: 2a43b69fb87ca9f7db69c0e37a0c54d1
-      size: 963
+      md5: b2a1301c3cdc293e014843fdbca4eee1
+      size: 960
     - path: logs_lemm_dvc_plots/val_binary_accuracy.json
-      md5: 562ce8e65f1c111df5dd53a1f4a97adc
-      size: 1265
+      md5: d737d145c8cfa8b85b50d8f70586ec07
+      size: 1257
     - path: logs_lemm_dvc_plots/val_cost_metric.json
-      md5: b134b7fe6e32f82ee7bca75604a0772a
-      size: 1209
+      md5: 238bbdc1d0ffb93358f5614bc97e84b9
+      size: 1213
     - path: logs_lemm_dvc_plots/val_loss.json
-      md5: a5cd2af252d70305db774abe1b5dae09
-      size: 984
+      md5: 3ecc4372a586309a0e2010e7e27e40ca
+      size: 986
     - path: logs_lemm_dvc_plots/val_precision.json
-      md5: a9c033e526c26cf612fc141574a1145f
-      size: 1111
+      md5: d9c088eb98459a2a9fd52f9d6cda56ff
+      size: 1112
     - path: logs_lemm_dvc_plots/val_precision_at_recall.json
-      md5: 06af19e68d7ec51a9c27f3f8b3f44d17
-      size: 1360
+      md5: e2cb6b5e26fdf4a8721c02f828f7fcd9
+      size: 1363
     - path: logs_lemm_dvc_plots/val_recall.json
-      md5: 0d253737a70e0155b8f7c111c9e16ae1
-      size: 1039
+      md5: bd94d4eed66e6e1901e3eafd0ac50916
+      size: 1040
     - path: logs_lemm_dvc_plots/val_sensitivity_at_specificity.json
-      md5: a4940ae5b497619161d154a57837a3c3
-      size: 1539
+      md5: dec68a881e261c12d3e4b5abc213a11c
+      size: 1537
     - path: logs_lemm_dvc_plots/val_specificity_at_sensitivity.json
-      md5: eb18cea4317c09800f8ead7962586202
-      size: 1539
+      md5: 21c02c5e3ebd6dfa3c2f803d2648e532
+      size: 1537
     - path: metrics/embedding/embedding_metrics_lemm.json
-      md5: a3d6f5cbaaf61158bd454370c1664c71
-      size: 265
+      md5: b2ad585dd47a0f23677929626a6a89a4
+      size: 264
   keras_embedding_stem:
     cmd: python src/keras_embedding.py --action stem
     outs:
     - path: confusion_matrices/Confusion_matrix_embeddings_stem.jpg
-      md5: 81f0a897a7d735b458ea02c249282356
-      size: 26508
+      md5: d158dc6b8e1109e8c7ed2e9ac69d2d8e
+      size: 27980
     - path: logs_stem_dvc_plots/auc.json
-      md5: 4f65db4c26021110b5dcb64696bcf883
-      size: 864
+      md5: 9e93c9daf3b964f460e33c28692383c4
+      size: 863
     - path: logs_stem_dvc_plots/binary_accuracy.json
-      md5: 1aee5823545e84ea35f82b3230855405
-      size: 1162
+      md5: ee636a0474b3e39c02dbc7604349a76b
+      size: 1164
     - path: logs_stem_dvc_plots/cost_metric.json
-      md5: 8112ed295b73ab6e0735dd874f8b81ed
+      md5: 6af01a39603a7e18da9469ef8b6b5f92
       size: 1093
     - path: logs_stem_dvc_plots/loss.json
-      md5: 47245cf97a3f1b612ee93e4f3b982794
-      size: 890
+      md5: a454e608b0aff6569e366df2d93fd4c6
+      size: 886
     - path: logs_stem_dvc_plots/precision.json
-      md5: 1d770e3d474dfde323f501dfea0cb733
-      size: 1014
+      md5: 6d01d99fbb4594fd21812b4b42706758
+      size: 1010
     - path: logs_stem_dvc_plots/precision_at_recall.json
-      md5: fe96e9807a2ced118c6b7773595463e9
-      size: 1261
-    - path: logs_stem_dvc_plots/recall.json
-      md5: ba8752e875b5ab19c2d59c081df8a38a
-      size: 939
-    - path: logs_stem_dvc_plots/sensitivity_at_specificity.json
-      md5: de1c312216c32ddfed437a31b9c67491
-      size: 1439
-    - path: logs_stem_dvc_plots/specificity_at_sensitivity.json
-      md5: a0527678ea8413e8788620a8761460e1
-      size: 1439
-    - path: logs_stem_dvc_plots/val_auc.json
-      md5: 35c84e093582d51f49337f6c30732ed4
-      size: 963
-    - path: logs_stem_dvc_plots/val_binary_accuracy.json
-      md5: 348e3f6d9b409ffef559c0abe2fb097e
+      md5: 52b01bb34a7ddbf144985e5297c03b47
       size: 1265
+    - path: logs_stem_dvc_plots/recall.json
+      md5: 656596355a2c70bc2cddf500247a505f
+      size: 938
+    - path: logs_stem_dvc_plots/sensitivity_at_specificity.json
+      md5: 439e4a16af4f14fedd85f35504582ca4
+      size: 1440
+    - path: logs_stem_dvc_plots/specificity_at_sensitivity.json
+      md5: aa5fde3ed59f45cd16c3c356704f3824
+      size: 1437
+    - path: logs_stem_dvc_plots/val_auc.json
+      md5: a509eb038804436aa88d1c60c7455024
+      size: 960
+    - path: logs_stem_dvc_plots/val_binary_accuracy.json
+      md5: 57d0b57733f7a1a09b4edc40509c5360
+      size: 1259
     - path: logs_stem_dvc_plots/val_cost_metric.json
-      md5: cb0a4730c56a7ae61a873370ec79cfce
-      size: 1213
+      md5: 395e65cacc9c8088101fff78c6e4bb55
+      size: 1214
     - path: logs_stem_dvc_plots/val_loss.json
-      md5: 610df9d16f05b4ed5dd41388bc0ad66c
-      size: 987
+      md5: 6712ba0a79ef32d5859e9bab032f81c1
+      size: 988
     - path: logs_stem_dvc_plots/val_precision.json
-      md5: fe9dc24f4ceb63d355107db22a7d3b56
-      size: 1112
+      md5: ec835bf9bdb28b7824207b67f4904e66
+      size: 1107
     - path: logs_stem_dvc_plots/val_precision_at_recall.json
-      md5: e5f149df1bbc31dfa888feaccbf0e308
-      size: 1361
+      md5: 7d1ce6e7d82bf10ad33c761e2ef4dd48
+      size: 1362
     - path: logs_stem_dvc_plots/val_recall.json
-      md5: bd3eced2face320a0515453b5e3a404d
-      size: 1037
+      md5: 25171f970fd6d5f73d22c409becc5ee7
+      size: 1036
     - path: logs_stem_dvc_plots/val_sensitivity_at_specificity.json
-      md5: f9188b95d4e012708f58553d2535386c
-      size: 1538
+      md5: 87685a46743aa4a2684e96762d864296
+      size: 1537
     - path: logs_stem_dvc_plots/val_specificity_at_sensitivity.json
-      md5: bc54c15af9159db6467fd94bfcd01b88
-      size: 1538
+      md5: 508dc3d8b00da4aabbfd1ea76fd47e52
+      size: 1536
     - path: metrics/embedding/embedding_metrics_stem.json
-      md5: 6a14d8ee3cc30a3edf22ec25a7ec06f0
-      size: 266
+      md5: f237a4ee997accf4cf2ac42306c2308a
+      size: 265
   keras_w2v:
     cmd: python src/keras_word2vec.py --action nature
     outs:
     - path: confusion_matrices/Confusion_matrix_w2v_nature.jpg
-      md5: ec8dd17c1ca02696cd8962c0b1555312
-      size: 27352
+      md5: 4d4fc5a5b8e7de5d921900747ae87e41
+      size: 28266
     - path: metrics/w2v/w2v_metrics_nature.json
       md5: a053bb9ddcb1867051022f7cf02f6b4f
       size: 183
     - path: w2v_logs_nature_dvc_plots/auc.json
-      md5: f7ed06707e4fe43d66d8117da520d5ec
-      size: 860
+      md5: 118697913e66aa8f71692dade4a868ce
+      size: 861
     - path: w2v_logs_nature_dvc_plots/binary_accuracy.json
-      md5: 02eaf18def211d38022939716921183c
-      size: 1161
+      md5: 79e2f2bf786e78782a56171136ef0e54
+      size: 1164
     - path: w2v_logs_nature_dvc_plots/cost_metric.json
-      md5: 4f5cec853fa69b03c7a926d7e014c4f0
-      size: 1118
+      md5: 0c9881ba23b1dc7b9f57f439cb4941bd
+      size: 1113
     - path: w2v_logs_nature_dvc_plots/loss.json
-      md5: 92f9f7531d1fd1a00703cff651ad40f3
+      md5: a4501b5475f068fd843bbd2e2067c6d2
       size: 887
     - path: w2v_logs_nature_dvc_plots/precision.json
-      md5: e0dd4720a2ebb3d242a62af3d42221b5
-      size: 1011
+      md5: 50e6be276dd21de79b2a95abbdcc3170
+      size: 1014
     - path: w2v_logs_nature_dvc_plots/precision_at_recall.json
-      md5: 8aa8d8a452792c726cea1f7867294c46
-      size: 1262
+      md5: 0ed37c57771cc08faec57a784718141e
+      size: 1261
     - path: w2v_logs_nature_dvc_plots/recall.json
-      md5: c8aaf5e7f459decbe9164a35521176ce
-      size: 936
+      md5: 4fc555997256cca51361a70b61200a97
+      size: 939
     - path: w2v_logs_nature_dvc_plots/sensitivity_at_specificity.json
-      md5: e3c3fb15b9c13a737a06452a98bea771
-      size: 1440
+      md5: 8e46b14f5203e1598e7e4fa8aa6259a2
+      size: 1437
     - path: w2v_logs_nature_dvc_plots/specificity_at_sensitivity.json
-      md5: aef5c98fe67c6dacfbdd1bd4736ed3bb
-      size: 1440
+      md5: d2e66dbeeb87b8a7a565dbfb314f0684
+      size: 1437
     - path: w2v_logs_nature_dvc_plots/val_auc.json
-      md5: 21d755b98ca7a62057c45d0d5c455265
-      size: 963
+      md5: 0ff292be40d4542f9834936adafa271e
+      size: 964
     - path: w2v_logs_nature_dvc_plots/val_binary_accuracy.json
-      md5: 45ccdef5fd2a6f2ea5bfbae6e1476ebf
-      size: 1265
+      md5: bf1987a9a4876ab6d469e56ef662a48d
+      size: 1263
     - path: w2v_logs_nature_dvc_plots/val_cost_metric.json
-      md5: af8ee9a0d61e9e74d7133748ff0f4407
-      size: 1238
+      md5: 7ed43ed6bdc72f36b6f30cf09a2c0d9a
+      size: 1235
     - path: w2v_logs_nature_dvc_plots/val_loss.json
-      md5: 0169e7465203d2668d246b2848a8885a
-      size: 986
+      md5: 47549c09bdca0b99330a39e5ffb46d18
+      size: 989
     - path: w2v_logs_nature_dvc_plots/val_precision.json
-      md5: 3ec8f63c9dd28a6969f5e52ea5bd3f95
-      size: 1115
+      md5: 7fdbb80670fb6652ebcdd0336b090870
+      size: 1113
     - path: w2v_logs_nature_dvc_plots/val_precision_at_recall.json
-      md5: 1bc10c783b6b0e65e36d9f9085581e76
-      size: 1365
+      md5: aa0732f81eb08c5b977c996015e7e0c0
+      size: 1359
     - path: w2v_logs_nature_dvc_plots/val_recall.json
-      md5: c0c25f23b88f64ddb400035cabfa9537
-      size: 1040
+      md5: 0490db1d1a68ad71b71878ddacb5f84b
+      size: 1038
     - path: w2v_logs_nature_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 6b81eb9cad5fa6fa891adaf49fd54528
-      size: 1539
+      md5: cfec925026e05809e3684e5f810d61e0
+      size: 1538
     - path: w2v_logs_nature_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 3cf6093b1a422a6012f555969c3eaddf
-      size: 1539
+      md5: ceaef066b8470398fdfd7699270f6640
+      size: 1538
   keras_w2v_lemm:
     cmd: python src/keras_word2vec.py --action lemm
     outs:
     - path: confusion_matrices/Confusion_matrix_w2v_lemm.jpg
-      md5: 0030ee5d11866e267a76c498f2d17390
-      size: 27056
+      md5: a32dae1bcd14bbeee831a9fa616efeda
+      size: 27324
     - path: metrics/w2v/w2v_metrics_lemm.json
       md5: a053bb9ddcb1867051022f7cf02f6b4f
       size: 183
     - path: w2v_logs_lemm_dvc_plots/auc.json
-      md5: 39093f808f74dc0598357aa53102b1b7
-      size: 863
+      md5: 3d03821dbe1f7093fd59a3deb47ca5ca
+      size: 865
     - path: w2v_logs_lemm_dvc_plots/binary_accuracy.json
-      md5: f82f6c28fccff42b8f8d3ad125c4eb9d
-      size: 1160
+      md5: f77f61880d321b579c78aaab2a7b269f
+      size: 1162
     - path: w2v_logs_lemm_dvc_plots/cost_metric.json
-      md5: 6994c23afee667a4125a0d3dd06cefc0
+      md5: 3a08256f6b4ad1e742c2a3935e111aba
       size: 1140
     - path: w2v_logs_lemm_dvc_plots/loss.json
-      md5: 890b6347cd775062be19c43d8508bf37
-      size: 885
+      md5: e37af62396e9a8f5a2e5be8b0e6d85e7
+      size: 886
     - path: w2v_logs_lemm_dvc_plots/precision.json
-      md5: b023b4ec74c5adeb19bdeee120bbfe93
-      size: 1010
+      md5: 1031e9cd25bec95ff5402edd62565cb7
+      size: 1014
     - path: w2v_logs_lemm_dvc_plots/precision_at_recall.json
-      md5: 494887b3a917826e03215ee7c2904438
-      size: 1260
-    - path: w2v_logs_lemm_dvc_plots/recall.json
-      md5: 357c76fa7131d0ffe1716100d8e70763
-      size: 935
-    - path: w2v_logs_lemm_dvc_plots/sensitivity_at_specificity.json
-      md5: f633328f96edbecb0dd656ec065a60d6
-      size: 1439
-    - path: w2v_logs_lemm_dvc_plots/specificity_at_sensitivity.json
-      md5: f340d12a4b0cfadbde4bfbd8574f66be
-      size: 1439
-    - path: w2v_logs_lemm_dvc_plots/val_auc.json
-      md5: 49307a480521853c358a878182dab46c
-      size: 964
-    - path: w2v_logs_lemm_dvc_plots/val_binary_accuracy.json
-      md5: 10805fa490dd815cdfac08b9cc7d88d3
+      md5: b280d5c14e18836bde6597c5520e2820
       size: 1264
+    - path: w2v_logs_lemm_dvc_plots/recall.json
+      md5: 0eab87b742b8fc32b56ca73e5514661b
+      size: 939
+    - path: w2v_logs_lemm_dvc_plots/sensitivity_at_specificity.json
+      md5: 3a88cf210ae6546ffb442b093e013d9a
+      size: 1437
+    - path: w2v_logs_lemm_dvc_plots/specificity_at_sensitivity.json
+      md5: 4d9a7c0652a64c0d74b4e230dd40c0d0
+      size: 1437
+    - path: w2v_logs_lemm_dvc_plots/val_auc.json
+      md5: 270ba56eaa08c467e4ca6d94367d5765
+      size: 963
+    - path: w2v_logs_lemm_dvc_plots/val_binary_accuracy.json
+      md5: c4458ed693c15d2df2f88e5f507278e0
+      size: 1263
     - path: w2v_logs_lemm_dvc_plots/val_cost_metric.json
-      md5: 57da9018244730ed242aa1f1513fb41b
-      size: 1237
+      md5: 1d15b4eb60b7a525d939435bb91a75d8
+      size: 1240
     - path: w2v_logs_lemm_dvc_plots/val_loss.json
-      md5: 9a98f7675df395ea16f54db6a60248a9
-      size: 989
+      md5: 4c6bcc64f8be61e5e7e1c73c50637598
+      size: 986
     - path: w2v_logs_lemm_dvc_plots/val_precision.json
-      md5: 84724f34f39bf765cbe9d581313c5892
-      size: 1114
+      md5: 0137b55cbddcb8e3ecdd7a85b70c80bd
+      size: 1113
     - path: w2v_logs_lemm_dvc_plots/val_precision_at_recall.json
-      md5: b642b20304566a0200ebbad10e86d6c1
-      size: 1362
+      md5: d2b16b795800fbb2c8ef976ed91a997b
+      size: 1363
     - path: w2v_logs_lemm_dvc_plots/val_recall.json
-      md5: 1453e1c773a8d7c50250e64cc9f5f036
-      size: 1039
+      md5: 13171113c51b5ec0a94c8b5cde686a3f
+      size: 1038
     - path: w2v_logs_lemm_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 0dafc6b6bfb25e380ec4f7686787fc5a
-      size: 1536
+      md5: 900be7cb62dc19b85966298a909255d3
+      size: 1540
     - path: w2v_logs_lemm_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 3b4449b22c376eb74c5a23874fba0ed6
-      size: 1536
+      md5: da5aa27d0c6a265f2cdf1c7b1234de97
+      size: 1540
   keras_w2v_stem:
     cmd: python src/keras_word2vec.py --action stem
     outs:
     - path: confusion_matrices/Confusion_matrix_w2v_stem.jpg
-      md5: 976845884493452b82ffc66e55614efa
-      size: 27050
+      md5: 1e8e2fe55fd1adea5c86f609d8d1d502
+      size: 27232
     - path: metrics/w2v/w2v_metrics_stem.json
       md5: a053bb9ddcb1867051022f7cf02f6b4f
       size: 183
     - path: w2v_logs_stem_dvc_plots/auc.json
-      md5: dbd800a55b1d314f1d169ce257a1dd7e
-      size: 861
+      md5: 010a54f0b51ba52f0488fe7410ba545b
+      size: 860
     - path: w2v_logs_stem_dvc_plots/binary_accuracy.json
-      md5: ee6cada85023c14ced3183b02a5c0889
-      size: 1163
+      md5: b137e36b908f1df58b4f0e8b5dc0f63e
+      size: 1161
     - path: w2v_logs_stem_dvc_plots/cost_metric.json
-      md5: abd3f66d3f8604ce82c2cb4a9285b100
-      size: 1140
+      md5: c55e317c0de2b5ae8b54d148458dbd3b
+      size: 1137
     - path: w2v_logs_stem_dvc_plots/loss.json
-      md5: 81e491d2082efb2ae1736b9990e5c4a3
-      size: 889
+      md5: 3bc398636c4170d6fab7f4838b20240c
+      size: 886
     - path: w2v_logs_stem_dvc_plots/precision.json
-      md5: c33e5ad0146ca0e97e472dd99b973ea5
-      size: 1013
+      md5: a0c3d4458a64fca48b2d612720bd9f0c
+      size: 1011
     - path: w2v_logs_stem_dvc_plots/precision_at_recall.json
-      md5: 3afcc029279ab2343c2285b96c8d6a1d
-      size: 1261
+      md5: 25678df2a96d8299ef335023a6427199
+      size: 1263
     - path: w2v_logs_stem_dvc_plots/recall.json
-      md5: d9bdec250b89b6468807d7a5487b567b
-      size: 938
+      md5: 801e66b15ff8c1944cae6fed2e03b196
+      size: 936
     - path: w2v_logs_stem_dvc_plots/sensitivity_at_specificity.json
-      md5: 8433a13fa710c57cfc197b61c84db335
-      size: 1440
+      md5: d2758bbd3ec414729c19d48f6afb0e1f
+      size: 1439
     - path: w2v_logs_stem_dvc_plots/specificity_at_sensitivity.json
-      md5: e59aec6ee646e06348a831bcc9c52252
-      size: 1440
+      md5: b88789df41ed47e59a5097dfa35d6d03
+      size: 1439
     - path: w2v_logs_stem_dvc_plots/val_auc.json
-      md5: 09d3f7d2708789b119e3792c7f3036f4
+      md5: 939cceaaecb750d942edfd3c16bd174a
       size: 962
     - path: w2v_logs_stem_dvc_plots/val_binary_accuracy.json
-      md5: af5771706d2fac6bcc353f847690e561
-      size: 1261
+      md5: 35ccc2e6ea24f7f0354fe807e52895e7
+      size: 1263
     - path: w2v_logs_stem_dvc_plots/val_cost_metric.json
-      md5: 8468bf1c9ca756dbeef86aa432c040ae
-      size: 1238
+      md5: 20a176811dcdd6ded91448fc2f89dfc0
+      size: 1240
     - path: w2v_logs_stem_dvc_plots/val_loss.json
-      md5: 775480a9f0bb934b48f72c0e5ad27120
-      size: 988
+      md5: d360abef97c1b1abc9dfa6ed6a1eb093
+      size: 984
     - path: w2v_logs_stem_dvc_plots/val_precision.json
-      md5: 12b0bab672cde7fc8c166aef7fd36f8d
-      size: 1111
+      md5: 5b1f4c06324da9c08f16bd6f81de1d9f
+      size: 1113
     - path: w2v_logs_stem_dvc_plots/val_precision_at_recall.json
-      md5: 179f3142bfd4cb069cd0d3bc2ea89152
-      size: 1361
+      md5: 9ff4378d695af9b48ed10957922afc45
+      size: 1362
     - path: w2v_logs_stem_dvc_plots/val_recall.json
-      md5: b352fc108eab6c08eb568ceb27ec7e60
-      size: 1036
+      md5: ba7fdf35b88dcb041f72511acf7ccc47
+      size: 1038
     - path: w2v_logs_stem_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 18ddc65794ff0ab41510a1948b49d474
-      size: 1537
+      md5: 2f2b3c3be316adbb9d517e952c50526c
+      size: 1539
     - path: w2v_logs_stem_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 45363846f6e4e2dccc13faf98d6321c1
-      size: 1537
+      md5: a7086cb433e1417746ad1c630a148bd7
+      size: 1539
   keras_w2v_lstm:
     cmd: python src/keras_w2v_lstm.py --action nature
     outs:
     - path: confusion_matrices/Confusion_matrix_w2v_lstm_nature.jpg
-      md5: f0db129b58bf8cb8676ba3b4155012a9
-      size: 25548
+      md5: f0c1d08a254708492b281188eb6cc6a4
+      size: 28173
     - path: metrics/w2v_lstm/w2v_lstm_metrics_nature.json
       md5: a053bb9ddcb1867051022f7cf02f6b4f
       size: 183
     - path: w2v_lstm_logs_nature_dvc_plots/auc.json
-      md5: b56a7b213ebc3296c0184b6f221fce53
+      md5: 3ecda0f6c4e38406349884f789c50cff
       size: 863
     - path: w2v_lstm_logs_nature_dvc_plots/binary_accuracy.json
-      md5: 82322dbe501415ed3ae09c3af83f60cf
-      size: 1165
+      md5: 6589e94d1417d4a51bbb215e9c0b0960
+      size: 1162
     - path: w2v_lstm_logs_nature_dvc_plots/cost_metric.json
-      md5: 8b11bd97ceb3e31070ea02505ad0bce1
-      size: 1108
+      md5: 36741d5a355484a9fc602f0937317351
+      size: 1112
     - path: w2v_lstm_logs_nature_dvc_plots/loss.json
-      md5: ab3031369b79baa087d94892249111ce
+      md5: 2dab001a93a12b1b5ae11f2ad02d9b0f
       size: 887
     - path: w2v_lstm_logs_nature_dvc_plots/precision.json
-      md5: 544e7e82beea02aaa7628eb011f95fd8
-      size: 1015
+      md5: a7a8c98cd3aa602b40a28eb1a2bc8b4d
+      size: 1013
     - path: w2v_lstm_logs_nature_dvc_plots/precision_at_recall.json
-      md5: b789fe57273d6e0a0d2a37e559c75a30
-      size: 1262
+      md5: e441153069143a88f0c2ff828f488cf9
+      size: 1264
     - path: w2v_lstm_logs_nature_dvc_plots/recall.json
-      md5: f09d6447c93790a4bd97fc14c6466d29
-      size: 940
+      md5: 2fc11fe7bc81c15e987f23a3a2d232ea
+      size: 937
     - path: w2v_lstm_logs_nature_dvc_plots/sensitivity_at_specificity.json
-      md5: 36515cbfb70373161f460d414ab42904
-      size: 1437
+      md5: 69462f2394ee52e8c3b4e082ad820754
+      size: 1439
     - path: w2v_lstm_logs_nature_dvc_plots/specificity_at_sensitivity.json
-      md5: bee600913d3ec70c425f5713721f31c6
-      size: 1437
+      md5: 6087ab5533fc3ad4d0828ce8e1419317
+      size: 1439
     - path: w2v_lstm_logs_nature_dvc_plots/val_auc.json
-      md5: bfc9cf6fb0d50421e35391fa04935cae
+      md5: cbd1796806336921ed0795a45f7aca13
       size: 964
     - path: w2v_lstm_logs_nature_dvc_plots/val_binary_accuracy.json
-      md5: 8656a1733aab2d4b642b8292c9cbe4c2
-      size: 1264
+      md5: a2dc927fe6fd0a2adc5abd803d787b98
+      size: 1263
     - path: w2v_lstm_logs_nature_dvc_plots/val_cost_metric.json
-      md5: dcbd870ce9826fd986fcf5f63ed369d3
+      md5: be77205355e61171f4c0bdaec9dafda0
       size: 1212
     - path: w2v_lstm_logs_nature_dvc_plots/val_loss.json
-      md5: 81b2b545ebad4c0a08fa70a77a4a7e58
-      size: 990
+      md5: 58afd85499193947d7dfb00fc6a4ad9a
+      size: 987
     - path: w2v_lstm_logs_nature_dvc_plots/val_precision.json
-      md5: f8fff77f358ac9dc2fa5d48cc7fb4a33
-      size: 1114
+      md5: 0f6cd8c2c21be4a9ae91c6fc5e5d1568
+      size: 1113
     - path: w2v_lstm_logs_nature_dvc_plots/val_precision_at_recall.json
-      md5: 5fe5187995af24b68a2cc7a801157260
-      size: 1364
+      md5: c28b28486da1c54d6273102df239df95
+      size: 1361
     - path: w2v_lstm_logs_nature_dvc_plots/val_recall.json
-      md5: d0c9dc3225e9bda2e1f904ce1ec5ff09
-      size: 1039
+      md5: 1ab77e39ad8a4bec571e36bb60a1447d
+      size: 1038
     - path: w2v_lstm_logs_nature_dvc_plots/val_sensitivity_at_specificity.json
-      md5: f7162a10318490c809f13caea2ac68b7
-      size: 1538
+      md5: 1e723d7f85dc45094fdd9de5184a66d1
+      size: 1536
     - path: w2v_lstm_logs_nature_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 4bab58ce54ea4bc479d3298cf40a3114
-      size: 1538
+      md5: d522f7435ac8e606b5854ce3851f0e5e
+      size: 1536
   keras_w2v_lstm_lemm:
     cmd: python src/keras_w2v_lstm.py --action lemm
     outs:
     - path: confusion_matrices/Confusion_matrix_w2v_lstm_lemm.jpg
-      md5: 93c8090fe9d9ed7b30522c60f2f38394
-      size: 25608
+      md5: faeea999ceab85e555d9e49b09aa75b8
+      size: 26746
     - path: metrics/w2v_lstm/w2v_lstm_metrics_lemm.json
       md5: a053bb9ddcb1867051022f7cf02f6b4f
       size: 183
     - path: w2v_lstm_logs_lemm_dvc_plots/auc.json
-      md5: 9854c01493b8c8513e09d9588712b2ef
-      size: 862
+      md5: fc2bc55c6c27a668863ba3fbdba8eddf
+      size: 864
     - path: w2v_lstm_logs_lemm_dvc_plots/binary_accuracy.json
-      md5: e671e45c9622a15ad28c10efbee76ac6
-      size: 1161
+      md5: b93b53d832a36252ef6a51a3ea10494b
+      size: 1164
     - path: w2v_lstm_logs_lemm_dvc_plots/cost_metric.json
-      md5: 4bd7c077bd3910db1e757d8119c91572
-      size: 1112
+      md5: dfacec2239e1a83b3a6a9b3121047b5f
+      size: 1111
     - path: w2v_lstm_logs_lemm_dvc_plots/loss.json
-      md5: 52bcbc578d4c5a5b649b7f067372960f
-      size: 890
+      md5: 5be5d93ba73ade2e85c7207d5a558d7f
+      size: 888
     - path: w2v_lstm_logs_lemm_dvc_plots/precision.json
-      md5: cc46a5e7d9683c1815630d1355a1ceb0
-      size: 1012
+      md5: 1ab30dd0687beedc478ca9ff3592e54c
+      size: 1014
     - path: w2v_lstm_logs_lemm_dvc_plots/precision_at_recall.json
-      md5: fe77b56e045c4deac65b96b9431b8af8
-      size: 1263
-    - path: w2v_lstm_logs_lemm_dvc_plots/recall.json
-      md5: f2a45305e3397a6831d23ac8f3554025
-      size: 937
-    - path: w2v_lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.json
-      md5: 9b84b5938d272346ea8211f0583c3d2c
-      size: 1436
-    - path: w2v_lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.json
-      md5: 57e81fd5d76f390fd4e8ccccfaa77874
-      size: 1436
-    - path: w2v_lstm_logs_lemm_dvc_plots/val_auc.json
-      md5: 2b6822dda39fc4d3bc89af6183931d14
-      size: 962
-    - path: w2v_lstm_logs_lemm_dvc_plots/val_binary_accuracy.json
-      md5: dd353b38457e808136664749c79adc12
+      md5: 03a59b090b636757987636ce745b92cf
       size: 1264
+    - path: w2v_lstm_logs_lemm_dvc_plots/recall.json
+      md5: 49fef0928c3144c4dae25f05bb70a3b7
+      size: 939
+    - path: w2v_lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.json
+      md5: fcfccc1fde3abc688c00b0f62155e5f0
+      size: 1438
+    - path: w2v_lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.json
+      md5: e29b22fcfb7e558ed01c721de6b5e854
+      size: 1438
+    - path: w2v_lstm_logs_lemm_dvc_plots/val_auc.json
+      md5: 9e2fe41abe15d742774d16672f8f0dd0
+      size: 963
+    - path: w2v_lstm_logs_lemm_dvc_plots/val_binary_accuracy.json
+      md5: c4524ac146d4cc040cbe9e5a2c3b3218
+      size: 1265
     - path: w2v_lstm_logs_lemm_dvc_plots/val_cost_metric.json
-      md5: f6032b46ae3724d9a065dc7473d3db49
-      size: 1208
+      md5: 420984707af0f9e09c0f9eed8de859e2
+      size: 1212
     - path: w2v_lstm_logs_lemm_dvc_plots/val_loss.json
-      md5: a84cf3fb6871674f79bcc3367126402f
-      size: 987
+      md5: a26172852ecaecddbc017a0b69db8f97
+      size: 989
     - path: w2v_lstm_logs_lemm_dvc_plots/val_precision.json
-      md5: 359dc7b58a4f42577201e534cf5dc5f6
-      size: 1114
+      md5: 7433d4ef9cec81a72ae57e2ec6f0c01e
+      size: 1115
     - path: w2v_lstm_logs_lemm_dvc_plots/val_precision_at_recall.json
-      md5: 72fe3f529aff742edbf00aae9bccc67d
-      size: 1363
+      md5: 5715402fab63424b1ad818430fa6df9a
+      size: 1362
     - path: w2v_lstm_logs_lemm_dvc_plots/val_recall.json
-      md5: 7a508b40b07d4f184ef5419bd3a8a973
-      size: 1039
+      md5: 3fe554ed3c66660d345f8953ea3c5901
+      size: 1040
     - path: w2v_lstm_logs_lemm_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 1e2a7f16c391170d05152d1643448669
-      size: 1540
+      md5: 9f7761937058d4ef955e0fb8a3756990
+      size: 1537
     - path: w2v_lstm_logs_lemm_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 5a1941e84b6c5396f743294d09c2e3ff
-      size: 1540
+      md5: d2c6c650a6021b6f13ed969d480410d3
+      size: 1537
   keras_w2v_lstm_stem:
     cmd: python src/keras_w2v_lstm.py --action stem
     outs:
     - path: confusion_matrices/Confusion_matrix_w2v_lstm_stem.jpg
-      md5: 5994a96b11b98b636bc55b2836ce9e5e
-      size: 24358
+      md5: de9641e3a7652db09941d4f056e05729
+      size: 27717
     - path: metrics/w2v_lstm/w2v_lstm_metrics_stem.json
       md5: a053bb9ddcb1867051022f7cf02f6b4f
       size: 183
     - path: w2v_lstm_logs_stem_dvc_plots/auc.json
-      md5: 096c01fb0e4b60e2ef4b1f5c63018993
-      size: 863
+      md5: c68f783e6d762d5da33f6764771b9814
+      size: 865
     - path: w2v_lstm_logs_stem_dvc_plots/binary_accuracy.json
-      md5: 4b2707059e9c8fa1697dd9e6e279231e
-      size: 1160
+      md5: 3d6e9ce39f201e5edfb47729448d7cb5
+      size: 1162
     - path: w2v_lstm_logs_stem_dvc_plots/cost_metric.json
-      md5: c1f16af4abc3f23f342b8c8b575089fb
-      size: 1110
+      md5: e49539907f8ca88005a17b10b6b0b318
+      size: 1114
     - path: w2v_lstm_logs_stem_dvc_plots/loss.json
-      md5: f7903fc68e8cee9da2984eed7b05a858
-      size: 889
+      md5: 358b43eab0647bfcdff12f693d594a0f
+      size: 888
     - path: w2v_lstm_logs_stem_dvc_plots/precision.json
-      md5: a5f1191564d192f55ee669eaa6da5f3a
-      size: 1010
+      md5: c5b7c30115f0cb6c32314561ca66cc5c
+      size: 1012
     - path: w2v_lstm_logs_stem_dvc_plots/precision_at_recall.json
-      md5: d70014d9dee10a38729551d8a70621c6
-      size: 1262
+      md5: 90019017ca33f066a27f7a37ae9a7775
+      size: 1265
     - path: w2v_lstm_logs_stem_dvc_plots/recall.json
-      md5: 47772b4e65777bb9997b76d1d0436cb1
-      size: 935
+      md5: 675762b350e04a962f115304f6fd390f
+      size: 937
     - path: w2v_lstm_logs_stem_dvc_plots/sensitivity_at_specificity.json
-      md5: f01232f019b33725f7144a18afe59e12
-      size: 1434
+      md5: 94371f1d3ca6b23bbb5a9ec4e80ae516
+      size: 1437
     - path: w2v_lstm_logs_stem_dvc_plots/specificity_at_sensitivity.json
-      md5: 21b844cf6966077e3fd551ea6d004126
-      size: 1434
+      md5: ca028a128b41e1a324786f3dd7df7a95
+      size: 1437
     - path: w2v_lstm_logs_stem_dvc_plots/val_auc.json
-      md5: 2163e45b4c516f38670f52b5de0b279a
-      size: 962
+      md5: 361cfab01e457899e3ae15e4bc0cf7fa
+      size: 959
     - path: w2v_lstm_logs_stem_dvc_plots/val_binary_accuracy.json
-      md5: 113603845ea3a76e1b3656f91f4daf4c
-      size: 1260
+      md5: dbd3b9529994f4cfeea705cb10c7f4ae
+      size: 1263
     - path: w2v_lstm_logs_stem_dvc_plots/val_cost_metric.json
-      md5: 48ef4d65d222bf8d8323eb5f27b2b3cd
-      size: 1213
+      md5: e149ca0650df111aabfbc01a33c5aa21
+      size: 1212
     - path: w2v_lstm_logs_stem_dvc_plots/val_loss.json
-      md5: 0f403f096d416b88ee7b6e48b3557a5f
-      size: 989
+      md5: fa867ce9a85dbc7a5fb16a767eb84275
+      size: 986
     - path: w2v_lstm_logs_stem_dvc_plots/val_precision.json
-      md5: a18c6b8e28273d8df8e93b06b6040f3e
-      size: 1110
+      md5: 7f50940eae3b689730b7ec26d07f36c5
+      size: 1113
     - path: w2v_lstm_logs_stem_dvc_plots/val_precision_at_recall.json
-      md5: 45a083b64560a50f68f80217163511fe
-      size: 1363
+      md5: 2554fc4ccd57af0c796d58683ed01750
+      size: 1364
     - path: w2v_lstm_logs_stem_dvc_plots/val_recall.json
-      md5: d51800325ce4ad0cedb7a2265d012913
-      size: 1035
+      md5: 9569719190df7243807bbe61fe0cf509
+      size: 1038
     - path: w2v_lstm_logs_stem_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 6b020ebddf4631855acc97be94b16d38
-      size: 1537
+      md5: 1f3cdc401be940a5c12cac9d8df5968b
+      size: 1538
     - path: w2v_lstm_logs_stem_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 38a5fd5f2557c2e8a5ca0db8a2ec0a73
-      size: 1537
+      md5: fdc55380ab84574314ea012f84938488
+      size: 1538
   keras_glove:
     cmd: python src/keras_glove.py --action nature
     outs:
+    - path: confusion_matrices/Confusion_matrix_glove_nature.jpg
+      md5: 1f0024b1c0e536ce754a540d7d1797a6
+      size: 27151
     - path: glove_logs_nature_dvc_plots/auc.json
-      md5: d6f647523d0f950e05d6a7c86edf65d2
-      size: 861
+      md5: acfab19f1759f8cbdbdba8f5bf35e0b7
+      size: 862
     - path: glove_logs_nature_dvc_plots/binary_accuracy.json
-      md5: a7c8ba0a73fb6c8953f3af207dcb6201
-      size: 1163
+      md5: 7a5c833bf2b44012624f6b005dfa5b8b
+      size: 1161
     - path: glove_logs_nature_dvc_plots/cost_metric.json
-      md5: 9ef52ddf8546cda343c4a0731f96fa29
-      size: 1112
+      md5: e6bc98f27adfaaf16285c98f87d4cea3
+      size: 1110
     - path: glove_logs_nature_dvc_plots/loss.json
-      md5: a633d8d07c315e0a3145900bba8446d5
-      size: 884
+      md5: c3f83b2ea1560c7cfeba937738bc5f28
+      size: 887
     - path: glove_logs_nature_dvc_plots/precision.json
-      md5: 93d41328f245ee32cae72c84b1b765ef
-      size: 1014
+      md5: 53eb0465d4a769566f56ad99f149ca42
+      size: 1009
     - path: glove_logs_nature_dvc_plots/precision_at_recall.json
-      md5: 3b640c5a368bdb75d95652a67753b49f
-      size: 1262
+      md5: c6ffc576a025b9088cc0aec8c94aebd5
+      size: 1265
     - path: glove_logs_nature_dvc_plots/recall.json
-      md5: 3f5184a117fad71ff1c81eebd74f5c89
-      size: 939
+      md5: 01568a730235796d29d83ab8eaf03c6b
+      size: 938
     - path: glove_logs_nature_dvc_plots/sensitivity_at_specificity.json
-      md5: 607c12637188ef83e3273103985442f1
-      size: 1432
+      md5: e854f1e5c63a427755bcb86e3e61ca71
+      size: 1433
     - path: glove_logs_nature_dvc_plots/specificity_at_sensitivity.json
-      md5: b6936616148d8120d21ae07156db8556
-      size: 1437
+      md5: cee83c0c24b3212b8c7f0b914374ede9
+      size: 1438
     - path: glove_logs_nature_dvc_plots/val_auc.json
-      md5: b883df20752fbe8d46167107fe0e2f92
-      size: 964
+      md5: 864120cc7634efafef1a02e46e6144fe
+      size: 962
     - path: glove_logs_nature_dvc_plots/val_binary_accuracy.json
-      md5: f47dc765030283451e5b9f003bfdde49
-      size: 1258
+      md5: 207b75861b7a03095970bd47c4984257
+      size: 1262
     - path: glove_logs_nature_dvc_plots/val_cost_metric.json
-      md5: bf2ee142121c9313a4bcf7fe97b30b49
-      size: 1228
+      md5: 4ea34d41aecb12f881c771bc7544742a
+      size: 1226
     - path: glove_logs_nature_dvc_plots/val_loss.json
-      md5: 1a92aed7e60a2bcdd310394d57f5d765
+      md5: e90da0ef5e6a1ce6d0751d3aa1902ac6
       size: 987
     - path: glove_logs_nature_dvc_plots/val_precision.json
-      md5: 365b990e1fd24bfd51337bd3d4d4deac
-      size: 1114
+      md5: 6de3b3bc488316627b1f6cd7371b0139
+      size: 1112
     - path: glove_logs_nature_dvc_plots/val_precision_at_recall.json
-      md5: eccd9fe5daa15863fa0c840c79f0d666
-      size: 1359
+      md5: 030defa59eb52c7f2cb39f124a9d4135
+      size: 1364
     - path: glove_logs_nature_dvc_plots/val_recall.json
-      md5: 25a2e2d9ec7da1c92a66a60ef4e0dcc4
-      size: 1037
+      md5: cf5849fab0a79d1e351ddca492c2f043
+      size: 1039
     - path: glove_logs_nature_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 874a3a7171ce5a43f5d20280622098aa
-      size: 1536
+      md5: 4b99801a97b1a950c3f80c4aea17cca5
+      size: 1538
     - path: glove_logs_nature_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 58bc665025a30a0cade5e04aa13ce33b
-      size: 1536
+      md5: f3a88afa2ca0dc99c9da396e0a7ed201
+      size: 1535
     - path: metrics/glove/glove_metrics_nature.json
-      md5: 515ce59ca4a70a4ccf33f221164260ae
-      size: 265
+      md5: 40958fdb8d7b7be8222ddad571897906
+      size: 263
   multi_plots:
     cmd: python src/multi_plots.py
     outs:
@@ -1093,120 +1096,372 @@ stages:
   keras_glove_lemm:
     cmd: python src/keras_glove.py --action lemm
     outs:
+    - path: confusion_matrices/Confusion_matrix_glove_lemm.jpg
+      md5: 050790eca68d215eed8c9f7a7d932543
+      size: 26454
     - path: glove_logs_lemm_dvc_plots/auc.json
-      md5: ae30a210146b0c781bd134d48f2c76fd
+      md5: e7d46273dce1abdeb4342b4ffe1f92ae
       size: 861
     - path: glove_logs_lemm_dvc_plots/binary_accuracy.json
-      md5: 44bf22fdb933946bf8afb5d24676fe80
+      md5: f37f2a4d83e4855e4045a4481603a455
       size: 1164
     - path: glove_logs_lemm_dvc_plots/cost_metric.json
-      md5: 3a8639afb20bb0e8f2fefb59103aa587
-      size: 1114
+      md5: a030fed1a3f48f4995398e1082901ace
+      size: 1111
     - path: glove_logs_lemm_dvc_plots/loss.json
-      md5: ae480964f685ac037a454c50a00ed35d
-      size: 889
+      md5: 684f4570392309e7ca59fee606387de7
+      size: 888
     - path: glove_logs_lemm_dvc_plots/precision.json
-      md5: 06ea0ce1594598817800f69f60550959
-      size: 1011
+      md5: fefda37b417f7ae570309febf95253c9
+      size: 1013
     - path: glove_logs_lemm_dvc_plots/precision_at_recall.json
-      md5: 3728826aa3f81857e304d394a135106f
-      size: 1263
+      md5: 0da5769dac494464d3fb4427de3a7d06
+      size: 1261
     - path: glove_logs_lemm_dvc_plots/recall.json
-      md5: 362a457890d29d4f0ca02e1ef0345352
-      size: 940
+      md5: 19cb628981bac8e77fec0908c9b666e8
+      size: 935
     - path: glove_logs_lemm_dvc_plots/sensitivity_at_specificity.json
-      md5: 4cd89800de07d875581a28d0049c5609
-      size: 1439
+      md5: 4a5bdec0e656c5d6d804c1b12d7f3fd7
+      size: 1434
     - path: glove_logs_lemm_dvc_plots/specificity_at_sensitivity.json
-      md5: 7aa3a41383e9759037d8e0b66272161c
-      size: 1435
+      md5: 05b5005845fb0a1e3fe91068586ed23b
+      size: 1437
     - path: glove_logs_lemm_dvc_plots/val_auc.json
-      md5: 7a9ca2845a1fc665427fbad44d8f1ea4
+      md5: 77d3d7d3b1b3009fa826ff011d08b377
       size: 965
     - path: glove_logs_lemm_dvc_plots/val_binary_accuracy.json
-      md5: 452d968b383c7dee9dc8e16f777db9f8
-      size: 1263
+      md5: 2352e7524610b80fa64ec6dc4f718b68
+      size: 1258
     - path: glove_logs_lemm_dvc_plots/val_cost_metric.json
-      md5: 1dfe80b01bcec4e0fb0a9e29706caa58
-      size: 1222
+      md5: de3e4ba41bce5090f12755633ac4162b
+      size: 1226
     - path: glove_logs_lemm_dvc_plots/val_loss.json
-      md5: f65a24c1d265851eab91aae404382568
-      size: 988
+      md5: 1571dd4932def589e0ddc095247eed54
+      size: 987
     - path: glove_logs_lemm_dvc_plots/val_precision.json
-      md5: cbc5ec20c8c50b93a4e826a5b71780b5
+      md5: a52666313cbdc00a7954fff9eb1f888f
       size: 1114
     - path: glove_logs_lemm_dvc_plots/val_precision_at_recall.json
-      md5: e23c880d591f68830223405124aa95c0
-      size: 1363
+      md5: f4fd296f8d54019d365e15f02d363197
+      size: 1361
     - path: glove_logs_lemm_dvc_plots/val_recall.json
-      md5: ff0384c5c75667e0af86e9ee9b5d664e
-      size: 1036
+      md5: 583ef646699f13c0a9c5907422916ec0
+      size: 1038
     - path: glove_logs_lemm_dvc_plots/val_sensitivity_at_specificity.json
-      md5: de6130537295cd1e2f5055ce8bfb24fb
-      size: 1540
+      md5: 1bc40ed538f6fde0f5e886efd778f1df
+      size: 1537
     - path: glove_logs_lemm_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 706f0a44f9c33a7533972a4ef4f2043a
-      size: 1538
+      md5: b31eafee2dd198e04a03870def330b58
+      size: 1537
     - path: metrics/glove/glove_metrics_lemm.json
-      md5: 7874d57890864d7a53f2b6fd92c0bb2c
-      size: 265
+      md5: 22bcb59d2e2ea72680964584d7505b2e
+      size: 264
   keras_glove_stem:
     cmd: python src/keras_glove.py --action stem
     outs:
+    - path: confusion_matrices/Confusion_matrix_glove_stem.jpg
+      md5: 57fdcaf7ae9f49a3f45db2fea81886e6
+      size: 26563
     - path: glove_logs_stem_dvc_plots/auc.json
-      md5: ed943697b7cb0d168f769453a5d276b0
+      md5: 297a25f8d7a381c474ec083ab0186d6a
       size: 863
     - path: glove_logs_stem_dvc_plots/binary_accuracy.json
-      md5: 27b2c047e144116a2840e7471f9e8679
-      size: 1163
+      md5: 3fec85a859c5f4dc8619482d5a3b3a3e
+      size: 1164
     - path: glove_logs_stem_dvc_plots/cost_metric.json
-      md5: ec409efa1cb82f1d2bdbce6e8e633e71
-      size: 1116
+      md5: 2456c2bcf76fca5fa5b9b1b2808db09a
+      size: 1112
     - path: glove_logs_stem_dvc_plots/loss.json
-      md5: 4783b9339d38ef73fc42efe54db27490
-      size: 886
+      md5: 586bbaa432d0b059d2d997b539cdc2b2
+      size: 887
     - path: glove_logs_stem_dvc_plots/precision.json
-      md5: fc1772b113556dccc30ba0201c3e7bc7
-      size: 1014
+      md5: b2b757f63a5cd3fd6c5e2bdd7f28a753
+      size: 1013
     - path: glove_logs_stem_dvc_plots/precision_at_recall.json
-      md5: fd6c1597e994f2543df0a504eb8c9bf6
+      md5: 50d3d5c948c55b7ec3a1ecc7eee3b2e0
       size: 1264
     - path: glove_logs_stem_dvc_plots/recall.json
-      md5: 9d0b2ffb13873631b6974f2e78a50f21
-      size: 939
+      md5: 3f2098fbeda6b1c4e4dcd65cc881edb5
+      size: 938
     - path: glove_logs_stem_dvc_plots/sensitivity_at_specificity.json
-      md5: 343fa8a249e238c3fc1ad0a4f5904c67
-      size: 1439
+      md5: 7956d74fe0b5e516094a1f3cbd0d3c05
+      size: 1438
     - path: glove_logs_stem_dvc_plots/specificity_at_sensitivity.json
-      md5: 13957dc57b951c0b4dccda23864b46da
-      size: 1439
+      md5: c092ab419ad42fef10a4775bd08330ff
+      size: 1440
     - path: glove_logs_stem_dvc_plots/val_auc.json
-      md5: 4bfddddc97b113ddce53fbe6877ac1bc
-      size: 962
+      md5: f3c51f036bfabff715f931d0a7c66898
+      size: 963
     - path: glove_logs_stem_dvc_plots/val_binary_accuracy.json
-      md5: 3f1f8e97b85b5fb2188829a18a2954e8
-      size: 1261
+      md5: 7ee515f8e220dcfdba4896c1834ad711
+      size: 1264
     - path: glove_logs_stem_dvc_plots/val_cost_metric.json
-      md5: f4d9fce7e65ffb99100c2a83ed1d0c7c
-      size: 1220
+      md5: 0dec2cd812f5d8ecfa053169b1b5317b
+      size: 1223
     - path: glove_logs_stem_dvc_plots/val_loss.json
-      md5: c708a819d4a965c41a57131b18a36a8a
-      size: 987
+      md5: 9ff0bed726454fb8f653408a7ff6a817
+      size: 986
     - path: glove_logs_stem_dvc_plots/val_precision.json
-      md5: 2e66d527254ea20e5fbb7aeebab264fe
-      size: 1115
+      md5: e09c4f274c8bedc79506b78d91673e9b
+      size: 1112
     - path: glove_logs_stem_dvc_plots/val_precision_at_recall.json
-      md5: 120038d7206f6af0e4fc478d7fe8befb
-      size: 1363
+      md5: 9aa5d83884c6a1eeb22589258b8bc918
+      size: 1361
     - path: glove_logs_stem_dvc_plots/val_recall.json
-      md5: 296373bc49b627bc37b6180d2397d394
-      size: 1036
+      md5: 6bf8ab4afaecfc104b519faf9ec9796e
+      size: 1035
     - path: glove_logs_stem_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 07f3e21f385a318bc67f379a4cd3b576
-      size: 1539
+      md5: e9b097e690ffda2101a1805e6468e1f4
+      size: 1536
     - path: glove_logs_stem_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 989dd7e1eacdb96ef393e4886e99ac03
-      size: 1538
+      md5: 6a4a4f77f01cd4b12deeb7aec5725998
+      size: 1537
     - path: metrics/glove/glove_metrics_stem.json
-      md5: 8a5480147a028e1ffcb1d0f11275c36e
+      md5: f57526d36952e4d3f8084836a70c051a
+      size: 266
+  kerasbert_algorithm:
+    cmd: python src/kerasbert_algorithm.py --action nature
+    outs:
+    - path: bert_logs_nature_dvc_plots/binary_accuracy.json
+      md5: 1427a6dd4ff9409b350e1d33d3327c8e
+      size: 1162
+    - path: bert_logs_nature_dvc_plots/cost_metric.json
+      md5: 2a87190fba880fb1298863319cc3bc64
+      size: 1090
+    - path: bert_logs_nature_dvc_plots/loss.json
+      md5: f475b4d42930fbae2426f53562c1c3d6
+      size: 889
+    - path: bert_logs_nature_dvc_plots/val_binary_accuracy.json
+      md5: a3d7d0300cfbec275721589ed445b4ff
+      size: 1263
+    - path: bert_logs_nature_dvc_plots/val_cost_metric.json
+      md5: 8ebb642a120c2ad4fd0bac5e0d43a453
+      size: 1213
+    - path: bert_logs_nature_dvc_plots/val_loss.json
+      md5: 6bf4ec0e86ce6b261a1b3af98dc2b695
+      size: 985
+    - path: metrics/bert/bert_metrics_nature.json
+      md5: 7e589699cf1254b8d4104535054fb4d6
+      size: 80
+  keras_lstm:
+    cmd: python src/keras_lstm.py --action nature
+    outs:
+    - path: lstm_logs_nature_dvc_plots/auc.json
+      md5: e26c0f54ff346b5b2451e95a95e04e61
+      size: 863
+    - path: lstm_logs_nature_dvc_plots/binary_accuracy.json
+      md5: 56937255c6608619c8f6f7350066bab5
+      size: 1162
+    - path: lstm_logs_nature_dvc_plots/cost_metric.json
+      md5: d6a09ae97dded23ba63df8f9b350d707
+      size: 1106
+    - path: lstm_logs_nature_dvc_plots/loss.json
+      md5: c447a90d9b933f8c7f995f2f60885618
+      size: 884
+    - path: lstm_logs_nature_dvc_plots/precision.json
+      md5: c4f99cf743357163eb0d816797c7862a
+      size: 1011
+    - path: lstm_logs_nature_dvc_plots/precision_at_recall.json
+      md5: 6ca3c3e2702d8b615423f3b225620f86
+      size: 1263
+    - path: lstm_logs_nature_dvc_plots/recall.json
+      md5: c285513b2175f6f8a03c342a08a7a4f2
+      size: 935
+    - path: lstm_logs_nature_dvc_plots/sensitivity_at_specificity.json
+      md5: cbaebca7b5a743f05ee0c5d8071e2294
+      size: 1439
+    - path: lstm_logs_nature_dvc_plots/specificity_at_sensitivity.json
+      md5: 805d5aaf4c5a7790bc1dda793c957938
+      size: 1433
+    - path: lstm_logs_nature_dvc_plots/val_auc.json
+      md5: ad03e56b0a3a1fca5b0ddacc8bf64bf9
+      size: 963
+    - path: lstm_logs_nature_dvc_plots/val_binary_accuracy.json
+      md5: d83f69c9cc0f3d3e17c96e1250565c0f
+      size: 1261
+    - path: lstm_logs_nature_dvc_plots/val_cost_metric.json
+      md5: 2e0ff82a8b7df6b43275110b50d99ee6
+      size: 1214
+    - path: lstm_logs_nature_dvc_plots/val_loss.json
+      md5: d457afebc1d23e5fb328327d565ad625
+      size: 989
+    - path: lstm_logs_nature_dvc_plots/val_precision.json
+      md5: 63aa3c6e6a5740ac6c873fd1d8940115
+      size: 1108
+    - path: lstm_logs_nature_dvc_plots/val_precision_at_recall.json
+      md5: 11044317fb5817179c78c4152a6e7772
+      size: 1362
+    - path: lstm_logs_nature_dvc_plots/val_recall.json
+      md5: aa7a8278f6545ddbf5fc684d302cc0c4
+      size: 1032
+    - path: lstm_logs_nature_dvc_plots/val_sensitivity_at_specificity.json
+      md5: 77383044af84683e4fe712b413b24d38
+      size: 1537
+    - path: lstm_logs_nature_dvc_plots/val_specificity_at_sensitivity.json
+      md5: b6f46b3070631d4cbe444272bd11298d
+      size: 1538
+    - path: metrics/lstm/lstm_metrics_nature.json
+      md5: a8f97d3243af36d814350e253563c7fe
+      size: 263
+  keras_lstm_lemm:
+    cmd: python src/keras_lstm.py --action lemm
+    outs:
+    - path: lstm_logs_lemm_dvc_plots/auc.json
+      md5: 2fe09aa906fa1a01edb1c6caa80125b9
+      size: 863
+    - path: lstm_logs_lemm_dvc_plots/binary_accuracy.json
+      md5: e33884f35b079fbd34bec200c83877af
+      size: 1162
+    - path: lstm_logs_lemm_dvc_plots/cost_metric.json
+      md5: 81009b7d69b9a937faa9a6886a7bf2a1
+      size: 1104
+    - path: lstm_logs_lemm_dvc_plots/loss.json
+      md5: ac53fa5da15e36ef9d6d7cd398b80bd6
+      size: 886
+    - path: lstm_logs_lemm_dvc_plots/precision.json
+      md5: 897461386f1484d279269c0edb43b69b
+      size: 1012
+    - path: lstm_logs_lemm_dvc_plots/precision_at_recall.json
+      md5: 16daa0522bcd54c08f3c92299679c72a
+      size: 1262
+    - path: lstm_logs_lemm_dvc_plots/recall.json
+      md5: 73baec622209c33729e38cad55e56d0b
+      size: 938
+    - path: lstm_logs_lemm_dvc_plots/sensitivity_at_specificity.json
+      md5: 867e6f7cba95d4bb79fd2a6f30b72df4
+      size: 1440
+    - path: lstm_logs_lemm_dvc_plots/specificity_at_sensitivity.json
+      md5: 25eb311fbd3531b5365da505578784f1
+      size: 1437
+    - path: lstm_logs_lemm_dvc_plots/val_auc.json
+      md5: 8bbb6f6ca17f87c589064b58fb1465bf
+      size: 960
+    - path: lstm_logs_lemm_dvc_plots/val_binary_accuracy.json
+      md5: afb0f5787947e3d61dbcdf9f7b2c3a55
+      size: 1264
+    - path: lstm_logs_lemm_dvc_plots/val_cost_metric.json
+      md5: 93668477e0fe12c9d187c332ae59fb64
+      size: 1215
+    - path: lstm_logs_lemm_dvc_plots/val_loss.json
+      md5: bdad742c7a203cfa92265cb87d808e7e
+      size: 987
+    - path: lstm_logs_lemm_dvc_plots/val_precision.json
+      md5: d9be808373a0f3b74ba7bf6e93926fbc
+      size: 1113
+    - path: lstm_logs_lemm_dvc_plots/val_precision_at_recall.json
+      md5: b110835c15feada91c013241bf693f77
+      size: 1359
+    - path: lstm_logs_lemm_dvc_plots/val_recall.json
+      md5: db6470905affea9f9652973f8f4f784e
+      size: 1037
+    - path: lstm_logs_lemm_dvc_plots/val_sensitivity_at_specificity.json
+      md5: c14d5b238041bfc5a0553d92074242c0
+      size: 1537
+    - path: lstm_logs_lemm_dvc_plots/val_specificity_at_sensitivity.json
+      md5: 922c08d11980d4cefe5923c344bb78f0
+      size: 1536
+    - path: metrics/lstm/lstm_metrics_lemm.json
+      md5: e6f6c2693747f739beed60d2e0956ffa
       size: 264
+  keras_lstm_stem:
+    cmd: python src/keras_lstm.py --action stem
+    outs:
+    - path: lstm_logs_stem_dvc_plots/auc.json
+      md5: 78ea51cd34125468b5a1bdfe0ee72fc9
+      size: 857
+    - path: lstm_logs_stem_dvc_plots/binary_accuracy.json
+      md5: 4a71bb6a861f3affa6f45aec3a88775b
+      size: 1161
+    - path: lstm_logs_stem_dvc_plots/cost_metric.json
+      md5: d548865509aff240bfcce2520770a063
+      size: 1102
+    - path: lstm_logs_stem_dvc_plots/loss.json
+      md5: f32505ebb33e4bf5a67c83df708181e3
+      size: 888
+    - path: lstm_logs_stem_dvc_plots/precision.json
+      md5: 59e1c14c0058e15a4af528ea7b725e64
+      size: 1013
+    - path: lstm_logs_stem_dvc_plots/precision_at_recall.json
+      md5: e106077e5261ee1a7af1380cdf65f355
+      size: 1263
+    - path: lstm_logs_stem_dvc_plots/recall.json
+      md5: b6d77f5a6f3a813cde65768a2a8e707e
+      size: 933
+    - path: lstm_logs_stem_dvc_plots/sensitivity_at_specificity.json
+      md5: b1d944e6c348479879df3b8d4d196485
+      size: 1434
+    - path: lstm_logs_stem_dvc_plots/specificity_at_sensitivity.json
+      md5: ad982fa441915271c5d1149b35be7aeb
+      size: 1439
+    - path: lstm_logs_stem_dvc_plots/val_auc.json
+      md5: 441c04c0366fa971190eef6023990d53
+      size: 965
+    - path: lstm_logs_stem_dvc_plots/val_binary_accuracy.json
+      md5: 19d83008d6999f93daff96e04fc8c926
+      size: 1259
+    - path: lstm_logs_stem_dvc_plots/val_cost_metric.json
+      md5: 0126837f15905e821d6ed29632e5ca28
+      size: 1212
+    - path: lstm_logs_stem_dvc_plots/val_loss.json
+      md5: d037b4731ae0988765592637bce00bdd
+      size: 985
+    - path: lstm_logs_stem_dvc_plots/val_precision.json
+      md5: e49317b77ade873833ce57bbe4e5b205
+      size: 1108
+    - path: lstm_logs_stem_dvc_plots/val_precision_at_recall.json
+      md5: edc944da04dd8952b5e9714816c14a83
+      size: 1361
+    - path: lstm_logs_stem_dvc_plots/val_recall.json
+      md5: 47ec87d82afee53be0780081663aca64
+      size: 1039
+    - path: lstm_logs_stem_dvc_plots/val_sensitivity_at_specificity.json
+      md5: 288046a91b450ab5bd02f107093941b0
+      size: 1537
+    - path: lstm_logs_stem_dvc_plots/val_specificity_at_sensitivity.json
+      md5: c41898321a3ecbdad59d840b7f51d27f
+      size: 1539
+    - path: metrics/lstm/lstm_metrics_stem.json
+      md5: be7726d78942f14a60c75274646bb78c
+      size: 265
+  kerasbert_algorithm_lemm:
+    cmd: python src/kerasbert_algorithm.py --action lemm
+    outs:
+    - path: bert_logs_lemm_dvc_plots/binary_accuracy.json
+      md5: eeabccb4687966b628b18c8bea0c6daa
+      size: 1163
+    - path: bert_logs_lemm_dvc_plots/loss.json
+      md5: a06419aa6ca3793047051f9eda3ae479
+      size: 890
+    - path: bert_logs_lemm_dvc_plots/val_binary_accuracy.json
+      md5: e50b12790b5cc84dfebc38fa6a561526
+      size: 1264
+    - path: bert_logs_lemm_dvc_plots/val_loss.json
+      md5: 79a0e6b54cb2ce75b81dca708630192e
+      size: 990
+    - path: confusion_matrices/Confusion_matrix_bert_lemm.jpg
+      md5: 1803e353076208b2f49e60d30f3830d8
+      size: 27865
+    - path: metrics/bert/bert_metrics_lemm.json
+      md5: 138e9a14de95ee47395aa0252a2e47a7
+      size: 81
+  kerasbert_algorithm_stem:
+    cmd: python src/kerasbert_algorithm.py --action stem
+    outs:
+    - path: bert_logs_stem_dvc_plots/binary_accuracy.json
+      md5: 1698ebc30f081860f1057c884dcee03d
+      size: 1163
+    - path: bert_logs_stem_dvc_plots/loss.json
+      md5: bf3b04433226ac89f0b6c764e16db90d
+      size: 886
+    - path: bert_logs_stem_dvc_plots/val_binary_accuracy.json
+      md5: 557b3df8209e5a53b6238f16d421e161
+      size: 1263
+    - path: bert_logs_stem_dvc_plots/val_loss.json
+      md5: 33ba127b1fc30f88ebe5e2bd08546dab
+      size: 989
+    - path: confusion_matrices/Confusion_matrix_bert_stem.jpg
+      md5: b1b2c71a05e5c5efd4230fe362c9dc8a
+      size: 27484
+    - path: metrics/bert/bert_metrics_stem.json
+      md5: f1f2c6df9ec058495587b906a669239f
+      size: 79
