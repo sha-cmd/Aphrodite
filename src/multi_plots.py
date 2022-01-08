@@ -49,7 +49,7 @@ for key_dir, metrics in dirs_dict.items():
         df_train = pd.read_json(learning['train'])
         df_train['stage'] = 'train'
         df_val = pd.read_json(learning['val'])
-        df_val['stage'] = 'test'
+        df_val['stage'] = 'val'
         cols = df_val.columns
         df_list = [df_train, df_val]
         for df in df_list:
