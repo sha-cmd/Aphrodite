@@ -1381,7 +1381,12 @@ stages:
 
     metrics:
     - metrics/bert/bert_metrics_lemm.json:
+        persist: true
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_bert_lemm.jpg:
+          cache: false
+          persist: true
     plots:
     - bert_logs_lemm_dvc_plots/binary_accuracy.json:
         cache: false
@@ -1400,14 +1405,19 @@ stages:
         x: step
         y: val_loss
 
-    frozen: true
+    frozen: false
 
   kerasbert_algorithm_stem:
     cmd: python src/kerasbert_algorithm.py --action stem
 
     metrics:
     - metrics/bert/bert_metrics_stem.json:
+        persist: true
         cache: false
+    outs:
+      - confusion_matrices/Confusion_matrix_bert_stem.jpg:
+          cache: false
+          persist: true
     plots:
     - bert_logs_stem_dvc_plots/binary_accuracy.json:
         cache: false
@@ -1426,7 +1436,7 @@ stages:
         x: step
         y: val_loss
 
-    frozen: true
+    frozen: false
 
   multi_plots:
     cmd: python src/multi_plots.py
