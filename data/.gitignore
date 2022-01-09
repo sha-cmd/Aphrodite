@@ -3,3 +3,7 @@
 /test
 /train
 /bert
+/X_nature_train.csv
+/y_nature_train.csv
+/X_nature_test.csv
+/y_nature_test.csv

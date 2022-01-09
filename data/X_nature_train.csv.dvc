@@ -1,0 +1,4 @@
+outs:
+- md5: ed4ce819b7ce55cc499bb96c43d1a948
+  size: 14138631
+  path: X_nature_train.csv

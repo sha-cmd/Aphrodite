@@ -1,0 +1,4 @@
+outs:
+- md5: 6bdd5546354aa77a55d03a167fe42f1c
+  size: 788901
+  path: y_nature_train.csv
