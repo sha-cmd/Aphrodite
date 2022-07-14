@@ -417,67 +417,83 @@ stages:
       size: 1538
   keras_w2v_lstm:
     cmd: python src/keras_w2v_lstm.py --action nature
+    deps:
+    - path: data/X_nature_test.csv
+      md5: 845c4cd3040178453a234d4bd97f375e
+      size: 2815291
+    - path: data/X_nature_train.csv
+      md5: ed4ce819b7ce55cc499bb96c43d1a948
+      size: 14138631
+    - path: data/y_nature_test.csv
+      md5: 140430535b6d02e41d7e6dd9c204d982
+      size: 148901
+    - path: data/y_nature_train.csv
+      md5: 6bdd5546354aa77a55d03a167fe42f1c
+      size: 788901
+    - path: word2vec/wiki-news-300d-1M.vec
+      md5: d73308ce15859b77f73b173c4ac235e7
+      size: 2259088777
     outs:
     - path: confusion_matrices/Confusion_matrix_w2v_lstm_nature.jpg
-      md5: 6f1c47cc4958fd719596a7ea66340eda
-      size: 28243
+      md5: e179a47154cf1224595e70e6b0f9c74c
+      size: 27408
     - path: metrics/w2v_lstm/w2v_lstm_metrics_nature.json
-      md5: ead64c92c88e45e628cfe74777b16119
+      md5: 164361a33b8f18f1825cab575a5d7056
       size: 266
     - path: w2v_lstm_logs_nature_dvc_plots/auc.json
-      md5: 0dcf1ae236c9da75ddc0d9884d0fded5
+      md5: 0a87f45c2b2f540caa90bd2e5965ae5f
       size: 861
     - path: w2v_lstm_logs_nature_dvc_plots/binary_accuracy.json
-      md5: 27300363cf0dd9080ed5a648ddb063f1
+      md5: 49240b3cccd2b6393f6606ac0e169a53
       size: 1161
     - path: w2v_lstm_logs_nature_dvc_plots/cost_metric.json
-      md5: 612d4a7e89a45c2da776b784817ac6d6
-      size: 1115
+      md5: 75f71f76c0acf4e0fd8727877c61ac1d
+      size: 1116
     - path: w2v_lstm_logs_nature_dvc_plots/loss.json
-      md5: 5f60cc9956267c1c78f5eafec17290bf
-      size: 888
+      md5: 4c275d0bd99923aae2f240250658633a
+      size: 889
     - path: w2v_lstm_logs_nature_dvc_plots/precision.json
-      md5: ba4a195c0de3488b4125b3e2a6b4f193
+      md5: c3ccdc9b43303de097a836e20d83c7a0
       size: 1011
     - path: w2v_lstm_logs_nature_dvc_plots/precision_at_recall.json
-      md5: d2927b6705e25525faed1a2e2b1094ae
-      size: 1263
+      md5: a201ca1c3847f9bbe844a36876369944
+      size: 1264
     - path: w2v_lstm_logs_nature_dvc_plots/recall.json
-      md5: d6bd96b266bb39a4d8c30ff92aff596f
+      md5: 82d9860a3edc5e3a1f018f0d4cf8de3f
       size: 936
     - path: w2v_lstm_logs_nature_dvc_plots/sensitivity_at_specificity.json
-      md5: 71aa095af498615ffa2c89f579e0407e
-      size: 1432
+      md5: 23e10fb3c5feedee619803e887064edf
+      size: 1436
     - path: w2v_lstm_logs_nature_dvc_plots/specificity_at_sensitivity.json
-      md5: 35bef8df990995307a2362f33851ca1e
-      size: 1432
+      md5: 5b746e81030c3c0a6353ba0b885decb2
+      size: 1436
     - path: w2v_lstm_logs_nature_dvc_plots/val_auc.json
-      md5: 8f306bf5803214e5ca2853ae5da15d3f
-      size: 963
+      md5: 8d854e0248518a2522e0a08584d62dba
+      size: 962
     - path: w2v_lstm_logs_nature_dvc_plots/val_binary_accuracy.json
-      md5: d5362197773b37ed4bf55d352ad8abd1
-      size: 1258
+      md5: 527769afb8e0de6b1a16f1538fb28da9
+      size: 1263
     - path: w2v_lstm_logs_nature_dvc_plots/val_cost_metric.json
-      md5: bb041ea177e013dc6fced05163c76167
-      size: 1215
+      md5: ca6236554da2baec814f3d640b4bb796
+      size: 1212
     - path: w2v_lstm_logs_nature_dvc_plots/val_loss.json
-      md5: c4654437c24b36fb5ea6a185cb509652
-      size: 988
+      md5: ba1f11a7732d9d6dd89c0966d1b32975
+      size: 987
     - path: w2v_lstm_logs_nature_dvc_plots/val_precision.json
-      md5: 705595154f75681a54a4d3ed3dcc4835
-      size: 1108
+      md5: ac4b97f2c65fc2ded9fb1d4f42c174cf
+      size: 1113
     - path: w2v_lstm_logs_nature_dvc_plots/val_precision_at_recall.json
-      md5: 53ca0b404253ef8907401ba70e143605
-      size: 1358
+      md5: 320582c26a35ebb63aa7908c07dc6608
+      size: 1361
     - path: w2v_lstm_logs_nature_dvc_plots/val_recall.json
-      md5: c947cf072e6af5910e80c84a556c934a
-      size: 1033
+      md5: ab16a0cf4f3eec6655401cffd7721a0a
+      size: 1038
     - path: w2v_lstm_logs_nature_dvc_plots/val_sensitivity_at_specificity.json
-      md5: 29023f949818521de0ff08e317dcabf9
-      size: 1537
+      md5: b0cb11e0674ed0005cc89cff8fc35c6d
+      size: 1538
     - path: w2v_lstm_logs_nature_dvc_plots/val_specificity_at_sensitivity.json
-      md5: 1e283ad4434ccb4e6c06b4568f511cfd
-      size: 1537
+      md5: 903f5d299a97853bdc3fd9a41ed02162
+      size: 1538
   keras_w2v_lstm_lemm:
     cmd: python src/keras_w2v_lstm.py --action lemm
     outs:
