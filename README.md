@@ -10,3 +10,7 @@ Utilisation du software [studio](https://studio.iterative.ai/user/sha-cmd/projec
 
 [![](data/studio.png)](https://studio.iterative.ai/user/sha-cmd/projects/Aphrodite-1ue5zga6kt)
 
+Nuage de mots des tweets positifs :
+
+![](wc_nature_positive.png)
+
